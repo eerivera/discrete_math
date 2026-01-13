@@ -27,19 +27,17 @@ Click on the skill to go to see a short tutorial along with some problems (and w
 * [F19](Combinatorics/F19.md) Combinatorics: Permutations and Combinations 
 * [F20](Combinatorics/F20.md) Combinatorics: Principle of Inclusion and Exclusion 
 * [F21](Combinatorics/F21.md) Combinatorics: Pigeonhole Principle
-* [G06](Combinatorics/G06.md) Combinatorics: Advanced 
-* [F22](Sequences/F22.md) Sequences: Syntax and Semantics 
+* [G04](Combinatorics/G04.md) Combinatorics: Advanced 
+* [F22](Sequences/F22.md) Sequences: Syntax and Semantics
 * [F23](Sequences/F23.md) Sequences: Polynomial Fitting and Difference Tests
-* [G04](Sequences/G04.md) Sequences: Closed Forms for Linear Recurrences 
-* [G05](Sequences/G05.md) Sequences: Closed Forms using Generating Functions
-* [F24](Probability/F24.md) Probability: Events and Probability Spaces 
-* [F25](Probability/F25.md) Probability: Random Variables and Expected Value 
+* [G05](Sequences/G05.md) Sequences: Closed Forms for Linear Recurrences
+* [G06](Sequences/G06.md) Sequences: Closed Forms using Generating Functions
+* [F24](Probability/F24.md) Probability: Events and Probability Spaces
+* [F25](Probability/F25.md) Probability: Random Variables and Expected Value
 * [F26](Graph_Theory/F26.md) Graph Theory: Basic Properties
-* [G07](Graph_Theory/G07.md) Graph Theory: Digraphs, DAGs and Equivalence Relations 
-* [G08](Graph_Theory/G08.md)  Graph Theory: DFAs, NFAs, and Regular Languages  
-* [F27](Number_Theory/F27.md) Number Theory: Congruence 
-* [G09](Number_Theory/G09.md) Number Theory: RSA
-* [G10](Sets/G10.md) Sets: Countability
+* [G07](Sets/G07.md) Sets: Countability
+* [G08](Graph_Theory/G08.md) Graph Theory: Digraphs, DAGs and Equivalence Relations
+* [G09](Graph_Theory/G09.md) Graph Theory: DFAs, NFAs, and Regular Languages
  
 
 ---
@@ -185,12 +183,8 @@ Ability to calculate the probability of some event using the "4 step method" Thi
 The ability to calculate the expected value of some function on a probability space.
 
 ## F26
-### Graph Theory: Basic Properties 
+### Graph Theory: Basic Properties
 Ability to convert between different representations of graphs and to understand basic graph vocabulary.
-
-## F27
-### Number Theory: Congruence 
-Ability to do computations in the rings Z/nZ and to prove properties of such rings
 
 ## G01
 ### Propositional Logic: Inference: Truth Trees 
@@ -205,30 +199,26 @@ The ability to verify that a first order sentence is a logical consequence of a 
 Ability to write a well-structured proof of a Theorem, Proposition, Lemma or Corollary using a combination of the following basic techniques: * direct proof * proof of contrapositive * proof by contradiction (possibly using the well-ordering principle) * proof by cases * proof by induction
 
 ## G04
-### Sequences: Closed Forms for Linear Recurrences 
-The ability to find a closed form for a homogenous linear recurrence with constant coefficients. This involves find and solving the characteristic equation and using polyomial fitting.
-
-## G05
-### Sequences: Closed Forms using Generating Functions 
-The ability to use Generating Functions to find closed form solutions to recurrence equations.
-
-## G06
-### Combinatorics: Advanced 
+### Combinatorics: Advanced
 Ability to determine the size of a set using a combination of the techniques covered in this course.
 
+## G05
+### Sequences: Closed Forms for Linear Recurrences
+The ability to find a closed form for a homogenous linear recurrence with constant coefficients. This involves find and solving the characteristic equation and using polynomial fitting.
+
+## G06
+### Sequences: Closed Forms using Generating Functions
+The ability to use Generating Functions to find closed form solutions to recurrence equations.
+
 ## G07
-### Graph Theory: Digraphs, DAGs and Equivalence Relations 
-Ability to calculate the equivalence classes of a relation defined by a digraph D and form the related DAG D'
+### Sets: Countability
+The ability to prove that an infinite set is, or is not, countable.
+[G07 overview and practice problems](Sets/G07.md)
 
 ## G08
-### Graph Theory: DFAs, NFAs, and Regular Languages 
-Ability to convert an NFA to a DFA and to use DFAs and NFAs to recognized regular languages.
+### Graph Theory: Digraphs, DAGs and Equivalence Relations
+Ability to calculate the equivalence classes of a relation defined by a digraph D and form the related DAG D'
 
 ## G09
-### Number Theory: RSA 
-Ability to understand and apply the RSA algorithm to create public/private keys and to encrypt/decrypt.
-
-## G10 
-### Sets: Countability 
-The ability to prove that an infinite set is, or is not, countable.
-[G10 overview and practice problems](Sets/G10.md)
+### Graph Theory: DFAs, NFAs, and Regular Languages
+Ability to convert an NFA to a DFA and to use DFAs and NFAs to recognized regular languages.
