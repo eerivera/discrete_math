@@ -1,7 +1,7 @@
 # Strategies for success in COSI 29A Spring 2026
 * Skills
   * there are [36 Discrete Math skills](../../skills/README.md) in COSI 29A Spring 2026
-  * in-class participation is worth 4 additional skills based on the percentage of in-class questions answered with a Good Faith Effort
+  * in-class participation is worth up to 4 additional "skills" based on engagement with a "good faith effort"
   * that gives a total of 40 skills, so each skill is worth 2.5 points
 * Grading - we will grade on the following curve, but may relax the requirements toward the end of the semester.
   * **Discrete Math Skills Needed (assuming full participation):**
