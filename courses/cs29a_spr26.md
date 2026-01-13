@@ -133,10 +133,10 @@ When you register for the course you will be added to the app;
 
 * Week 11 (Mar 23-29)
   * Mon 3/23 [Lesson 18: Exponential Sequences and Generating Functions](#lesson-18)
-    * [G04](../skills/Sequences/G04.md) Sequences: Closed Forms for Linear Recurrences
+    * [G05](../skills/Sequences/G05.md) Sequences: Closed Forms for Linear Recurrences
   * Wed 3/25 [Lesson 19: Generating Functions](#lesson-19)
-    * [G05](../skills/Sequences/G05.md) Sequences: Closed Forms using Generating Functions
-  * Exam 10: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 [G04](../skills/Sequences/G04.md) [G05](../skills/Sequences/G05.md)
+    * [G06](../skills/Sequences/G06.md) Sequences: Closed Forms using Generating Functions
+  * Exam 10: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 [G05](../skills/Sequences/G05.md) [G06](../skills/Sequences/G06.md)
 
 ---
 
@@ -144,7 +144,7 @@ When you register for the course you will be added to the app;
   * Mon 3/30 [Lesson 20: Events and Probability Spaces](#lesson-20)
     * [F24](../skills/Probability/F24.md) Probability: Events and Probability Spaces
   * Wed 4/1 Passover - no class
-  * Exam 11: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05 [F24](../skills/Probability/F24.md)
+  * Exam 11: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06 [F24](../skills/Probability/F24.md)
 
 ---
 
@@ -157,26 +157,26 @@ When you register for the course you will be added to the app;
 * Week 14 (Apr 13-19)
   * Mon 4/13 [Lesson 21: Random Variables and Expected Values](#lesson-21)
     * [F25](../skills/Probability/F25.md) Probability: Random Variables and Expected Value
-  * Wed 4/15 [Lesson 22: Graph Theory - Relations, Digraphs, and DAGs](#lesson-22)
-    * [F26](../skills/Graph_Theory/F26.md) Binary Relations
-    * [G07](../skills/Graph_Theory/G07.md) DAGs
-  * Exam 12: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05 F24 [F25](../skills/Probability/F25.md) [F26](../skills/Graph_Theory/F26.md) [G07](../skills/Graph_Theory/G07.md)
+  * Wed 4/15 [Lesson 22: Countability and UnCountability](#lesson-22)
+    * [G07](../skills/Sets/G07.md) Countability
+  * Exam 12: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06 F24 [F25](../skills/Probability/F25.md) [G07](../skills/Sets/G07.md)
 
 ---
 
 * Week 15 (Apr 20-26)
-  * Mon 4/20 [Lesson 23: Graph Theory - Digraphs, DAGs, DFAs, NFAs, and RegExs](#lesson-23)
-    * [G08](../skills/Graph_Theory/G08.md) DFAs, NFAs, RegExs
-  * Wed 4/22 [Lesson 24: Countability and UnCountability](#lesson-24)
-    * [G10](../skills/Sets/G10.md) Countability
-  * Exam 13: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05 F24 F25 F26 G07 [G08](../skills/Graph_Theory/G08.md) [G10](../skills/Sets/G10.md)
+  * Mon 4/20 [Lesson 23: Graph Theory - Digraphs, DAGs and Equivalence Relations](#lesson-23)
+    * [F26](../skills/Graph_Theory/F26.md) Graph Theory: Basic Properties
+    * [G08](../skills/Graph_Theory/G08.md) Digraphs, DAGs and Equivalence Relations
+  * Wed 4/22 [Lesson 24: Graph Theory - DFAs, NFAs, and Regular Languages](#lesson-24)
+    * [G09](../skills/Graph_Theory/G09.md) DFAs, NFAs, and Regular Languages
+  * Exam 13: F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06 F24 F25 G07 [F26](../skills/Graph_Theory/F26.md) [G08](../skills/Graph_Theory/G08.md) [G09](../skills/Graph_Theory/G09.md)
 
 ---
 
 * Week 16 (Apr 27-May 3)
   * Mon 4/27 [Lesson 25: Review for Final Exam (Part 1)](#lesson-25)
   * Wed 4/29 [Lesson 26: Review for Final Exam (Part 2)](#lesson-26)
-  * Exam 14 (Final Exam): F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05 F24 F25 F26 G07 G08 G10
+  * Exam 14 (Final Exam): F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06 F24 F25 G07 F26 G08 G09
 
 ---
 ---
@@ -537,24 +537,24 @@ F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 
 * We look at linear [recurrence relations and exponential sequences](../notes/sequences/exponential_sequences.md)
 
 ### Today's Skills:
-* [G04](../skills/Sequences/G04.md) Sequences: Closed Forms for Linear Recurrences
+* [G05](../skills/Sequences/G05.md) Sequences: Closed Forms for Linear Recurrences
 
 ---
 
 ## Lesson 19
 ### Wed 3/25/2026 <br> _Generating Functions_
 * We continue with studying sequences
-   * [G05: Closed Forms using Generating Functions](../skills/Sequences/G05.md)
+   * [G06: Closed Forms using Generating Functions](../skills/Sequences/G06.md)
 
 ### Today's Skills:
-* [G05](../skills/Sequences/G05.md) Sequences: Closed Forms using Generating Functions
+* [G06](../skills/Sequences/G06.md) Sequences: Closed Forms using Generating Functions
 
 ---
 
 ## Exam 10
 F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23
-[G04](../skills/Sequences/G04.md)
 [G05](../skills/Sequences/G05.md)
+[G06](../skills/Sequences/G06.md)
 
 ---
 ---
@@ -578,7 +578,7 @@ F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 
 ---
 
 ## Exam 11
-F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05
+F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06
 [F24](../skills/Probability/F24.md)
 
 ---
@@ -608,24 +608,21 @@ F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 
 ---
 
 ## Lesson 22
-### Wed 4/15/2026 <br> _Relations, Digraphs, and DAGs_
-* We begin talking about Binary Relations and Equivalence Relations
-  * [F26: Graph Theory: Binary Relations and Digraphs](../skills/Graph_Theory/F26.md)
-* We introduce the concepts of Digraphs and DAGs
-  * [G07: Graph Theory: Digraphs, DAGS](../skills/Graph_Theory/G07.md)
-* We show how every digraph can be factored into a DAG of equivalence classes
+### Wed 4/15/2026 <br> _Countability and UnCountability_
+* We introduce the notion of countability and cardinality of infinite sets
+  * [G07: Sets: Countability](../skills/Sets/G07.md)
+  * We show that some sets are not countable
+  * We show there is an infinite hierarchy of non-isomorphic infinite sets
 
 ### Today's Skills:
-* [F26](../skills/Graph_Theory/F26.md) Binary Relations
-* [G07](../skills/Graph_Theory/G07.md) DAGs
+* [G07](../skills/Sets/G07.md) Countability
 
 ---
 
 ## Exam 12
-F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05 F24
+F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06 F24
 [F25](../skills/Probability/F25.md)
-[F26](../skills/Graph_Theory/F26.md)
-[G07](../skills/Graph_Theory/G07.md)
+[G07](../skills/Sets/G07.md)
 
 ---
 ---
@@ -636,31 +633,35 @@ F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 
 ---
 
 ## Lesson 23
-### Mon 4/20/2026 <br> _Graphs, Digraphs, DAGs, DFAs, NFAs, and RegExs_
-* We introduce labeled digraphs and give an overview of DFAs, NFAs, and Regular Expressions
-  * [G08: Graph Theory: DFAs, NFAs, RegEx](../skills/Graph_Theory/G08.md)
+### Mon 4/20/2026 <br> _Graph Theory - Digraphs, DAGs and Equivalence Relations_
+* We begin talking about Binary Relations and Equivalence Relations
+  * [F26: Graph Theory: Basic Properties](../skills/Graph_Theory/F26.md)
+  * _Note: An alternative guide on [Binary Relations](../skills/Graph_Theory/F26a.md) is also available_
+* We introduce the concepts of Digraphs and DAGs
+  * [G08: Graph Theory: Digraphs, DAGs and Equivalence Relations](../skills/Graph_Theory/G08.md)
+* We show how every digraph can be factored into a DAG of equivalence classes
 
 ### Today's Skills:
-* [G08](../skills/Graph_Theory/G08.md) DFAs, NFAs, RegExs
+* [F26](../skills/Graph_Theory/F26.md) Graph Theory: Basic Properties
+* [G08](../skills/Graph_Theory/G08.md) Digraphs, DAGs and Equivalence Relations
 
 ---
 
 ## Lesson 24
-### Wed 4/22/2026 <br> _Countability and UnCountability_
-* We introduce the notion of countability and cardinality of infinite sets
-  * [G10: Sets: Countability](../skills/Sets/G10.md)
-  * We show that some sets are not countable
-  * We show there is an infinite hierarcy of non-isomorphic infinite sets
+### Wed 4/22/2026 <br> _Graph Theory - DFAs, NFAs, and Regular Languages_
+* We introduce labeled digraphs and give an overview of DFAs, NFAs, and Regular Expressions
+  * [G09: Graph Theory: DFAs, NFAs, and Regular Languages](../skills/Graph_Theory/G09.md)
 
 ### Today's Skills:
-* [G10](../skills/Sets/G10.md) Countability
+* [G09](../skills/Graph_Theory/G09.md) DFAs, NFAs, and Regular Languages
 
 ---
 
 ## Exam 13
-F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05 F24 F25 F26 G07
+F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06 F24 F25 G07
+[F26](../skills/Graph_Theory/F26.md)
 [G08](../skills/Graph_Theory/G08.md)
-[G10](../skills/Sets/G10.md)
+[G09](../skills/Graph_Theory/G09.md)
 
 ---
 ---
@@ -687,7 +688,7 @@ F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 
 ---
 
 ## Exam 14 (Final Exam)
-F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G04 G05 F24 F25 F26 G07 G08 G10
+F00 F01 F02 F03 F04 G01 F05 F06 F07 G02 F08 F09 F10 F11 G03 F12 F13 F14 F15 F16 F17 F18 F19 F20 F21 F22 F23 G05 G06 F24 F25 G07 F26 G08 G09
 
 ---
 ---
