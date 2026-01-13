@@ -1,5 +1,8 @@
 # discrete_math
-Course notes for CS29a
+Course notes for COSI 29A
 
-* CS29a Fall 2025 Brandeis University
-  https://github.com/tjhickey724/discrete_math/blob/main/courses/cs29a_fall25.md
+* COSI 29A Spring 2026 Brandeis University
+  [Course Syllabus](courses/cs29a_spr26.md)
+
+* COSI 29A Fall 2025 Brandeis University
+  [Course Syllabus](courses/cs29a_fall25.md)

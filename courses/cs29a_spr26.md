@@ -1,8 +1,8 @@
-# CS29a Spring 2026 Discrete Structures
+# COSI 29A Spring 2026 Discrete Structures
 ## Instructor: Elijah Rivera at Brandeis University
-### Office Hours: [Click Here](https://calendar.google.com/calendar/embed?src=c_fadba2ee8b23994940aaa8b2641a6da3114eb95fe794276eb3d00f7ae05918ac%40group.calendar.google.com&ctz=America%2FNew_York)
+### Office Hours: TBA
 
-This file contains links to course notes for CS29a in Spring 2026
+This file contains links to course notes for COSI 29A in Spring 2026
 
 
 
@@ -43,7 +43,7 @@ When you register for the course you will be added to the app;
     * [F01](../skills/Propositional_Calculus/F01.md) Propositional Logic: Syntax and Semantics
     * [F02](../skills/Propositional_Calculus/F02.md) Propositional Logic: Truth Tables and Satisfiability
     * [F03](../skills/Propositional_Calculus/F03.md) Propositional Logic: Translation to/from English
-  * Exam 01: [F00](../skills/Algebra/F00.md) College Algebra skills
+  * Exam 01: [F00](../skills/Algebra/F00.md) [F01](../skills/Propositional_Calculus/F01.md) [F02](../skills/Propositional_Calculus/F02.md) [F03](../skills/Propositional_Calculus/F03.md)
 
 ---
 
@@ -182,6 +182,7 @@ When you register for the course you will be added to the app;
 ---
 
 # Week 1
+### Mon 1/12, Wed 1/14
 
 ## Lesson 1
 ### Mon 1/12/2026 <br> _Intro and overview_
@@ -199,8 +200,8 @@ of this course will rely on your ability to work with, and understand the meanin
   - an overview of the course by reviewing the syllabus
   - a discussion of why Math might be useful in CS, and what kinds of math would be most useful. Here are
     [some examples](../notes/StudyGuides/applications.md)
-  - we go over some [strategies for success in CS29a](../notes/StudyGuides/strategy.md)
-* We ask everyone to connect to the [Mastery Learning App](https://masterylearningapp.onrender.com), if you have registered for the course you will see the CS29a appear on the MLA when you log in with your Brandeis ID.
+  - we go over some [strategies for success in COSI 29A](../notes/StudyGuides/strategy.md)
+* We ask everyone to connect to the [Mastery Learning App](https://masterylearningapp.onrender.com), if you have registered for the course you will see the COSI 29A appear on the MLA when you log in with your Brandeis ID.
 * We look at the [Skill Study Guides on github](../skills/README.md). Each lesson will cover one or more skills and each skill has a study guide with a description of the skill, some sample problems, a tutorial with additional reading, and the solutions to the sample problems. Today we'll start with three skills which we will continue to cover next week
 * We introduce Boolean Algebra and the Propositional Calculus
   - We introduce the boolean operators AND, OR, NOT, IMPLIES, IFF, XOR, ONLYIF in this
@@ -210,7 +211,7 @@ of this course will rely on your ability to work with, and understand the meanin
 * and we see [a few more examples of truth tables](../notes/propositional_calculus/TruthTablePractice.md)
 * We get some practice in [converting between English and the Propositional Calculus](../notes/propositional_calculus/PropCalTranslation.md)
 
-### Today's skills:
+### Today's Skills:
 
 [F01](../skills/Propositional_Calculus/F01.md) Propositional Logic: Syntax and Semantics
 
@@ -218,7 +219,11 @@ of this course will rely on your ability to work with, and understand the meanin
 
 [F03](../skills/Propositional_Calculus/F03.md) Propositional Logic: Translation to/from English
 
-##  Exam 01: College Algebra skills - [F00](../skills/Algebra/F00.md)
+## Exam 01
+[F00](../skills/Algebra/F00.md)
+[F01](../skills/Propositional_Calculus/F01.md)
+[F02](../skills/Propositional_Calculus/F02.md)
+[F03](../skills/Propositional_Calculus/F03.md)
 
 ---
 ---
@@ -239,7 +244,7 @@ and we show that every formula can be reduced to
   and also to
   [Conjunctive Normal Form](https://en.wikipedia.org/wiki/Conjunctive_normal_form)
 
-### Today's skills
+### Today's Skills:
 * [F01](../skills/Propositional_Calculus/F01.md) Propositional Logic: Syntax and Semantics
 * [F02](../skills/Propositional_Calculus/F02.md) Propositional Logic: Truth Tables and Satisfiability
 * [F03](../skills/Propositional_Calculus/F03.md) Propositional Logic: Translation to/from English
@@ -252,7 +257,7 @@ and we show that every formula can be reduced to
 * We show how to convert any propositional formula in a [normal form CNF or DNF](../notes/propositional_calculus/normalForms.md)
 * We give an introduction to [arguments, formal proofs, and counterexamples](../notes/propositional_calculus/SymbolicProofs.md)
 
-### Today's skills
+### Today's Skills:
 * [F04](../skills/Propositional_Calculus/F04.md) Propositional Logic: Boolean Algebra
 ---
 
@@ -282,7 +287,7 @@ Next week we'll show how to do this for First Order Logic.
 [chapter  3 of "The Logic Notes" by John Slaney](https://users.cecs.anu.edu.au/~jks/LogicNotes/exercises2.html)
 * More exercises in [Chapter 9 of Part 1 of the Logic Primer by Paul Teller](https://tellerprimer.sf.ucdavis.edu/logic-primer-files)
 
-### Today's skills
+### Today's Skills:
 * [G01](../skills/Propositional_Calculus/G01.md) Propositional Logic: Inference: Truth Trees
 
 
@@ -297,7 +302,7 @@ Next week we'll show how to do this for First Order Logic.
 * We show how to [draw parse trees for First Order Formulas](../notes/predicate_calculus/parseTree.md).
 * We show [how to evaluate a First Order Formula given an Interpretation](../notes/predicate_calculus/FOLinterpretations.md).
 
-### Today's Skills
+### Today's Skills:
 * [F05](../skills/Predicate_Calculus/F05.md) Predicate Calculus: Syntax and Semantics
 * [F06](../skills/Predicate_Calculus/F06.md) Predicate Calculus: Translation to/from English
 
@@ -324,7 +329,7 @@ a formula follows from a set of assumptions, or to find a counter example.
 * We give [an example of translating an argument to the predicate calculus and simplifying the resulting argument](../notes/predicate_calculus/FOLtreemethodExample1.md).
 * We introduce the notion of [inference and valid arguments in the Predicate Calculus](../notes/predicate_calculus/inference.md)
 
-### Today's skills
+### Today's Skills:
 * [F07](../skills/Predicate_Calculus/F07.md) Predicate Calculus: Simplification Rules
 
 ---
@@ -336,7 +341,7 @@ a formula follows from a set of assumptions, or to find a counter example.
   * using [these examples from the Logic Notes Book](https://users.cecs.anu.edu.au/~jks/LogicNotes/exercises3.html)
   * and looking at [the Peano Axiomatization of Arithmetic](../notes/predicate_calculus/peanoAxioms.md).
 
-### Today's skills
+### Today's Skills:
 * [G02](../skills/Predicate_Calculus/G02.md) Predicate Calculus: Inference: Truth Trees
 
 ---
@@ -355,7 +360,7 @@ F00 F01 F02 F03 F04 G01 F05  F06  [F07](../skills/Predicate_Calculus/F07.md) [G0
 * We give an overview of [the art of writing mathematical proofs](../notes/proofs/overview.md)
 * We review [the features of a "good" proof](../notes/proofs/goodProofFeatures.md) as explained in MfCS
 
-### Today's skills
+### Today's Skills:
 * [F08](../skills/Proof_Techniques/F08.md) Proof Techniques: Direct and ContraPositive Proofs
 * [F09](../skills/Proof_Techniques/F09.md) Proof Techniques: Proof by Contradiction
 * [F10](../skills/Proof_Techniques/F10.md) Proof Techniques: Proof by Cases
