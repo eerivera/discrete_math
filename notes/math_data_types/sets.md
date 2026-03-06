@@ -40,13 +40,13 @@ the ":" or "|" can be read "such that" or "for"
 ## Intervals
 We use the following notation to represent intervals in the integers, rationals, or reals:
 
-$[a,b] = \\{x : a\le x\le b]$
+$[a,b] = \\{x : a\le x\le b\\}$
 
-$[a,b) = \\{x : a\le x\lt b]$
+$[a,b) = \\{x : a\le x\lt b\\}$
 
-$(a,b] = \\{x : a\lt x\le b]$
+$(a,b] = \\{x : a\lt x\le b\\}$
 
-$(a,b) = \\{x : a\lt x\lt b]$
+$(a,b) = \\{x : a\lt x\lt b\\}$
 
 The bracket or parenthesis indicates that the endpoint is  or is not in the set.
 Note we can write $\mathbb{F}_n$ as $[0,n)$ or $[0,n-1]$. For example, 
@@ -91,7 +91,7 @@ What is
 * $A\cap B$
 * $\overline{C}$
 * $A\cap C$
-* $A\cap B$
+* $\overline{A\cap B}$
 * $C \cap (A\cup B)$
 * $C \cup (A \cap B)$
 
