@@ -1,0 +1,37 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{forest}
+  truth tree
+  [{ \textit{(from neg-c)} \\ $C$ \\ $\neg A$ \\ $\neg B$ }
+    [{ \textit{Apply p1} \\ $\neg A \vee C$ }
+      [{ $\neg A$ }
+        [{ \textit{Apply p2} \\ $\neg B \vee C$ }
+          [{ $\neg B$ }
+            [{ $\mathbf{\circ}$ \\ \textit{Open} }]
+          ]
+          [{ $C$ }
+            [{ $\mathbf{\circ}$ \\ \textit{Open} }]
+          ]
+        ]
+      ]
+      [{ $C$ }
+        [{ \textit{Apply p2} \\ $\neg B \vee C$ }
+          [{ $\neg B$ }
+            [{ $\mathbf{\circ}$ \\ \textit{Open} }]
+          ]
+          [{ $C$ }
+            [{ $\mathbf{\circ}$ \\ \textit{Open} }]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{forest}
+
+\input{parse-tree-style}
+
+\begin{document}
+\begin{forest}
+  parse tree
+  [{$\leftrightarrow$}
+    [{$\wedge$}
+      [{$\rightarrow$}
+        [{$P$}]
+        [{$R$}]
+      ]
+      [{$\rightarrow$}
+        [{$Q$}]
+        [{$R$}]
+      ]
+    ]
+    [{$\rightarrow$}
+      [{$\vee$}
+        [{$P$}]
+        [{$Q$}]
+      ]
+      [{$R$}]
+    ]
+  ]
+\end{forest}
+\end{document}

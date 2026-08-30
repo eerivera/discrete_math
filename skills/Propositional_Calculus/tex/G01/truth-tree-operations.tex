@@ -1,0 +1,69 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\forestset{
+  rule tree/.style={
+    for tree={
+      parent anchor=south,
+      child anchor=north,
+      align=center,
+      s sep=2em,
+      l sep=1.5em,
+      inner sep=2pt,
+      edge={semithick},
+    },
+  },
+}
+
+\begin{document}
+\begin{tabular}{c@{\qquad}c@{\qquad}c}
+\begin{forest}
+  rule tree
+  [{$E \vee F\;\checkmark$}
+    [{$E$}]
+    [{$F$}]
+  ]
+\end{forest}
+&
+\begin{forest}
+  rule tree
+  [{$E \wedge F\;\checkmark$}
+    [{$E$ \\ $F$}]
+  ]
+\end{forest}
+&
+\begin{forest}
+  rule tree
+  [{$E \rightarrow F\;\checkmark$}
+    [{$\neg E$}]
+    [{$F$}]
+  ]
+\end{forest}
+\\[3em]
+\begin{forest}
+  rule tree
+  [{$E \leftrightarrow F\;\checkmark$}
+    [{$E$ \\ $F$}]
+    [{$\neg E$ \\ $\neg F$}]
+  ]
+\end{forest}
+&
+\begin{forest}
+  rule tree
+  [{$E \oplus F\;\checkmark$}
+    [{$E$ \\ $\neg F$}]
+    [{$\neg E$ \\ $F$}]
+  ]
+\end{forest}
+&
+\begin{forest}
+  rule tree
+  [{$P$ \\ $\vdots$ \\ $\neg P$}
+    [{$\mathbf{X}$ \\ \textit{Contradiction}}]
+  ]
+\end{forest}
+\end{tabular}
+\end{document}

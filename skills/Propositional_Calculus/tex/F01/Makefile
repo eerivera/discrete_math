@@ -1,5 +1,5 @@
-SOURCES := practice-01.tex practice-02.tex truth-tree-operations.tex example-valid.tex example-invalid.tex
-OUTPUT_DIR := ../../images/G01
+SOURCES := parse-tree.tex parse-tree-evaluation.tex
+OUTPUT_DIR := ../../images/F01
 BUILD_DIR := build
 SVGS := $(SOURCES:%.tex=$(OUTPUT_DIR)/%.svg)
 
@@ -7,7 +7,7 @@ SVGS := $(SOURCES:%.tex=$(OUTPUT_DIR)/%.svg)
 
 all: $(SVGS)
 
-$(OUTPUT_DIR)/%.svg: %.tex truth-tree-style.tex
+$(OUTPUT_DIR)/%.svg: %.tex parse-tree-style.tex
 	mkdir -p $(BUILD_DIR) $(OUTPUT_DIR)
 	latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR) $<
 	pdftocairo -svg $(BUILD_DIR)/$*.pdf $@

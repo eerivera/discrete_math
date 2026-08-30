@@ -1,0 +1,39 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{forest}
+
+\input{parse-tree-style}
+
+\begin{document}
+\begin{tabular}{c@{\qquad}l}
+\begin{forest}
+  parse tree
+  [{$\leftrightarrow$ \\ $\mathbf{T}$}
+    [{$\wedge$ \\ $\mathbf{F}$}
+      [{$\rightarrow$ \\ $\mathbf{T}$}
+        [{$P$ \\ $\mathbf{F}$}]
+        [{$R$ \\ $\mathbf{F}$}]
+      ]
+      [{$\rightarrow$ \\ $\mathbf{F}$}
+        [{$Q$ \\ $\mathbf{T}$}]
+        [{$R$ \\ $\mathbf{F}$}]
+      ]
+    ]
+    [{$\rightarrow$ \\ $\mathbf{F}$}
+      [{$\vee$ \\ $\mathbf{T}$}
+        [{$P$ \\ $\mathbf{F}$}]
+        [{$Q$ \\ $\mathbf{T}$}]
+      ]
+      [{$R$ \\ $\mathbf{F}$}]
+    ]
+  ]
+\end{forest}
+&
+$\begin{aligned}
+P&=\mathbf{F}\\
+Q&=\mathbf{T}\\
+R&=\mathbf{F}
+\end{aligned}$
+\end{tabular}
+\end{document}
