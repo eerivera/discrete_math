@@ -1,4 +1,9 @@
 # Truth Tree Performance
+
+## Skill Addressed
+
+* [G01 — Inference with Truth Trees](../../skills/Propositional_Calculus/G01.md)
+
 We know that the Truth Table method can take $2^n$ steps to determine if a formula with $n$ propositions is a tautology.
 We first show that in some cases the Truth Tree method can solve very large problems with many propositions quickly.
 
@@ -34,6 +39,5 @@ we would
 get a tree with an exponential number of branches, so the order really does matter ...
 
 ![TruthTree Exponential Growth](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/exponentialTruthTreeGrowthExample.jpg)
-
 
 

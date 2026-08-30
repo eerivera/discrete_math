@@ -1,4 +1,9 @@
 # Mathematical Notation
+
+## Skill Addressed
+
+* [F00 — College Algebra Skills](../../skills/Algebra/F00.md)
+
 We present below some of the standard mathematical notation that you will often see in proofs.
 
 ## Variables
@@ -69,4 +74,3 @@ $a_1,a_2,a_3,\ldots$ of numbers. For example,
 
 
   
-

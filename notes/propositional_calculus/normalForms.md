@@ -1,4 +1,9 @@
 # Normal Forms 
+
+## Skill Addressed
+
+* [F04 — Boolean Algebra](../../skills/Propositional_Calculus/F04.md)
+
 ## Disjunctive Normal Form
 Any formula in propositional logic can be converted into a normal form, called Disjunctive Normal Form,
 which is a disjunction of conjunctions of literals, where a literal is a propositional symbol or its negation. 
@@ -28,5 +33,4 @@ and my applying DeMorgan's rule we get an if-then rule:
 $(A\wedge B \wedge \ldots C) \rightarrow (D \vee E \vee \ldots F)$
 
 So a formula in conjunctive normal form corresponds to a set of if-then rules that are all true.
-
 

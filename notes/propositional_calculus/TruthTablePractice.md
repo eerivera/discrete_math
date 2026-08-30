@@ -1,5 +1,9 @@
 # Truth table examples
 
+## Skill Addressed
+
+* [F02 — Truth Tables and Satisfiability](../../skills/Propositional_Calculus/F02.md)
+
 Here are some problems to get practice constructing truth tables
 ---
 
@@ -64,4 +68,3 @@ T F
 F T
 F F
 ```
-

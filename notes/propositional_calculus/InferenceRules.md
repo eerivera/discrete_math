@@ -1,5 +1,9 @@
 # Inference Rules for Propositional Calculus
 
+## Skill Addressed
+
+* [F04 — Boolean Algebra](../../skills/Propositional_Calculus/F04.md)
+
 We say that two formulas $F_1$ and $F_2$ are equivalent, writted $F_1\equiv F_2$ if they
 hae the same values on all interpretations, i.e. they have the same truth tables.
 
@@ -80,4 +84,3 @@ having to construct the truth table though by using the definition of implicatio
 $P \rightarrow \neg Q \wedge R \equiv$
 
 $\neg P \vee \neg Q \wedge R$ 
-

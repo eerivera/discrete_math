@@ -1,5 +1,10 @@
 # Estimating the time required to test for satisfiability
 
+## Skills Addressed
+
+* [F02 — Truth Tables and Satisfiability](../../skills/Propositional_Calculus/F02.md)
+* [G01 — Inference with Truth Trees](../../skills/Propositional_Calculus/G01.md)
+
 We know that we can test whether a Propositional Formula is satisifable using the Truth Table,
 but how long will this take? Is it a practical method?
 
@@ -47,7 +52,6 @@ In many cases these new methods can be used to find solutions to larger problems
 they are still exponential.  It is an open problem (and a very important one) to see if there is an algorithm to test for satisfiability
 that is substantialy faster than the exponential Truth Table method.  This is known as the P vs NP problem and you can learn more about it
 if you take a course in the "Theory of Computation"
-
 
 
 

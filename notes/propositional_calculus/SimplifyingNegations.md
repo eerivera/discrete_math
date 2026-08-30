@@ -1,5 +1,9 @@
 # Simplifying the negation of a formula
 
+## Skill Addressed
+
+* [F04 — Boolean Algebra](../../skills/Propositional_Calculus/F04.md)
+
 On this page we give some examples of simiplifying the negation of a formula
 by using using the DeMorgan rules to move the negation symbols all the way in to the formula
 so the only negations are those on primitive propositional symbols.
@@ -81,5 +85,4 @@ to show that $F$ is equivalent to True, that is,
 $\neg F \equiv {\rm false}$   -->  $F \equiv {\rm true}$
 
 In many cases this is much faster than using the Truth Table method to show $F$ is true for all interpretation, but there is no known "fast" algorithm to prove a formula is a tautology.
-
 

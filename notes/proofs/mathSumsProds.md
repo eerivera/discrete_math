@@ -1,5 +1,9 @@
 # Notation for Summations and Products
 
+## Skill Addressed
+
+* [F00 — College Algebra Skills](../../skills/Algebra/F00.md)
+
 ## Summation formulas
 It is very common to write expressions that represent summations. We do this using the capital greek letter Sigma which allows us to write a sum of several terms in a compressed fashion. For example, we can express the sum of four numbers four numbers $a_0$, $a_1$, $a_2$, and $a_3$.
 as 

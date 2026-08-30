@@ -1,4 +1,9 @@
 # The Truth Tree Method
+
+## Skill Addressed
+
+* [G01 — Inference with Truth Trees](../../skills/Propositional_Calculus/G01.md)
+
 In this slide we introduce the Truth Tree Method which is a technique proving that a conclusion formula $C$ in Propositional Logic
 is a logical consequence of a set $S$ of premises, or finding a counterexample if it is not a logical consequence. 
 
@@ -99,7 +104,6 @@ Here is what we get if we apply the Truth Tree Method to this argument
 Note that first we simplify the negation of the conclusion then we apply the rules for implication, on each branch. None of the
 branches are closed and they all have the same interpretation $\neg A, \neg B, C$ (that is A=B=False, C=True) which satisfies the premises but not the conclusion,
 so the argument in not valid!
-
 
 
 

@@ -1,5 +1,9 @@
 # Propositional Calculus Parse Trees
 
+## Skill Addressed
+
+* [F01 — Syntax and Semantics](../../skills/Propositional_Calculus/F01.md)
+
 For large sentences in the propositional calculus, also known as boolean formulas, it can sometimes be easier to
 represent the formula in a graphical form as a "tree".  This is particularly useful if you want to evaluate a formula
 on a particular assignment of truth values to the variables of the formula.

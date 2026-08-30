@@ -1,5 +1,9 @@
 # Truth Tables
 
+## Skill Addressed
+
+* [F02 — Truth Tables and Satisfiability](../../skills/Propositional_Calculus/F02.md)
+
 A Truth Table is a way of determining the value of a Propositional formula
 for all possible values for the variables in the formula. 
 

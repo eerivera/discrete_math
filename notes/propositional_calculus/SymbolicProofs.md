@@ -1,5 +1,9 @@
 # Arguments, Inference, Formal Proofs, and Counter-examples
 
+## Skill Addressed
+
+* [G01 — Inference with Truth Trees](../../skills/Propositional_Calculus/G01.md)
+
 One of the main goals of this course is the help you learn how to write clear and convincing proofs of mathematical theorems. 
 
 In this section, we put this into a formalism and we will show how to construct formal, symbolic proofs.
@@ -115,4 +119,3 @@ P
 This has a simple counterexample where $P$ is false, and both $R$ and $Q$ are true.
 That makes all three premises true, but the conclusion is false. An argument is invalid if and only if
 it has a counterexample.
-

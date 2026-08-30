@@ -1,5 +1,9 @@
 # Practice Converting English into Propositional Calculus
 
+## Skill Addressed
+
+* [F03 — Translation to/from English](../../skills/Propositional_Calculus/F03.md)
+
 This question will assess your ability to translate English statements into logic. 
 Assume we have a program P with two functions F1 and F2 that are operating either with a high load or a low load. 
 

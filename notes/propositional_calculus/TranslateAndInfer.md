@@ -1,4 +1,10 @@
 # Examples of Translation and Inference
+
+## Skills Addressed
+
+* [F03 — Translation to/from English](../../skills/Propositional_Calculus/F03.md)
+* [G01 — Inference with Truth Trees](../../skills/Propositional_Calculus/G01.md)
+
 Let's look at how to use the Propositional Calculus to reason about systems.
 The idea will be to take an argument, in English, convert it to the Propositional Calculus,
 and then use inference tools to verify that the argument (as translated) is valid,

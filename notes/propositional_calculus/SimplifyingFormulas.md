@@ -1,4 +1,9 @@
 # Simplifying Propositional Formulas
+
+## Skill Addressed
+
+* [F04 — Boolean Algebra](../../skills/Propositional_Calculus/F04.md)
+
 Any formula in propositional logic can be reduced to one containing only the $\vee$ and $\wedge$ operators
 and propositional symbols $P,Q,...$ and their negations $\neg P, \neg Q, ...$.
 
@@ -63,5 +68,4 @@ and we remove the double negations as $\neg\neg A \equiv A$
 $(A\wedge \neg B) \vee (B \wedge \neg A)$
 
 and this says that exactly one of A and B is True, so this expressions is equivalent to $A\oplus B$
-
 

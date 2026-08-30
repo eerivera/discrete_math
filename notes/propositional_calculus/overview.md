@@ -1,6 +1,11 @@
 # Overview of Propositional Calculus
 
-The Propositional Calculus is a formal language for expressing logical concepts. 
+## Skills Addressed
+
+* [F01 — Syntax and Semantics](../../skills/Propositional_Calculus/F01.md)
+* [F02 — Truth Tables and Satisfiability](../../skills/Propositional_Calculus/F02.md)
+
+The Propositional Calculus is a formal language for expressing logical concepts.
 
 The primitives are propositions (typically named P, Q, R, ...) which are assumed to be either true or false. 
 These are connected to form sentences using the logical connectors: and, or, not, and others. 
