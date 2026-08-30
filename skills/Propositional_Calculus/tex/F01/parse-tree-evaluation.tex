@@ -1,39 +1,37 @@
 \documentclass[border=8pt]{standalone}
 
 \usepackage{amsmath}
+\usepackage{xcolor}
 \usepackage{forest}
 
-\input{parse-tree-style}
-
 \begin{document}
-\begin{tabular}{c@{\qquad}l}
+\begingroup
+\tikzset{label distance=0em}
 \begin{forest}
-  parse tree
-  [{$\leftrightarrow$ \\ $\mathbf{T}$}
-    [{$\wedge$ \\ $\mathbf{F}$}
-      [{$\rightarrow$ \\ $\mathbf{T}$}
-        [{$P$ \\ $\mathbf{F}$}]
-        [{$R$ \\ $\mathbf{F}$}]
+  for tree={
+    math content,
+    s sep=3.5em,
+    l sep=2em,
+  }
+  [\leftrightarrow, label={below:\textcolor{red}{\textbf{T}}}
+    [\wedge, label={below:\textcolor{red}{\textbf{F}}}
+      [\rightarrow, label={below:\textcolor{red}{\textbf{T}}}
+        [P, label={below:\textcolor{red}{\textbf{F}}}]
+        [R, label={below:\textcolor{red}{\textbf{F}}}]
       ]
-      [{$\rightarrow$ \\ $\mathbf{F}$}
-        [{$Q$ \\ $\mathbf{T}$}]
-        [{$R$ \\ $\mathbf{F}$}]
+      [\rightarrow, label={below:\textcolor{red}{\textbf{F}}}
+        [Q, label={below:\textcolor{red}{\textbf{T}}}]
+        [R, label={below:\textcolor{red}{\textbf{F}}}]
       ]
     ]
-    [{$\rightarrow$ \\ $\mathbf{F}$}
-      [{$\vee$ \\ $\mathbf{T}$}
-        [{$P$ \\ $\mathbf{F}$}]
-        [{$Q$ \\ $\mathbf{T}$}]
+    [\rightarrow, label={below:\textcolor{red}{\textbf{F}}}
+      [\vee, label={below:\textcolor{red}{\textbf{T}}}
+        [P, label={below:\textcolor{red}{\textbf{F}}}]
+        [Q, label={below:\textcolor{red}{\textbf{T}}}]
       ]
-      [{$R$ \\ $\mathbf{F}$}]
+      [R, label={below:\textcolor{red}{\textbf{F}}}]
     ]
   ]
 \end{forest}
-&
-$\begin{aligned}
-P&=\mathbf{F}\\
-Q&=\mathbf{T}\\
-R&=\mathbf{F}
-\end{aligned}$
-\end{tabular}
+\endgroup
 \end{document}
