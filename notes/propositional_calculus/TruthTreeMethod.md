@@ -36,7 +36,17 @@ Here is how we prove this is true using Truth Tables.
 We create the truth tables for each of $A\rightarrow C, B\rightarrow C, A\vee B$
 and then show that for each of the three interpretations where all three are True
 (ABC = TTT, TFT, FTT), we also see that $C$ is True.
-![TruthTableExample1](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/TruthTableInference.jpg)
+
+| $A$ | $B$ | $C$ | $A \rightarrow C$ | $B \rightarrow C$ | $A \vee B$ | All premises True? |
+| --- | --- | --- | --- | --- | --- | --- |
+| T | T | T | T | T | T | **Yes** |
+| T | T | F | F | F | T | No |
+| T | F | T | T | T | T | **Yes** |
+| T | F | F | F | T | T | No |
+| F | T | T | T | T | T | **Yes** |
+| F | T | F | T | F | T | No |
+| F | F | T | T | T | F | No |
+| F | F | F | T | T | F | No |
 
 
 
@@ -62,7 +72,7 @@ En
 We then apply the following rules which simplify the formulas in the tree.
 
 The rules are shown in the following image:
-![Truth Tree Operations](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/TruthTreeOperations.jpg)
+![Truth Tree operations](../../skills/Propositional_Calculus/images/G01/truth-tree-operations.svg)
 
 For the cases where there is branching, this corresponds to looking at the different cases, e.g. if $E \vee F$ is True, then we can look at two cases:
 1) the case where $E$ is True
@@ -79,7 +89,7 @@ Since the formulas get simpler when we check them off, we see that this process 
 
 ## Example of using the Truth Tree Method to prove that logical inference
 
-![TruthTreeExample1](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/TreeMethodExample1.jpg)
+![A truth tree in which every branch closes](../../skills/Propositional_Calculus/images/G01/example-valid.svg)
 
 Let's walk through the steps of creating this tree and interpreting its results.
 
@@ -99,11 +109,10 @@ $A\rightarrow C, B\rightarrow C \models C\rightarrow A \vee B$
 Here is what we get if we apply the Truth Tree Method to this argument
 (note we negate the conclusion and simplify it to move the negations inward before continuing).
 
-![TruthTreeExample2](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/TreeMethodExample2.jpg)
+![A truth tree with open branches](../../skills/Propositional_Calculus/images/G01/example-invalid.svg)
 
 Note that first we simplify the negation of the conclusion then we apply the rules for implication, on each branch. None of the
 branches are closed and they all have the same interpretation $\neg A, \neg B, C$ (that is A=B=False, C=True) which satisfies the premises but not the conclusion,
 so the argument in not valid!
-
 
 

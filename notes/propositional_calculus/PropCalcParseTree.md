@@ -13,7 +13,7 @@ on a particular assignment of truth values to the variables of the formula.
 Below is an example of a parse tree for the formula
 $((P \rightarrow R) \wedge (Q\rightarrow R)) \leftrightarrow ((P\vee Q) \rightarrow R)$.
 
-![Parse Tree](boolean_parse_tree.png)
+![Parse tree for the formula](../../skills/Propositional_Calculus/images/F01/parse-tree.svg)
 
 Observe that you don't need paretheses in a parse tree as it is completely clear which subexpressions correspond to which operators.
 
@@ -22,16 +22,13 @@ Observe that you don't need paretheses in a parse tree as it is completely clear
 Below is an example showing how to use a parse tree to find the value of a boolean expression
 for a particular assignment of truth values to the variables.
 
-You can either draw the "tree" above the formula, or below the formula.
-In the image we put in the truth values of the subexpressions with a dotted line to the operator.
-
-In either case, the first step is to write down the truth values for each proposition.
+The first step is to write down the truth values for each proposition.
 
 Next you write down the truth values for each subexpression as you work your way toward the root of the tree.
 
 The value at the root of the tree is the value of the expression for that assigment of truth values.
 
-![Evaluation using a Parse Tree](boolean_evaluation.png)
+![Evaluation using a parse tree](../../skills/Propositional_Calculus/images/F01/parse-tree-evaluation.svg)
 
 Parse Trees for Expressions are an important concept in Computer Science, and we'll return to them
 we look at Graph Theory toward the end of this class.
