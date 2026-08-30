@@ -26,9 +26,9 @@ The constraint beneath the sigma specifies the values that should be used in the
 
 ### Polynomials
 
-A typical example is to express a general polynomial of degree k as a sum:
+A typical example is to express a general polynomial of degree $k$ as a sum:
 
-$p(x) = \sum_\limits{i=0}^n a_i x^i = a_0 + a_1x + a_2x^2 + a_3x^3 + \ldots + a_nx^n$
+$p(x) = \sum_\limits{i=0}^k a_i x^i = a_0 + a_1x + a_2x^2 + a_3x^3 + \ldots + a_kx^k$
 
 ## Product formulas
 
@@ -65,11 +65,11 @@ We can use this notation to express the Unique Factorization Theorem for integer
 
 ---
 
-**Theorem** Every positive integer $n$ can e factored uniquely into primes
+**Theorem** Every integer $n>1$ can be factored uniquely into primes
 
-$n = \prod_\limits{i=1}^k p_i^{a_i}$
+$n = \prod_\limits{i=1}^m p_i^{a_i}$
 
-where the $p_i$ are primes $p_1\lt p_2\lt \ldots\lt p_k$ and the $a_i$ are positive integers.
+where the $p_i$ are primes $p_1\lt p_2\lt \ldots\lt p_m$ and the $a_i$ are positive integers.
 
 ---
 
@@ -89,7 +89,7 @@ Let first assume $p$ divides $n^k$.
 Let $n$ have the prime factorization shown in the Theorem above, then $n^k$ has the same factorization
 except the each $a_i$ is multiplied by $k$ because multiplication is commutative.
 
-$n^k =  \prod_\limits{i=0}^k p_i^{k a_i}$
+$n^k =  \prod_\limits{i=1}^m p_i^{k a_i}$
 
 So if a prime $p$ divides $n^k$, then it must be one of the $p_i$, and hence it must also divide $n$.
 

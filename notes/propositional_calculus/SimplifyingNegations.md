@@ -60,29 +60,30 @@ and by negating both sides we see also that
 
 $P \rightarrow (Q \rightarrow P) \equiv True$
 
-So $P\rightarrow (Q \rightarrow P)$ is a valid formula, i.e. a taugology.
+So $P\rightarrow (Q \rightarrow P)$ is a valid formula, i.e. a tautology.
 
 ## Generalized DeMorgan's Law
 There is a useful generalization of DeMorgan's Law that works for any formula containing only $\vee$, $\wedge$, $\neg$ and propositional symbols.
 
-Let $F$ be any such formula and let $\overline{F}$ be the fully parenthesized formula obtained by replacing all $\vee$ with $\wedge$ and $\wedge$ with $\vee$ and replacing each propositional symbol $P$ with its negation $\neg P$, and replacing $true$ with $false$ and vice versa. Then
+Let $F$ be any such formula and let $\overline{F}$ be the fully parenthesized formula obtained by replacing all $\vee$ with $\wedge$ and $\wedge$ with $\vee$ and replacing each propositional symbol $P$ with its negation $\neg P$, and replacing $True$ with $False$ and vice versa. Then
 
-$\neg F = \overline{F}$
+$\neg F \equiv \overline{F}$
 
 For example, if 
 
 $F = P \vee \neg (Q \wedge \neg R) \vee (\neg P \wedge Q)$, then
 
-$\overline{F} = \neg P \wedge \neg (\neg Q \vee  R) \wedge  ( P \vee \neg Q)))$
+$\overline{F} = \neg P \wedge \neg (\neg Q \vee R) \wedge (P \vee \neg Q)$
 
-and you can verify for yourself using DeMorgan that $\neg F = \overline{F}$
+$\neg F \equiv \neg P \wedge (Q \wedge \neg R) \wedge (P \vee \neg Q)$,
+
+and you can verify for yourself using DeMorgan that $\neg F \equiv \overline{F}$.
 
 ## Theorem proving by simplifying negation
 One approach to proving that a boolean formula $F$ is valid, i.e. is a tautology, is to show that the
 negation of the formula $\neg F$ simplifies to False; or equivalently, using the booolean algebra rules
 to show that $F$ is equivalent to True, that is, 
 
-$\neg F \equiv {\rm false}$   -->  $F \equiv {\rm true}$
+$\neg F \equiv \mathrm{False}$   -->  $F \equiv \mathrm{True}$
 
-In many cases this is much faster than using the Truth Table method to show $F$ is true for all interpretation, but there is no known "fast" algorithm to prove a formula is a tautology.
-
+In many cases this is much faster than using the Truth Table method to show $F$ is True for all interpretations, but there is no known "fast" algorithm to prove a formula is a tautology.

@@ -7,7 +7,7 @@
 This question will assess your ability to translate English statements into logic. 
 Assume we have a program P with two functions F1 and F2 that are operating either with a high load or a low load. 
 
-We will assume the following propositions are either true or false:
+We will assume the following propositions are either True or False:
 ```
 E1: function 1 throws an error
 E2: function 2 throws an error
@@ -21,14 +21,12 @@ You will translate English statements to propositional logic using only the logi
 ```
 and the four propositions above (E1,E2,H,C)
 
-Assume that 
-* the precedence of the operators is as listed above (i.e. AND binds tightest and IFF binds weakest) and that 
-* all operators are right associative (i.e.
-```
-   A implies B implies C
-means 
-   A implies (B implies C).
-```
+To avoid ambiguity, use parentheses to show the intended grouping. Negation applies
+only to the formula immediately following it unless parentheses extend its scope.
+Because AND and OR are associative, a sequence using only AND or only OR may be
+written without internal parentheses; for example, `A OR B OR C` and
+`A AND B AND C`. When different binary operators are mixed, use parentheses rather
+than relying on precedence or associativity conventions.
 
 ## Convert the following statements to propositional logic:
 
@@ -54,11 +52,11 @@ H. If the program crashes then exactly one of the two functions throws an error
 
 ## Convert the following statements to English
 
-I.  Translate to English: $E1 \wedge H \rightarrow E2 \wedge C$
+I.  Translate to English: $(E1 \wedge H) \rightarrow (E2 \wedge C)$
 
 J. Translate to English: $\neg C \rightarrow \neg (E1 \vee E2)$
 
-K. Translate to English: $C \leftarrow E1 \vee (E2 \wedge H))$
+K. Translate to English: $C \leftarrow (E1 \vee (E2 \wedge H))$
 
 ___
 
@@ -72,8 +70,8 @@ A = an alert box pops up<br>
 
 Translate the following statements to Propositional Logic using only the propositions S, X, E, A and the following logical connectives: 
   not, and, xor, or, implies, iff. 
-Use parentheses if you need them. Remember that the precedence of the operators is as listed above (not binds tightest) and the operators are right associative 
-so A => B => C means  A => (B => C)
+Use parentheses to show the intended grouping. A sequence using only AND or only OR
+may omit internal parentheses, but mixed binary operators should be parenthesized.
 
 A. the shift key and the X key are both pressed
 

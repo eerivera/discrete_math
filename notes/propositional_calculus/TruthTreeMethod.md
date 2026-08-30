@@ -13,7 +13,7 @@ extended to work with the Predicate Calculus
 (where we add parameters to the Propositions as well as function and constant symbols and universal and existential quantifiers).
 
 ## Overview
-The goal of this approach is to see if a conclusion $C$ is true when ever every element of a set of premises $E_1,\ldots,E_n$ is true.
+The goal of this approach is to see if a conclusion $C$ is True whenever every element of a set of premises $E_1,\ldots,E_n$ is True.
 In such a case, we say that $C$ is a logical consequence of $E_1,\ldots,E_n$, and we write it as follows:
 
 ```
@@ -34,8 +34,8 @@ $A\rightarrow C,  B\rightarrow C,  A\vee B  \models  C$
 
 Here is how we prove this is true using Truth Tables.  
 We create the truth tables for each of $A\rightarrow C, B\rightarrow C, A\vee B$
-and then show that for each of the three interpretations where all three are true
-(ABC = TTT, TFT, FTT),we also see that $C$ is true.
+and then show that for each of the three interpretations where all three are True
+(ABC = TTT, TFT, FTT), we also see that $C$ is True.
 ![TruthTableExample1](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/TruthTableInference.jpg)
 
 
@@ -46,10 +46,10 @@ and then show that for each of the three interpretations where all three are tru
 ## Truth Tree Operations
 Next we will look at another approach to proving that a conclusion is a logical consequence of a set of premises.
 This approach can be faster that the truth table method in some cases. The idea is to generate a tree where
-each "open" branch corresponds to a set of interpretations which make the premises and the negation of the conclusion true. If there are no open branches, then there are no interpretations which make all of the premises true and the negation of the conclusion true, i.e. the conclusion false.  Hence every interpretation which makes the premises true, must also make the conclusion true, and hence the argument is valid!
+each "open" branch corresponds to a set of interpretations which make the premises and the negation of the conclusion True. If there are no open branches, then there are no interpretations which make all of the premises True and the negation of the conclusion True, i.e. the conclusion False. Hence every interpretation which makes the premises True must also make the conclusion True, and hence the argument is valid!
 
-The Truth Tree method is a graphical approach to searching for counterexamples, that is interpretations which make E1,...,En true
-but which make C false.  If no such counterexamples can be found, the C must be true whenever E1,...,En are true.
+The Truth Tree method is a graphical approach to searching for counterexamples, that is interpretations which make E1,...,En True
+but which make C False. If no such counterexamples can be found, C must be True whenever E1,...,En are True.
 
 The first step is to write down the formulas E1,...,En, and the negation of the conclusion C
 ```
@@ -64,14 +64,14 @@ We then apply the following rules which simplify the formulas in the tree.
 The rules are shown in the following image:
 ![Truth Tree Operations](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/TruthTreeOperations.jpg)
 
-For the cases where there is branching, this corresponds to looking at the different cases, e.g. if $E \vee F$ is true, then we can look at two cases:
-1) the case where $E$ is true
-2) the case where $F$ is true
+For the cases where there is branching, this corresponds to looking at the different cases, e.g. if $E \vee F$ is True, then we can look at two cases:
+1) the case where $E$ is True
+2) the case where $F$ is True
 
 Each of the two branches correspond to different cases...
 
-The argument for the other operators is similar. For example $E \rightarrow F$ is true precisely when
-$\neg E$ is true or $F$ is true, and this gives us two cases to explore.
+The argument for the other operators is similar. For example $E \rightarrow F$ is True precisely when
+$\neg E$ is True or $F$ is True, and this gives us two cases to explore.
 
 Since the formulas get simpler when we check them off, we see that this process will eventually end and the only unchecked formulas on the branches will be propositions (e.g. $A$, $B$) or their negations $\neg A$, $\neg B$).  Branches that contain a contradiction (i.e. both $A$ and $\neg A$) are closed. Open branches, correspond to counterexamples, which make all of the premises True and the conclusion False, and so demonstrate that the argument is not valid.
 
@@ -104,7 +104,6 @@ Here is what we get if we apply the Truth Tree Method to this argument
 Note that first we simplify the negation of the conclusion then we apply the rules for implication, on each branch. None of the
 branches are closed and they all have the same interpretation $\neg A, \neg B, C$ (that is A=B=False, C=True) which satisfies the premises but not the conclusion,
 so the argument in not valid!
-
 
 
 

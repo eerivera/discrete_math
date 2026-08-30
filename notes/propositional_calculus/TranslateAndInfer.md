@@ -31,20 +31,20 @@ E2: function 2 throws an error
 ```
 We can now translate this English argument into formal logic:
 
-Premise1: $H \rightarrow E1\vee E2$
+Premise1: $H \rightarrow (E1\vee E2)$
 
-Premise2: $\neg C \rightarrow \neg E1 \wedge \neg E2$
+Premise2: $\neg C \rightarrow (\neg E1 \wedge \neg E2)$
 
 .....................
 
 Conclusion:  $H \rightarrow C$
 
-An easy way to see this is true is to replace Premise2 with its contrapositive version which is logically equivalent.
-That is $(A \rightarrow B) \equiv (\neg B \rightarrow \neg A$ which you can easily verify by simplification or using truth tables or truth trees, so we get
+An easy way to see this is True is to replace Premise2 with its contrapositive version, which is logically equivalent.
+That is, $(A \rightarrow B) \equiv (\neg B \rightarrow \neg A)$, which you can easily verify by simplification or using truth tables or truth trees, so we get
 
-Premise2a: $E1 \vee E2 \rightarrow C$
+Premise2a: $(E1 \vee E2) \rightarrow C$
 
-and since $H \rightarrow E1\vee E2$ and $E1\vee E2 \rightarrow C$, we can conclude that $H \rightarrow C$, by
+and since $H \rightarrow (E1\vee E2)$ and $(E1\vee E2) \rightarrow C$, we can conclude that $H \rightarrow C$, by
 the transitivity of implication, that is $(A\rightarrow B) \wedge (B\rightarrow C) \rightarrow (A \rightarrow C)$.
 
 More formally we can use the TruthTree method to verify this:
@@ -66,9 +66,9 @@ Translating into logic we get
 
 We can now translate this English argument into formal logic:
 
-Premise1: $H \rightarrow E1\vee E2$
+Premise1: $H \rightarrow (E1\vee E2)$
 
-Premise2: $\neg C \rightarrow \neg E1 \wedge \neg E2$
+Premise2: $\neg C \rightarrow (\neg E1 \wedge \neg E2)$
 
 .....................
 
@@ -83,5 +83,5 @@ The counter example is $C \wedge \neg H \wedge \neg E1$, which translates back i
 ```
 Counter example:
 When the program crashes and the load is not high and function 1 does not throw an error,
-the premises are both true, but the conclusion is false.
+the premises are both True, but the conclusion is False.
 ```

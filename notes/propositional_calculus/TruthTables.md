@@ -76,9 +76,9 @@ e.g.
 | F | F | F | T |
 
 
-## Truth table for $P \rightarrow \neg Q \wedge R$
+## Truth table for $P \rightarrow (\neg Q \wedge R)$
 
-| $P$ | $Q$ | $R$ |  $\neg Q \wedge R$ | $P \rightarrow \neg Q \vee R$  |
+| $P$ | $Q$ | $R$ |  $\neg Q \wedge R$ | $P \rightarrow (\neg Q \wedge R)$  |
 | --- | --- | --- | --- | --- | 
 | T   | T   | T   | F   | F   | 
 | T   | T   | F   | F   | F   | 
@@ -107,16 +107,16 @@ $P \vee Q$ =``` P | Q```
 
 $P \wedge Q$ = ``` P & Q```
 
-$P \rightarrow Q \equiv (\neg P \vee Q)$ = ```(1-P)|R```
+$P \rightarrow Q \equiv (\neg P \vee Q)$ = ```(1-P)|Q```
 
-$P \rightarrow \neg Q \wedge R$ = ```(1-P)|((1-Q)&R)```
-
-
+$P \rightarrow (\neg Q \wedge R)$ = ```(1-P)|((1-Q)&R)```
 
 
-## Truth table for $(P \rightarrow R) \wedge(Q\rightarrow R)) \leftrightarrow (P\vee Q \rightarrow R)$
 
-| $P$ | $Q$ | $R$ |  $P \rightarrow R$ | $Q \rightarrow R$  | $(P \rightarrow R) \wedge (Q \rightarrow R)$ | $(P \vee Q)$ | $P \vee Q \rightarrow R$ |      $(P \rightarrow R) \wedge (Q \rightarrow R)  \leftrightarrow (P \vee Q \rightarrow R)$
+
+## Truth table for $((P \rightarrow R) \wedge (Q\rightarrow R)) \leftrightarrow ((P\vee Q) \rightarrow R)$
+
+| $P$ | $Q$ | $R$ |  $P \rightarrow R$ | $Q \rightarrow R$  | $(P \rightarrow R) \wedge (Q \rightarrow R)$ | $(P \vee Q)$ | $(P \vee Q) \rightarrow R$ | $((P \rightarrow R) \wedge (Q \rightarrow R)) \leftrightarrow ((P \vee Q) \rightarrow R)$ |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | T   | T   | T   | T   | T   | T   | T   | T   | T   |
 | T   | T   | F   | F   | F   | F   | T   | F   | T   |

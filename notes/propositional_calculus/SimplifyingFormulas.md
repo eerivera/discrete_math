@@ -14,37 +14,44 @@ except disjunction and conjunction:
 
 $E \rightarrow F \equiv (\neg E \vee F)$
 
-$E \oplus F \equiv E\wedge \neg F \vee \neg E\wedge F$
+$E \oplus F \equiv (E\wedge \neg F) \vee (\neg E\wedge F)$
 
-$E \leftrightarrow F \equiv E\wedge F \vee (\neg E)\wedge (\neg F)$
+$E \leftrightarrow F \equiv (E\wedge F) \vee ((\neg E)\wedge (\neg F))$
 
 ## Example 1
-Lets show how to simplify $P \rightarrow (Q \rightarrow  R\oplus P)$
+Lets show how to simplify $P \rightarrow (Q \rightarrow (R\oplus P))$
 
 This example doesn't require any use of the DeMorgan rules.
 
 First we remove the implications and the exclusive or using the simplication rules
 
-$P \rightarrow (Q \rightarrow  R\oplus P) \equiv$
+$P \rightarrow (Q \rightarrow (R\oplus P)) \equiv$
 
-$P \rightarrow (Q \rightarrow  R\wedge \neg P \vee \neg R\wedge P) \equiv$
+$P \rightarrow (Q \rightarrow ((R\wedge \neg P) \vee (\neg R\wedge P))) \equiv$
 
-$P \rightarrow (\neg Q \vee  R\wedge \neg P \vee \neg R\wedge P) \equiv$
+$P \rightarrow (\neg Q \vee (R\wedge \neg P) \vee (\neg R\wedge P)) \equiv$
 
-$\neg P \vee (\neg Q \vee  R\wedge \neg P \vee \neg R\wedge P) \equiv$
+$\neg P \vee (\neg Q \vee (R\wedge \neg P) \vee (\neg R\wedge P)) \equiv$
 
-$(\neg P )\vee (\neg Q) \vee  (R\wedge \neg P) \vee (\neg R\wedge P)$ .... parentheses added for clarity...
+$\neg P \vee \neg Q \vee (R\wedge \neg P) \vee (\neg R\wedge P)$
 
-and this is a disjunction of conjuctions of propositional symbols or their negations,
-i.e. it is in Disjunctive Normal Form (DNF).
+This is in Disjunctive Normal Form (DNF). On an exam, no further simplification
+would be required. However, the absorption law can remove the redundant
+conjunction $R\wedge\neg P$:
 
-So this is true in four cases:
-1. P is False
-2. Q is false
-3. R is true and P is false
-4. R is false and P is true
+$\neg P \vee (R\wedge\neg P) \equiv \neg P$.
 
-and we could easily use this to write out the Truth Table of the formula.
+The result is therefore
+
+$\neg P \vee \neg Q \vee (\neg R\wedge P)$.
+
+Using $A\vee(\neg A\wedge B)\equiv A\vee B$, this can be simplified fully:
+
+$\neg P \vee \neg Q \vee (\neg R\wedge P)
+\equiv \neg P \vee \neg Q \vee \neg R$.
+
+Thus, the original formula is True precisely when at least one of $P$, $Q$,
+and $R$ is False.
 
 ## Example 2
 Let's try another which will use DeMorgan
@@ -68,4 +75,3 @@ and we remove the double negations as $\neg\neg A \equiv A$
 $(A\wedge \neg B) \vee (B \wedge \neg A)$
 
 and this says that exactly one of A and B is True, so this expressions is equivalent to $A\oplus B$
-

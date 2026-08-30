@@ -65,7 +65,7 @@ but it gets confusing to have too many subscripts
 We can use this subscript notation to define an infinite sequence 
 $a_1,a_2,a_3,\ldots$ of numbers. For example,
 
-* the sequence $1,3,5,7,9,11,\ldots$ of odd numbers is defined by $a_i=2i+1$
+* the sequence $1,3,5,7,9,11,\ldots$ of odd numbers is defined by $a_i=2i-1$ for $i\geq 1$
 * the sequence $1,4,9,16,25,36,\ldots$ of square numbers is defined by $a_i=i^2$
 * the fibonacci sequence $1,1,2,3,5,8,13,21,\ldots$ is defined by $a_1=a_2=1$ and for each $i>2$ we get the next number in the sequence by adding the previous 2. In our notation we write that as:
 

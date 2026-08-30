@@ -17,7 +17,7 @@ This is a more compact form for the table as we write the
 truth values for subexpressions underneath the operator
 
 ```
-A B C  (A and B) or C
+A B C  ((A and B) or C)
 T T T      T      T
 T T F      T      T
 T F T      F      T
@@ -61,7 +61,7 @@ F F
 
 or do the more verbose approach
 ```
-A B   (B and A)    not(B and A)    (A implies not (B and A)
+A B   (B and A)    not(B and A)    (A implies not (B and A))
           ?         ?                    ?
 T T
 T F

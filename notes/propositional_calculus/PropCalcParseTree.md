@@ -11,7 +11,7 @@ on a particular assignment of truth values to the variables of the formula.
 ## Example
 
 Below is an example of a parse tree for the formula
- $(P \rightarrow R) \wedge(Q\rightarrow R)) \leftrightarrow (P\vee Q \rightarrow R)$
+$((P \rightarrow R) \wedge (Q\rightarrow R)) \leftrightarrow ((P\vee Q) \rightarrow R)$.
 
 ![Parse Tree](boolean_parse_tree.png)
 

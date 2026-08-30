@@ -7,12 +7,12 @@
 
 The Propositional Calculus is a formal language for expressing logical concepts.
 
-The primitives are propositions (typically named P, Q, R, ...) which are assumed to be either true or false. 
+The primitives are propositions (typically named P, Q, R, ...) which are assumed to be either True or False.
 These are connected to form sentences using the logical connectors: and, or, not, and others. 
 
 ## Propositional Sentences
 Sentences in the Propositional calculus are formed by primitives called propositions (typically named P, Q, R, ...)
-joined together with logical operators (and, or, not, and others) to form sentences, which likewise are either true or false
+joined together with logical operators (and, or, not, and others) to form sentences, which likewise are either True or False
 (depending on the values of the primitive propositions).
 
 The operators are usually written with special symbols (where P and Q are propositional sentences)
@@ -20,35 +20,35 @@ The operators are usually written with special symbols (where P and Q are propos
 
 | Math | Text | Meaning |
 | --- | ----  | --- |
-| $\neg P$ |  not(P) |  This is the negation of P and is true precisely when P is false.|
-| $P \wedge Q$ |  P AND Q | This is the conjuntion of P and Q and is true both P and Q are true|
-| $P \vee Q$ | P OR Q |This is the disjunction of P and Q and is true if P or Q or both are true|
-| $P \rightarrow Q$  | P IMPLIES Q <br>  P ONLYIF Q | This is the implication, if P then Q, and it is true when P is false or Q is true.|
-| $P \leftarrow Q$  | P IF Q | This is the implication, Q implies P, if Q then P, and it is true when Q is false or P is true.|
-| $P \leftrightarrow Q$ | P IFF Q | This is true when P and Q have the same truth value, i.e. P is true IF AND ONLY IF Q is true.|
-| $P \oplus Q$ |  P XOR Q | This is true if P or Q but not both are true, it is called the exclusive OR|
+| $\neg P$ |  not(P) |  This is the negation of P and is True precisely when P is False.|
+| $P \wedge Q$ |  P AND Q | This is the conjunction of P and Q and is True precisely when both P and Q are True.|
+| $P \vee Q$ | P OR Q |This is the disjunction of P and Q and is True if P or Q or both are True.|
+| $P \rightarrow Q$  | P IMPLIES Q <br>  P ONLYIF Q | This is the implication, if P then Q, and it is True when P is False or Q is True.|
+| $P \leftarrow Q$  | P IF Q | This is the implication, Q implies P, if Q then P, and it is True when Q is False or P is True.|
+| $P \leftrightarrow Q$ | P IFF Q | This is True when P and Q have the same truth value, i.e. P is True IF AND ONLY IF Q is True.|
+| $P \oplus Q$ |  P XOR Q | This is True if exactly one of P and Q is True; it is called the exclusive OR.|
 
 
 This language is also called Boolean Algebra and the sentences are formulas in Boolean algebra. 
 Many of the familiar properties of high school algebra also hold true in Boolean Algebra.
 
-Each sentence has a truth value (true or false) which can be obtained from the truth values of the propositions using a truth table.
+Each sentence has a truth value (True or False) which can be obtained from the truth values of the propositions using a truth table.
 
  
 ## Definitions of some terms related to Propositional Calculus
-An assignment of truth values $\\{T,F\\}$ to a set of variables is called an __interpretation__ e.g.
+An assignment of truth values $\{T,F\}$ to a set of variables is called an __interpretation__, e.g.
 
 $P\mapsto F$<br>
 $Q\mapsto T$<br>
 $R\mapsto F$<br>
 
-A formula which is true for all interpretations is called a __tautology__
+A formula which is True for all interpretations is called a __tautology__.
 
 The formula  $P \vee \neg P$ is a tautology.
 
-A more complex tautology is $(P \rightarrow R) \wedge(Q\rightarrow R)) \leftrightarrow (P\vee Q \rightarrow R)$.
+A more complex tautology is $((P \rightarrow R) \wedge (Q\rightarrow R)) \leftrightarrow ((P\vee Q) \rightarrow R)$.
 
-A formula is __satisfiable__ if there is at least one interpretation which makes it true.
+A formula is __satisfiable__ if there is at least one interpretation which makes it True.
 
 If $\neg E$ is not satisfiable, then E is a tautology.
 
