@@ -23,14 +23,14 @@ We will learn how to use the following proof techniques:
 * **contrapositive proof** - to show that $A\rightarrow B$, prove the equivalent $\neg B \rightarrow \neg A$
     <br> $A\rightarrow B \equiv  \neg A \vee B \equiv \neg\neg B \vee \neg A \equiv \neg B \rightarrow \neg A$
 * **proofs of iff statements** - to prove $A\leftrightarrow B$ we must prove $A\rightarrow B$ and $A\leftarrow B$
-  to show that $A$ and $B$ are either both true or both false.
-* **proof by contradiction** - assuming that the conclusion is false and using  the premises to generate a contradiction, which shows the conclusion can not be false
-    <br> $(P\wedge \neg C)\rightarrow {\rm false} \equiv \neg (P \wedge \neg C) \equiv \neg P \vee C \equiv P \rightarrow C$
-* **proof by cases** - showing that $a_1\rightarrow c$ and  $a_2\rightarrow c$ and $\ldots$ and $a_n\rightarrow c$ and  and at least one of a1, a2,...., an must be true, so $c$ must be true.
+  to show that $A$ and $B$ are either both True or both False.
+* **proof by contradiction** - assuming that the conclusion is False and using  the premises to generate a contradiction, which shows the conclusion can not be False
+    <br> $(P\wedge \neg C)\rightarrow \mathrm{False} \equiv \neg (P \wedge \neg C) \equiv \neg P \vee C \equiv P \rightarrow C$
+* **proof by cases** - showing that $a_1\rightarrow c$ and  $a_2\rightarrow c$ and $\ldots$ and $a_n\rightarrow c$ and  and at least one of a1, a2,...., an must be True, so $c$ must be True.
    <br> $(A_1\vee A_2\vee\ldots\vee A_n)$  <br>$(A_1\rightarrow C)$<br>$(A_2\rightarrow C)$
   <br>$\ldots$<br>$(A_n \rightarrow C)$<br>----------------------<br> $C$
-* **proof by induction** - showing that some statement P(n) is true for every $n\ge 0$ by showing it is true for $n=0$ and
-  showing that $\forall n (P(n) \rightarrow P(n+1))$, hence $P(0)$ is true and so is $P(1)$ and $P(2)$ and $P(3)$ etc....
+* **proof by induction** - showing that some statement P(n) is True for every $n\ge 0$ by showing it is True for $n=0$ and
+  showing that $\forall n (P(n) \rightarrow P(n+1))$, hence $P(0)$ is True and so is $P(1)$ and $P(2)$ and $P(3)$ etc....
 
   $P(0)$<br>
   $\forall n  (P(n) \rightarrow P(n+1))$
@@ -44,9 +44,9 @@ Let's look at some examples, and have you try to create your own proofs...
 
 
 ## Proofs by cases
-This is a very common approach. Suppose we want to prove that some statement $C$ is true.
-If we can find statements $A$ and $B$ such that at least one of them is true, and we can show that each implies $C$
-(i.e. we show $C$ is true in each of these two cases), then we know $C$ must always be true.
+This is a very common approach. Suppose we want to prove that some statement $C$ is True.
+If we can find statements $A$ and $B$ such that at least one of them is True, and we can show that each implies $C$
+(i.e. we show $C$ is True in each of these two cases), then we know $C$ must always be True.
 * $(A\vee B) \wedge (A\rightarrow C) \wedge (B\rightarrow C) \rightarrow C$
 
 Let's use this to prove that $n^2 + n$ is always even, by looking at the two cases $n$ is even and $n$ is odd.
@@ -82,7 +82,7 @@ We have shown in both cases that there are two points with the same color exactl
 
 
 ## Proof by contradiction
-This is the method we've been using in our formal proofs. To prove that $A \rightarrow B$, assume $A$ is true but $B$ is false and show this generates a contradication and hence can't be true.  Thus whenever $A$ is true, $B$ can't be false, so $B$ must also be true.
+This is the method we've been using in our formal proofs. To prove that $A \rightarrow B$, assume $A$ is True but $B$ is False and show this generates a contradication and hence can't be True.  Thus whenever $A$ is True, $B$ can't be False, so $B$ must also be True.
 
 Let's use this to prove that $n^2$ is odd implies $n$ is odd.
 

@@ -51,8 +51,8 @@ def power(x,n,m):
 ## Loop Invariants and Correctness Proofs
 Next we show that the "power" function defined above is correct using the "loop invariant" technique.
 This is the most common way to prove that algorithms containing loops are correct. The idea is to find some
-function which is true before the loop, and whose value isn't changed by the body of the loop, and hence
-it must also be true at the end of the loop.
+function which is True before the loop, and whose value isn't changed by the body of the loop, and hence
+it must also be True at the end of the loop.
 
 **Proposition** The "power" algorithm above correctly computes $x^n$ % $m$ in at most $\log_2(n)$ steps.
 
@@ -103,7 +103,7 @@ the value $t * x^n$ % $m$ is preserved by the function and that proof is the sam
 We can now use this power function to test primality and to generate large primes efficiently as follows
 ``` python
 def prime_test(p,n):
-    ''' return true p passes prime test n times '''
+    ''' return True p passes prime test n times '''
     for i in range(n):
         x = randint(2,p-1)
         if power(x,p-1,p)!=1:
