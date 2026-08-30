@@ -1,0 +1,34 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{forest}
+  truth tree
+  [{ \textit{(from neg-c)} \\ $P$ }
+    [{ \textit{Apply p1} \\ $(\neg P \wedge \neg S) \vee (Q \wedge R)$ }
+      [{ $\neg P \wedge \neg S$ }
+        [{ $\neg P$ \\ $\neg S$ }
+          [{ $\mathbf{X}$ \\ \textit{Contradiction} \\ $P, \neg P$ }]
+        ]
+      ]
+      [{ $Q \wedge R$ }
+        [{ $Q$ \\ $R$ }
+          [{ \textit{Apply p2} \\ $\neg S \vee \neg Q$ }
+            [{ $\neg S$ }
+              [{ $\mathbf{\circ}$ \\ \textit{Open} }]
+            ]
+            [{ $\neg Q$ }
+              [{ $\mathbf{X}$ \\ \textit{Contradiction} \\ $Q, \neg Q$ }]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\end{document}
