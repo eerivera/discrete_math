@@ -52,7 +52,7 @@ even if instruction on that skill continues later. Previously introduced skills 
 
 **Daily schedule:**
 
-* Wed 8/26: Introduce [F00 — College Algebra skills](../skills/Algebra/F00.md) and [F01 — Propositional Logic: Syntax and Semantics](../skills/Propositional_Calculus/F01.md).
+* Wed 8/26: Introduce [F01 — Propositional Logic: Syntax and Semantics](../skills/Propositional_Calculus/F01.md).
 * Thu 8/27: Continue [F01](../skills/Propositional_Calculus/F01.md); introduce [F02 — Propositional Logic: Truth Tables and Satisfiability](../skills/Propositional_Calculus/F02.md) and [F03 — Propositional Logic: Translation to/from English](../skills/Propositional_Calculus/F03.md).
 
 **Exam 01: Fri 8/28 at the usual exam time**
