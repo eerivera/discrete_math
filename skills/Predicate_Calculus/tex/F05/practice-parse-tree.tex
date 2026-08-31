@@ -1,0 +1,23 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{forest}
+
+\input{parse-tree-style}
+
+\begin{document}
+\begin{forest}
+  parse tree
+  [{$\forall x$}
+    [{$\rightarrow$}
+      [{$\wedge$}
+        [{$P(x)$}]
+        [{$\exists y$}
+          [{$Q(x,y)$}]
+        ]
+      ]
+      [{$R(f(x))$}]
+    ]
+  ]
+\end{forest}
+\end{document}

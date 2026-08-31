@@ -1,0 +1,35 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{forest}
+  truth tree
+  [{$P(a)$}
+    [{\textit{p3, $x=a$} \\ $C(a,f(a))$ \\ $S(f(a))$}
+      [{\textit{p4, $x=f(a)$} \\ $\neg S(f(a))\vee\neg Q(f(a))$}
+        [{$\neg S(f(a))$}
+          [{$\mathbf{X}$ \\ \textit{Contradiction} \\ $S(f(a)),\neg S(f(a))$}]
+        ]
+        [{$\neg Q(f(a))$}
+          [{\textit{p2, $x=a$, $y=f(a)$} \\ $\neg P(a)\vee\neg C(a,f(a))\vee Q(f(a))$}
+            [{$\neg P(a)$}
+              [{$\mathbf{X}$ \\ \textit{Contradiction} \\ $P(a),\neg P(a)$}]
+            ]
+            [{$\neg C(a,f(a))$}
+              [{$\mathbf{X}$ \\ \textit{Contradiction} \\ $C(a,f(a)),\neg C(a,f(a))$}]
+            ]
+            [{$Q(f(a))$}
+              [{$\mathbf{X}$ \\ \textit{Contradiction} \\ $Q(f(a)),\neg Q(f(a))$}]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\end{document}

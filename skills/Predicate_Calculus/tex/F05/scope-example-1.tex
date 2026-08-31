@@ -1,0 +1,22 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{forest}
+
+\input{parse-tree-style}
+
+\begin{document}
+\begin{forest}
+  parse tree
+  [{$\rightarrow$}
+    [{$\forall x$}
+      [{$\exists y$}
+        [{$P(x,y)$}]
+      ]
+    ]
+    [{$\exists z$}
+      [{$P(z,x)$}]
+    ]
+  ]
+\end{forest}
+\end{document}

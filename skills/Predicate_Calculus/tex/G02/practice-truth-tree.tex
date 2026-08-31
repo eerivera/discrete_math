@@ -1,0 +1,25 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{forest}
+  truth tree
+  [{$P(a)$ \\ $\forall z\,\neg Q(a,z)$}
+    [{\textit{Premise, $x=a$} \\ $\neg P(a)\vee Q(a,f(a))$}
+      [{$\neg P(a)$}
+        [{$\mathbf{X}$ \\ \textit{Contradiction} \\ $P(a),\neg P(a)$}]
+      ]
+      [{$Q(a,f(a))$}
+        [{\textit{$z=f(a)$} \\ $\neg Q(a,f(a))$}
+          [{$\mathbf{X}$ \\ \textit{Contradiction} \\ $Q(a,f(a)),\neg Q(a,f(a))$}]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\end{document}
