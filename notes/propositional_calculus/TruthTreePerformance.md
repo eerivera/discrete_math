@@ -31,13 +31,12 @@ is impossible.... (how long would it take if you could check one trillion rows p
 But with the Truth Tree Method we see that the tree has a simple form and can be processed in about $1000$ steps.
 Likewise, the more general problem with $n$ premises and $n$ propositional symbols could be done in $n$ steps instead of $2^n$.
 
-![ImplicationChaining](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/TruthTreeForimplicationChain.jpg)
+![A linear-size truth tree for implication chaining](../../skills/Propositional_Calculus/images/G01/implication-chain.svg)
 
 Note however, that if we instead chose to use the OR-rule on the even implications $A_{2n}\rightarrow A_{2n+1}$ first, and then the odd implications
 $A_{2n+1}\rightarrow A_{2n+2}$
 we would
 get a tree with an exponential number of branches, so the order really does matter ...
 
-![TruthTree Exponential Growth](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/exponentialTruthTreeGrowthExample.jpg)
-
+![Exponential truth-tree growth from an unfavorable rule order](../../skills/Propositional_Calculus/images/G01/exponential-growth.svg)
 

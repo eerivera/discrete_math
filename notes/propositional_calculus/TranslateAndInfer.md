@@ -47,8 +47,8 @@ Premise2a: $(E1 \vee E2) \rightarrow C$
 and since $H \rightarrow (E1\vee E2)$ and $(E1\vee E2) \rightarrow C$, we can conclude that $H \rightarrow C$, by
 the transitivity of implication, that is $(A\rightarrow B) \wedge (B\rightarrow C) \rightarrow (A \rightarrow C)$.
 
-More formally we can use the TruthTree method to verify this:
-![TranslateAndInfer1](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/translateAndInfer!.jpg)
+More formally we can use the Truth Tree method to verify this:
+![A truth tree showing the argument is valid](../../skills/Propositional_Calculus/images/G01/translate-infer-valid.svg)
 
 
 ## Example 2
@@ -76,7 +76,7 @@ Conclusion:  $\neg H \rightarrow E1 \wedge E2$
 
 We can now use the Truth Tree Method and we see this has a counter example:
 
-![TranslateAndInfer2](https://github.com/tjhickey724/discrete_math/blob/main/notes/propositional_calculus/translateAndInfer2.jpg)
+![A truth tree yielding a counterexample](../../skills/Propositional_Calculus/images/G01/translate-infer-invalid.svg)
 
 The counter example is $C \wedge \neg H \wedge \neg E1$, which translates back into English as:
 

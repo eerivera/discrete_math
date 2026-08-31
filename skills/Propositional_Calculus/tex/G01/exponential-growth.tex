@@ -1,0 +1,59 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{minipage}{0.96\textwidth}
+\[
+\begin{array}{rll}
+1. & A_1 & \\
+2. & A_1 \rightarrow A_2 & \\
+3. & A_2 \rightarrow A_3 & \\
+4. & A_3 \rightarrow A_4 & \\
+5. & A_4 \rightarrow A_5 & \\
+   & \vdots & \\
+1000. & A_{999} \rightarrow A_{1000} & \\
+\text{neg-c}. & \neg A_{1000} &
+\end{array}
+\]
+
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{forest}
+  truth tree,
+  for tree={s sep=2.5em, l sep=2.5em}
+  [{ $A_1$ \\ $\neg A_{1000}$ }
+    [{ \textit{Apply } $A_2\rightarrow A_3$ \\ $\neg A_2$ }
+      [{ \textit{Apply } $A_4\rightarrow A_5$ \\ $\neg A_4$ }
+        [{ $\neg A_6$ }]
+        [{ $A_7$ }]
+      ]
+      [{ \textit{Apply } $A_4\rightarrow A_5$ \\ $A_5$ }
+        [{ $\neg A_6$ }]
+        [{ $A_7$ }]
+      ]
+    ]
+    [{ \textit{Apply } $A_2\rightarrow A_3$ \\ $A_3$ }
+      [{ \textit{Apply } $A_4\rightarrow A_5$ \\ $\neg A_4$ }
+        [{ $\neg A_6$ }]
+        [{ $A_7$ }]
+      ]
+      [{ \textit{Apply } $A_4\rightarrow A_5$ \\ $A_5$ }
+        [{ $\neg A_6$ }]
+        [{ $A_7$ }]
+      ]
+    ]
+  ]
+\end{forest}
+}
+
+$2$ branches after one even-indexed implication, $4$ after two, $8$ after
+three, and $2^k$ after $k$. No branch closes until an odd-indexed implication
+such as $A_1\rightarrow A_2$ or $A_3\rightarrow A_4$ is applied.
+\end{center}
+\end{minipage}
+\end{document}

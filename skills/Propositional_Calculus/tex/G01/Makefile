@@ -1,4 +1,5 @@
-SOURCES := practice-01.tex practice-02.tex truth-tree-operations.tex example-valid.tex example-invalid.tex
+SOURCES := practice-01.tex practice-02.tex truth-tree-operations.tex example-valid.tex example-invalid.tex \
+	implication-chain.tex exponential-growth.tex translate-infer-valid.tex translate-infer-invalid.tex
 OUTPUT_DIR := ../../images/G01
 BUILD_DIR := build
 SVGS := $(SOURCES:%.tex=$(OUTPUT_DIR)/%.svg)

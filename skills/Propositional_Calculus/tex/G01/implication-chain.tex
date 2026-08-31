@@ -1,0 +1,53 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{minipage}{0.92\textwidth}
+\[
+\begin{array}{rll}
+1. & A_1 & \\
+2. & A_1 \rightarrow A_2 & \\
+3. & A_2 \rightarrow A_3 & \\
+   & \vdots & \\
+1000. & A_{999} \rightarrow A_{1000} & \\
+\text{neg-c}. & \neg A_{1000} &
+\end{array}
+\]
+
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{forest}
+  truth tree,
+  for tree={s sep=4em}
+  [{ $A_1$ \\ $\neg A_{1000}$ }
+    [{ \textit{Apply premise 2} \\ $\neg A_1$ }
+      [{ $\mathbf{X}$ \\ \textit{Closed} }]
+    ]
+    [{ \textit{Apply premise 2} \\ $A_2$ }
+      [{ \textit{Apply premise 3} \\ $\neg A_2$ }
+        [{ $\mathbf{X}$ \\ \textit{Closed} }]
+      ]
+      [{ \textit{Apply premise 3} \\ $A_3$ }
+        [{ $\vdots$ \\ \textit{Continue in the same way} }
+          [{ $A_{999}$ }
+            [{ \textit{Apply premise 1000} \\ $\neg A_{999}$ }
+              [{ $\mathbf{X}$ \\ \textit{Closed} }]
+            ]
+            [{ \textit{Apply premise 1000} \\ $A_{1000}$ }
+              [{ $\mathbf{X}$ \\ \textit{Closed with } $\neg A_{1000}$ }]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+}
+\end{center}
+\end{minipage}
+\end{document}

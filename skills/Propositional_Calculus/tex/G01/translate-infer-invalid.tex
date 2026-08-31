@@ -1,0 +1,50 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{minipage}{0.98\textwidth}
+\[
+\begin{array}{rll}
+\text{p1}. & H \rightarrow (E_1\vee E_2) & \equiv \neg H\vee E_1\vee E_2 \\
+\text{p2}. & \neg C \rightarrow (\neg E_1\wedge\neg E_2) &
+  \equiv C\vee(\neg E_1\wedge\neg E_2) \\
+\text{neg-c}. & \neg(\neg H\rightarrow(E_1\wedge E_2)) &
+  \equiv \neg H\wedge(\neg E_1\vee\neg E_2)
+\end{array}
+\]
+
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{forest}
+  truth tree,
+  for tree={s sep=3.5em}
+  [{ \textit{from neg-c} \\ $\neg H$ }
+    [{ $\neg E_1$ }
+      [{ \textit{Apply p1} \\ $\neg H$ }
+        [{ \textit{Apply p2} \\ $C$ }
+          [{ $\mathbf{\circ}$ \\ \textit{Open counterexample} \\ $C,\neg H,\neg E_1$ }]
+        ]
+        [{ \textit{Apply p2} \\ $\neg E_1\wedge\neg E_2$ }
+          [{ $\neg E_1$ \\ $\neg E_2$ \\ $\mathbf{\circ}$ \\ \textit{Open} }]
+        ]
+      ]
+      [{ \textit{Apply p1} \\ $E_1$ }
+        [{ $\mathbf{X}$ \\ \textit{Contradiction} \\ $E_1,\neg E_1$ }]
+      ]
+      [{ \textit{Apply p1} \\ $E_2$ \\ \textit{not expanded} }]
+    ]
+    [{ $\neg E_2$ \\ \textit{not expanded} }]
+  ]
+\end{forest}
+}
+
+Once the open branch $C,\neg H,\neg E_1$ is found, the remaining branches
+need not be expanded: one counterexample is enough to show invalidity.
+\end{center}
+\end{minipage}
+\end{document}

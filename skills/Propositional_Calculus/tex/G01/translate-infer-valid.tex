@@ -1,0 +1,47 @@
+\documentclass[border=8pt]{standalone}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+
+\input{truth-tree-style}
+
+\begin{document}
+\begin{minipage}{0.96\textwidth}
+\[
+\begin{array}{rll}
+\text{p1}. & H \rightarrow (E_1\vee E_2) & \equiv \neg H\vee E_1\vee E_2 \\
+\text{p2}. & \neg C \rightarrow (\neg E_1\wedge\neg E_2) &
+  \equiv C\vee(\neg E_1\wedge\neg E_2) \\
+\text{neg-c}. & \neg(H\rightarrow C) & \equiv H\wedge\neg C
+\end{array}
+\]
+
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{forest}
+  truth tree,
+  for tree={s sep=4em}
+  [{ \textit{from neg-c} \\ $H$ \\ $\neg C$ }
+    [{ \textit{Apply p2} \\ $C$ }
+      [{ $\mathbf{X}$ \\ \textit{Contradiction} \\ $C,\neg C$ }]
+    ]
+    [{ \textit{Apply p2} \\ $\neg E_1\wedge\neg E_2$ }
+      [{ $\neg E_1$ \\ $\neg E_2$ }
+        [{ \textit{Apply p1} \\ $\neg H$ }
+          [{ $\mathbf{X}$ \\ \textit{Contradiction} \\ $H,\neg H$ }]
+        ]
+        [{ \textit{Apply p1} \\ $E_1$ }
+          [{ $\mathbf{X}$ \\ \textit{Contradiction} \\ $E_1,\neg E_1$ }]
+        ]
+        [{ \textit{Apply p1} \\ $E_2$ }
+          [{ $\mathbf{X}$ \\ \textit{Contradiction} \\ $E_2,\neg E_2$ }]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+}
+\end{center}
+\end{minipage}
+\end{document}
