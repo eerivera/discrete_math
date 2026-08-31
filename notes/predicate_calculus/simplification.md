@@ -1,155 +1,171 @@
 # Simplification of Predicate Calculus Formulas
 
-One of the goals of this course is to show you how to use formal methods to prove theorems in First Order Logic.
-We will use an extension of the Truth Tree method that we learned for Propositional Calculus. As before, the
-first step will be to simplify.
+## Skills Addressed
 
-For First Order Logic formulas, we will show how to move the negation operators past the quantifiers and
-replace the operators $\oplus, \leftrightarrow, \rightarrow$ with $\vee$ and $\wedge$ in the same way we
-do with Propositional Logic.
+* [F07 — Predicate Calculus: Simplification Rules](../../skills/Predicate_Calculus/F07.md)
 
-## Negating Quantifiers: DeMorgan rules for First Order Logic
-There are two rules for moving negation inside a quantified expression:
+The truth-tree method is easiest to apply after formulas have been placed in negation normal form and existential quantifiers have been Skolemized. Most simplification steps preserve logical equivalence. Skolemization has a different guarantee: it preserves satisfiability while introducing new symbols.
 
-$\neg \forall x F(x) \equiv \exists x \neg F(x)$
+## Rename bound variables first
 
-$\neg \exists x F(x) \equiv \forall x \neg F(x)$
+Give different quantifiers different variable names. For example,
 
-Notice that if the domain $D$ of discourse is a finite set, e.g. $D=\\{a,b,c\\}$,
-then universal quantification is equivalent to a conjunction:
+$$
+\forall x\,\forall y\bigl(P(x,y)\rightarrow\exists x\,Q(x,y)\bigr)
+$$
 
-$\forall x F(x)$  $\equiv$ $F(a) \wedge F(b) \wedge F(c)$
+is clearer after renaming the existentially bound variable:
 
-and existential quantification is equivalent to a disjunction:
+$$
+\forall x\,\forall y\bigl(P(x,y)\rightarrow\exists z\,Q(z,y)\bigr).
+$$
 
-$\exists x F(x)$  $\equiv$ $F(a) \vee F(b) \vee F(c)$
+This is an **alpha-renaming**: it changes no free occurrences and preserves meaning.
 
-So in this case, the negated quantifier rules are the same as the DeMorgan rules:
+## Eliminate derived connectives
 
-$\neg \forall x F(x)$  
+Use the propositional equivalences
 
-$\equiv$ $\neg ( F(a) \wedge F(b) \wedge F(c))$
+$$
+A\rightarrow B\equiv\neg A\vee B,
+$$
 
-$\equiv$ $\neg F(a) \vee \neg F(b) \vee \neg F(c))$
+$$
+A\oplus B\equiv(A\wedge\neg B)\vee(\neg A\wedge B),
+$$
 
-$\equiv$ $\exists x \neg F(x)$
+and
 
+$$
+A\leftrightarrow B\equiv(A\wedge B)\vee(\neg A\wedge\neg B).
+$$
 
+The parentheses are essential because these replacements contain mixed binary operators.
 
-## Renaming Quantifed variables
-Another important simplification is to make sure that each quantifier has its own unique variable so there is no
-confusion. Consider the formula
+## Move negations inward
 
-$\forall x \forall y  P(x,y) \rightarrow \exists x Q(x,y)$
+Use the propositional De Morgan laws and double-negation rule together with
 
-The $x$ that appears in $Q(x,y)$ is bound by the existential quantifier and so it isn't the same $x$ as in $P(x,y)$.
+$$
+\neg\forall x\,F(x)\equiv\exists x\,\neg F(x)
+$$
 
-To remove this confusion, it is better just to pick a new variable for the existential quantifier and replace all of its bound
-instances with that new variable. This gives us the following:
+and
 
-$\forall x \forall y  P(x,y) \rightarrow \exists z Q(z,y)$
+$$
+\neg\exists x\,F(x)\equiv\forall x\,\neg F(x).
+$$
 
-which is much easier to understand.
+For a finite domain $D=\{a,b,c\}$, the first rule mirrors ordinary De Morgan reasoning:
 
-### Step 1 of Simplification: replace operators by disjunctions and conjunctions
-The first step is to rename any quantified variables which appear in 2 or more quantifiers. Then we use the usual rules to replace all operators with $\vee$ or $\wedge$. We can also interleave Steps 1 and 2, doing some step 2 transforms before step 1 transforms...
+$$
+\begin{aligned}
+\neg\forall x\,F(x)
+&\equiv\neg(F(a)\wedge F(b)\wedge F(c))\\
+&\equiv\neg F(a)\vee\neg F(b)\vee\neg F(c)\\
+&\equiv\exists x\,\neg F(x).
+\end{aligned}
+$$
 
-$A \rightarrow B \equiv \neg A \vee B$
+A formula is in **negation normal form** when its only connectives are $\wedge$, $\vee$, and $\neg$, and every $\neg$ applies directly to an atomic formula.
 
-$A \oplus B \equiv A\wedge \neg B \vee \neg A \wedge B$
+## Move quantifiers only when permitted
 
-$A \leftrightarrow B \equiv A\wedge B \vee \neg A \wedge \neg B$
+If $x$ is not free in $B$, then each of the following is valid:
 
-### Step 2 move negation inwards
-Next we use the DeMorgan rules to move the negations all the way in so they only appear in front of predicates
+$$
+(\exists x\,A(x))\vee B\equiv\exists x(A(x)\vee B),
+$$
 
-$\neg (A \wedge B) \equiv \neg A \vee \neg B)$
+$$
+(\forall x\,A(x))\wedge B\equiv\forall x(A(x)\wedge B).
+$$
 
-$\neg (A \vee B) \equiv (\neg A \wedge \neg B)$
+Related movement rules hold for the other connective/quantifier combinations over the nonempty domains used in this course. Always check that moving a quantifier will not capture a free variable.
 
-$\neg \forall x F(x) \equiv \exists x \neg F(x)$
+A formula in **prenex form** has all quantifiers at the front. Prenex form can clarify dependencies, although a truth tree may be easier to read when some universal quantifiers remain near the formulas they govern.
 
-$\neg \exists x F(x) \equiv \forall x \neg F(x)$
+## Skolemization
 
-$\neg (A\oplus B) \equiv (A\leftrightarrow B)$
+After moving negations inward, replace each existential variable with a fresh symbol:
 
-$\neg (A\leftrightarrow B) \equiv (A\oplus B)$
+* use a fresh constant if the existential quantifier has no universal-quantifier ancestors; and
+* use a fresh function of the universally quantified variables on which the witness may depend otherwise.
 
+For example,
 
-### Step 3: Skolemization
-The last step is to introduce new function symbols for each existential quantifier.
+$$
+\exists x\,P(x)
+$$
 
-If there are no universal quantifier "in front" of the existential quantifier, then we our formula looks like:
+Skolemizes to $P(a)$ for a new constant $a$, while
 
-$\exists x P(x)$
+$$
+\forall x\,\exists y\,P(x,y)
+$$
 
-and if this is true, then it means there is some element $x$ in the domain which makes $P(x)$ true. So we can
-pick such an element and assign it to a new constant symbol, say $a$, and replace this formula with
+Skolemizes to
 
-$P(a)$
+$$
+\forall x\,P(x,f(x))
+$$
 
-If we have an interpretation which makes the original formula $\exists x P(x)$ true, then we can extend that interpretation to give a value
-for $a$ which makes $P(a)$ true.
+for a new function $f$.
 
-It gets a little trickier if the existential quantifier has one or more universal quantifiers "above" it.
+Use a different fresh symbol for each existential quantifier. Do not write $\equiv$ for a Skolemization step. The original and Skolemized formulas are in different languages and are not generally logically equivalent. They are **equisatisfiable**: the original formula has a model exactly when the Skolemized formula has a model in the expanded language.
 
-The idea is to think about the formula
+## Complete example
 
-$\forall x \exists z P(x,z)$
+Simplify
 
-what this means is that for each $x$ in the domain $D$ we can find a $z$ in the domain $D$ such that $P(x,z)$ is true.
-That means we can define a function $f$ on $D$ by letting $f(x)=z$, so we have
+$$
+\forall x\bigl((\forall y\,P(x,y))\rightarrow\exists z\,Q(x,z)\bigr).
+$$
 
-$\forall x \exists z P(x,z) \equiv \forall x P(x,f(x))$
+Eliminate the implication:
 
-and if there are multiple universal quantifers above the existential quantifer, then we include each of those universally
-quantified variables in the function, e.g.
+$$
+\forall x\bigl(\neg\forall y\,P(x,y)\vee\exists z\,Q(x,z)\bigr).
+$$
 
-$\forall x \forall y \forall z \exists w P(x,y,z,w) \equiv \forall x \forall y \forall z P(x,y,z,g(x,y,z))$
+Move the negation inward:
 
-We need a new function name for each quantifier we remove..
+$$
+\forall x\bigl((\exists y\,\neg P(x,y))\vee\exists z\,Q(x,z)\bigr).
+$$
 
-If we are given an interpretation for the formula in a first order language, 
-this shows us how extend that intepretation to a new language containing the new function symbols. 
-So the original formula had an interpretation that makes it true if and only if the new skolemized formula does.
+Move the existential quantifiers outward. Neither variable occurs free in the other disjunct:
 
-Conversely, if the skolemized set of formulas is unsatisfiable, then the original formulas are also unsatisfiable.
+$$
+\forall x\,\exists y\,\exists z\bigl(\neg P(x,y)\vee Q(x,z)\bigr).
+$$
 
-So a set of first order formulas is satisfiable if an only if its simplified form (after skolemization) is satisfiable. 
+These steps are logical equivalences. Now Skolemize $y$ and $z$ with two fresh functions of $x$:
 
-### Optional Step 4: move the quantifers to the front
-Since all of the quantifed variables are unique, and we only have universal quantifiers, we can now move them all to the front.
-This is called "prenex" form. When using the Tree Method for First Order Logic, it will sometimes be helpful not to put the formulas in prenex form...
+$$
+\forall x\bigl(\neg P(x,f(x))\vee Q(x,g(x))\bigr).
+$$
 
-# Examples
-Let's try this out!
+The last formula is equisatisfiable with the original.
 
-## Example 1: Simplify the following
-Simplify: $\forall x \forall y ( P(x,y) \rightarrow \exists x Q(x,y) ) $
+## A second example
 
-$\forall x \forall y ( P(x,y) \rightarrow \exists x Q(x,y) ) $, first we rename the $\exists x$ variable
+Simplify and Skolemize
 
-$\forall x \forall y ( P(x,y) \rightarrow \exists z Q(z,y) ) $, then we replace the implication with a $\vee$
+$$
+\neg\forall x\,\exists y\,R(x,y).
+$$
 
-$\forall x \forall y ( \neg P(x,y) \vee \exists z Q(z,y))$, then we introduce a skolem function f(x,y) for z
+First move the negation inward:
 
-$\forall x \forall y ( \neg P(x,y) \vee Q(f(x,y),y))$, and we are done since the quantifiers are already at the front
+$$
+\exists x\,\forall y\,\neg R(x,y).
+$$
 
+The existential quantifier has no universal ancestor, so use a fresh constant $a$:
 
-## Example 2: Simplify the following: 
-Simplify: $\forall x( (\forall y  P(x,y)) \rightarrow \exists y Q(x,y) )) $
+$$
+\forall y\,\neg R(a,y).
+$$
 
-$\forall x( (\forall y  P(x,y)) \rightarrow \exists y Q(x,y) )) $, first we rename the $\exists y$
-
-$\forall x ((\forall y  P(x,y)) \rightarrow \exists z Q(x,z) ) )$, then we replace the implication with a disjunction
-
-$\forall x( \neg (\forall y  P(x,y)) \vee \exists z Q(x,z) )) $, then we apply DeMorgan's rule
-
-$\forall x ((\exists y  \neg P(x,y)) \vee \exists z Q(x,z) )) $, then we introduce the Skolem functions to remove the $\exists y$ and $\exists z$
-
-$\forall x (\neg P(x,f(x)) \vee Q(x,g(x)))$ and we are done!
-
-Notice how the $\forall y$ became a $\exists y$ after we removed the implication and applied DeMorgan's rules
-
-
-
+The constant does not depend on $y$ because the choice of $x$ occurs before the universally quantified $y$.

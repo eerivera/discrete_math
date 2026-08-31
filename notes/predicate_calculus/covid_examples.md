@@ -1,44 +1,76 @@
-# Covid Examples
-Next let's look at how the Predicate Calculus can be used to reason about 
-domains which are not purely mathematical, for example, in epidemiology.
+# Applied Translation Examples
 
-Consider the domain $D$ of some group of people (perhaps Brandeis students)
-and the following predicates
-on that domain:
-* S(x) == x is sick with covid
-* F(x) == x has a fever
-* C(x,y) == x is a close contact of y
-* R(x,y) == x and y are roommates
-* V(x) == x had the covid vaccine
-* I(x) == x has influenza
+## Skills Addressed
 
-Let's translate the following formulas to predicate calculus
+* [F06 — Predicate Calculus: Translation to/from English](../../skills/Predicate_Calculus/F06.md)
 
-1. Everyone that has a fever either has covid or influenza or both.
-   
-   $\forall x F(x) \rightarrow S(x) \vee I(x)$
-   
-2. Whenever people are roommates,  they are also close contacts.
+Let the domain $D$ be a group of people, with:
 
-   $\forall x \forall y . R(x,y) \rightarrow C(x,y)$
-   
-3. Some people are close contacts but aren't roommates.
+* $S(x)$: $x$ has COVID;
+* $F(x)$: $x$ has a fever;
+* $C(x,y)$: $x$ is a close contact of $y$;
+* $R(x,y)$: $x$ and $y$ are roommates;
+* $V(x)$: $x$ is vaccinated; and
+* $I(x)$: $x$ has influenza.
 
-   $\exists a \exists b . C(a,b) \wedge \neg R(a,b)$
- 
-4. Everyone that has covid has a close contact with covid.
-5. If someone has a roommate with covide and they don't have covide then they are vaccinated.
-6. If everyone is vaccinated then noone has covid.
-7. If someone has covid then all of their close contacts who are not vaccinated have covid.
+The order of the arguments in $C(x,y)$ matters. A close contact of $x$ is represented by $C(y,x)$.
 
-Let's have you think up some statements to convert to this first order language...
+## English to first-order logic
 
-How would you translate the following formulas in plain English (where a and b are constants, i.e. refer to
-individuals like "Andy" and "Bohan"
-1. $\forall x . F(x) \wedge V(x) \rightarrow I(x)$
-2. $S(a) \wedge R(a,b) \wedge \neg V(b) \wedge F(b)$
-3. $\forall x \exists y . C(x,y)$
-4. $\exists y \forall x . C(x,y)$
-5. $\forall x \forall y . C(x,y) \rightarrow C(y,x)$
+### Everyone with a fever has COVID or influenza, or both
 
-   
+$$
+\forall x\bigl(F(x)\rightarrow(S(x)\vee I(x))\bigr).
+$$
+
+The implication restricts the claim to people with a fever. The inclusive disjunction permits a person to have both illnesses.
+
+### Roommates are close contacts
+
+$$
+\forall x\,\forall y\bigl(R(x,y)\rightarrow C(x,y)\bigr).
+$$
+
+### Some close contacts are not roommates
+
+$$
+\exists x\,\exists y\bigl(C(x,y)\wedge\neg R(x,y)\bigr).
+$$
+
+### Everyone with COVID has a close contact with COVID
+
+$$
+\forall x\bigl(S(x)\rightarrow\exists y(C(y,x)\wedge S(y))\bigr).
+$$
+
+The existential witness may be different for different values of $x$.
+
+### Anyone with an infected roommate who is not infected is vaccinated
+
+$$
+\forall x\bigl(((\exists y(R(x,y)\wedge S(y)))\wedge\neg S(x))\rightarrow V(x)\bigr).
+$$
+
+### If everyone is vaccinated, then no one has COVID
+
+$$
+(\forall x\,V(x))\rightarrow(\forall y\,\neg S(y)).
+$$
+
+This is one implication between two complete sentences. It does not claim that everyone is vaccinated.
+
+### Every unvaccinated close contact of an infected person is infected
+
+$$
+\forall x\bigl(S(x)\rightarrow\forall y((C(y,x)\wedge\neg V(y))\rightarrow S(y))\bigr).
+$$
+
+## First-order logic to English
+
+* $\forall x((F(x)\wedge V(x))\rightarrow I(x))$: everyone who has a fever and is vaccinated has influenza.
+* $S(a)\wedge R(a,b)\wedge\neg V(b)\wedge F(b)$: person $a$ has COVID and is a roommate of person $b$, while $b$ is unvaccinated and has a fever.
+* $\forall x\,\exists y\,C(x,y)$: everyone is a close contact of someone.
+* $\exists y\,\forall x\,C(x,y)$: there is a person of whom everyone is a close contact.
+* $\forall x\,\forall y(C(x,y)\rightarrow C(y,x))$: being a close contact is symmetric.
+
+The two middle formulas show why quantifier order matters: the first allows a different $y$ for each $x$, while the second requires one $y$ that works for every $x$.

@@ -1,120 +1,99 @@
-# Interpretations in First Order Logic
+# Interpretations in First-Order Logic
 
-One of the main differences between Propositional Logic and First Order Logic is that an interpretation $I$
-for First Order Logic requires that we specify 
-* a domain $D$ and
-* for each constant symbol $a$ an element $I(a)$ of that domain, and
-* for each function symbol $f$ a function $I(f)$ on that domain, and
-* for each predicate symbol $P$ a boolean function $I(P)$ on that domain
+## Skills Addressed
 
-Once we have specified an interpretation we can determine the truth or falsity of any formula 
-without quantifiers my first evaluate the truth values for each predicate in the formula, then
-we use the usual rules for propositional logic to evaluate the truth value of the entire formula.
+* [F05 — Predicate Calculus: Syntax and Semantics](../../skills/Predicate_Calculus/F05.md)
 
-Let's get some practice with that..
+An interpretation for a first-order language specifies:
 
-## Example 1.
-Suppose $I$ is the usual interpretation of the language of integer arithmetic, so the domain is the
-integers (positive, zero, and negative), and the predicates are $a\lt b, a=b, a\le b$ etc with their
-usual meaning and the constants are $0,1,2,..., -1,-2,...$ with their usual meaning, and the functions
-are $a+b, a-b, a*b$ with their usual meaning. We don't include division as it doesn't always return an integer
-and is sometimes undefined, e.g. $1/0 = ???$
+* a nonempty domain $D$;
+* an element of $D$ for each constant symbol;
+* a function on $D$ of the correct arity for each function symbol; and
+* a relation on $D$ of the correct arity for each predicate symbol.
 
-What then is the truth value for the following formula where we also define
-$I(a)=4$, $I(b)=7$ and $I(c)=0$
+Once these meanings are fixed, we can evaluate every sentence in the language.
 
-$(a+b \lt c) \wedge (b\le c \rightarrow (a\gt c)$
+## Example 1: A sentence without quantifiers
 
-To evaluate this we first replace all of the constants $a,b,c$ with their values under $I$
+Use the usual interpretation of integer arithmetic, extended by $a=4$, $b=7$, and $c=0$. Evaluate
 
-$(4+7 \lt 0) \wedge (7\le 0 \rightarrow (4\gt 0)$
+$$
+(a+b<c)\wedge((b\le c)\rightarrow(a>c)).
+$$
 
-Then we evaluate the predicates
+Substitute the values of the constants:
 
-$11\lt 0 = F$, $7 \le 0 = F$, $4 \gt 0$ = T
+$$
+(4+7<0)\wedge((7\le0)\rightarrow(4>0)).
+$$
 
-and finally evaluate the result boolean formula:
+The atomic formulas have values False, False, and True, respectively. Therefore,
 
-$F \wedge (F \rightarrow T)$
-$\equiv F \wedge T$
-$\equiv F$
+$$
+\text{False}\wedge(\text{False}\rightarrow\text{True})
+\equiv
+\text{False}\wedge\text{True}
+\equiv
+\text{False}.
+$$
 
-## Example 2.
-Lets try a different example. Let $D$ be the domain consisting of the digits $\{1,2,3,4\}$
-and let $P$ be the predicate defined by the following table, where the rows are "x" and the columns are "y"
-```
-         y
-P(x,y) 1 2 3 4
-     1 F F T F
- x   2 F T T T
-     3 T T T T
-     4 F T F T
-```
+## Example 2: Quantifiers over a finite domain
 
-Given this predicate which of the following are true?
-Explain why or why not...
-1. $\forall x \exists y P(x,y)$
-2. $\exists y \forall x P(x,y)$
-3. $\forall y \exists x P(x,y)$
-4. $\exists x \forall y P(x,y)$
-5. $\forall x \forall y \neg P(x,y)$
-6. $\forall x \neg \forall y P(x,y)$
-7. $\neg \forall x \forall y P(x,y)$
+Let $D=\{1,2,3,4\}$ and interpret $Q(x,y)$ by this table:
 
-For (1), it is saying that for each x in the domain (1,2,3,4) there must be some y in the domain
-which makes P(x,y) true. In other words, in each row there must be some column which is True.
-Let's check it
-* for x=1 P(1,3) is true
-* for x=2 P(2,3) is true (as is P(2,2) and P(2,4))
-* for x=3 P(3,*) is true for all columns
-* for x=4 P(4,2) and P(4,4) are true
+| $Q(x,y)$ | $y=1$ | $y=2$ | $y=3$ | $y=4$ |
+|:---:|:---:|:---:|:---:|:---:|
+| $x=1$ | F | F | T | F |
+| $x=2$ | F | T | T | T |
+| $x=3$ | T | T | T | T |
+| $x=4$ | F | T | F | T |
 
-So formula (1) is true.
+1. $\forall x\,\exists y\,Q(x,y)$ is **True** because every row contains a `T`.
+2. $\exists y\,\forall x\,Q(x,y)$ is **False** because no column contains only `T` values.
+3. $\forall y\,\exists x\,Q(x,y)$ is **True** because every column contains a `T`.
+4. $\exists x\,\forall y\,Q(x,y)$ is **True** because row $x=3$ contains only `T` values.
+5. $\forall x\,\forall y\,\neg Q(x,y)$ is **False**; for example, $Q(1,3)$ is True.
+6. $\forall x\,\neg\forall y\,Q(x,y)$ is **False** because $Q(3,y)$ is True for every $y$.
+7. $\neg\forall x\,\forall y\,Q(x,y)$ is **True**; for example, $Q(1,1)$ is False.
 
-For (2), it is saying that there is a column y such that P(x,y) is true for all rows x,
-but we can see this isn't true; each column contains at least one F. So (2) is false
+Rows are useful for formulas beginning with a quantifier over $x$, while columns are useful for formulas beginning with a quantifier over $y$.
 
-Try the others!
+## Example 3: Functions and predicates
 
-## Example 3
-Let $I$ be the usual interpretation for integer arithmetic, and extend it so that
-* $I(f)$ is the increment function $s(x)=x+1$ and
-* $I(g)$ is also the increment function
-* $I(a)=10$ and $I(b)=20$
-* $I(P)$ is the "less than" predicate, that is  $P(x,y) \equiv (x\lt y)$
-What are the truth values of the following formulas:
+Use the usual interpretation of integer arithmetic, and let:
 
-1. $\neg P(g(a),a) \wedge P(a,f(a))$
-2. $\forall x \neg P(g(x),x) \wedge P(x,f(x))$
+* $f(x)=x+1$ and $g(x)=x+1$;
+* $a=10$ and $b=20$; and
+* $P(x,y)$ mean $x<y$.
 
-For (1), we first evaluate the functional expressions $a=10$, $g(a)=11$, $f(a)=11$
-and then substitute them into the formula:
+Evaluate
 
-$\neg P(g(a),a) \wedge P(a,f(a))$
+$$
+\neg P(g(a),a)\wedge P(a,f(a)).
+$$
 
-$\equiv \neg P(11,10) \wedge P(10,11)$, then replace P with $\lt$
+Substitution gives
 
-$\equiv \neg(11<10) \wedge 10<11$, then evaluate the predicates and the formula
+$$
+\neg(11<10)\wedge(10<11),
+$$
 
-$\equiv \neg F \wedge T \equiv T$
+which is True.
 
-For (2), we can replace the $P$ by $\lt$ and the $f$ and $g$ by the increment function:
+The sentence
 
-$\forall x \neg P(g(x),x) \wedge P(x,f(x))$
+$$
+\forall x\bigl(\neg P(g(x),x)\wedge P(x,f(x))\bigr)
+$$
 
-$\equiv \forall x \neg P(x+1,x) \wedge P(x,x+1)$
+is also True because, for every integer $x$, $x+1<x$ is False and $x<x+1$ is True.
 
-$\equiv \forall x \neg (x+1\lt x) \wedge (x\lt x+1)$, and since we know that $x\lt x+1$ for all x, 
+## More practice with answers
 
-$\equiv \forall x \neg F \wedge T \equiv \forall x T \equiv T$
+Under the same interpretation:
 
-Try the following yourself. Are they true or false, and explain why...
-
-1. $P(a,b) \rightarrow P(g(a),f(b)$
-2. $\exists x P(a,x) \wedge P(x,a)$
-3. $\forall x \exists y  P(x,y)$
-4. $\exists x \forall y  P(x,y)$
-5. $\forall x \forall y P(x,y)\vee P(y,x) \rightarrow P(x,y) \oplus P(y,x)$
-
-
-
+1. $P(a,b)\rightarrow P(g(a),f(b))$ is **True**: $10<20$ and $11<21$.
+2. $\exists x(P(a,x)\wedge P(x,a))$ is **False**: no integer is both greater than and less than $10$.
+3. $\forall x\,\exists y\,P(x,y)$ is **True**: choose $y=x+1$.
+4. $\exists x\,\forall y\,P(x,y)$ is **False**: taking $y=x$ would require $x<x$.
+5. $\forall x\,\forall y((P(x,y)\vee P(y,x))\rightarrow(P(x,y)\oplus P(y,x)))$ is **True**. When $x\ne y$, exactly one of $x<y$ and $y<x$ holds; when $x=y$, the implication’s antecedent is False.

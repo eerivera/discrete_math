@@ -1,47 +1,51 @@
 # Inference and Validity of Arguments
 
-In propositional logic we have the notion of a **tautology**, also known as a **valid formula**.
-This is a formula which evaluates to True for every interpretation. 
+## Skills Addressed
 
-More generally, we have the
-notion of a valid argument which consists of a set of premises and a conclusion with the property
-that every interpretation which makes all of the premises true, also must make the conclusion true.
+* [G02 — Predicate Calculus: Inference](../../skills/Predicate_Calculus/G02.md)
 
-We can use exactly the same definition for a valid argument in the Predicate Calculus.
+An **argument** consists of premises $E_1,\ldots,E_n$ and a conclusion $C$. We use sentences—formulas with no free variables—so their truth values are determined by an interpretation.
 
-An **argument** is a sequence for first order formulas called the premises together with a first
-order formula called the conclusion. We assume that all variables in the formulas are quantified
-so there are no free variables.
+The argument is **valid** when every interpretation that makes all the premises True also makes the conclusion True. The domain and the meanings of the nonlogical symbols may vary from one interpretation to another.
 
-An argument is **valid** if every interpretation that makes the premises true, also makes the conclusion true.
+Equivalently, the argument is valid exactly when
 
-This is a very powerful statement!
+$$
+E_1\wedge\cdots\wedge E_n\wedge\neg C
+$$
 
-Different interpretations have different domain sets, and a valid argument is telling us that for any interpretation,
-with any domain set, if the premises are true, then so is the conclusion!
+is unsatisfiable. This equivalence is the basis of the truth-tree method: put the premises and the negation of the conclusion on the tree and try to close every branch.
 
-In particular, if an argument is valid, and we have a particular interpretation in mind which satisfies all of the premises,
-then we know the conclusion must hold for that interpretation too.
+## Countermodels
 
-Conversely, if an argument is not valid, then there must be an interpretation which makes the premises true, 
-but makes the conclusion false...  
+An invalid argument has a **countermodel**: a particular nonempty domain and interpretations of its symbols that make every premise True and the conclusion False.
 
-We will see that if an argument is valid, then the Tree Method (and other inference methods) are guaranteed to finish
-and show that the argument is valid.  If it is not valid, the Tree Method might generate an infinite tree, and we might
-now know that it the tree will be infinite, so there is no way of knowing for sure with these methods that the formula isn't valid!
+Showing one interpretation in which the premises and conclusion are all True does not prove validity. Validity is a statement about every interpretation. By contrast, a single verified countermodel is enough to prove invalidity.
 
-## Examples
-Lets consider some simple arguments and see if we can show they are valid or find a counter example.
+## Example: A valid quantifier inference
 
-### Example 1.
-$\exists x \forall y P(x,y)$
+Consider
 
-...................
+$$
+\exists x\,\forall y\,P(x,y)
+$$
 
-$\forall y \exists x P(x,y)$
+as a premise and
 
+$$
+\forall y\,\exists x\,P(x,y)
+$$
 
-[More Examples](https://users.cecs.anu.edu.au/~jks/LogicNotes/exercises3.html)
+as the conclusion. If one element $a$ satisfies $P(a,y)$ for every $y$, then for each $y$ there certainly exists an $x$ satisfying $P(x,y)$—namely $a$. The argument is valid.
 
+## The converse is invalid
 
+The converse would use $\forall y\,\exists x\,P(x,y)$ as its premise and $\exists x\,\forall y\,P(x,y)$ as its conclusion.
 
+Take the domain $D=\{0,1\}$ and interpret $P(x,y)$ as $x=y$. For every $y$, choosing $x=y$ makes $P(x,y)$ True, so the premise is True. But no single $x$ equals both $0$ and $1$, so the conclusion is False. This is a countermodel, and the converse is invalid.
+
+## Termination
+
+First-order validity is not decidable by an algorithm that always terminates with a yes-or-no answer. A complete, fair proof search will eventually find a finite proof when an argument is valid, but a search for an invalid argument may continue indefinitely. When a tree does not close quickly, finding and verifying a countermodel can establish invalidity directly.
+
+For more examples, see [The Logic Notes exercises](https://users.cecs.anu.edu.au/~jks/LogicNotes/exercises3.html).

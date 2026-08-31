@@ -1,89 +1,70 @@
-# Example of using the Tree Method in Predicate Calculus
+# A Translation and Truth-Tree Example
 
-We'll give an example here of solving a "word problem" by converting it to
-a formal argument in First Order Logic and then using formal methods to
-determine if the argument is valid or not. 
+## Skills Addressed
 
-Let's try to formally determine if the following argument is valid or not
-by translating it into the predicate calculus and then using the Tree method.
+* [F06 — Predicate Calculus: Translation to/from English](../../skills/Predicate_Calculus/F06.md)
+* [G02 — Predicate Calculus: Inference](../../skills/Predicate_Calculus/G02.md)
 
-Consider the following argument
-* P1: if a is a close contact of b, then b is a close contact of a
-* P2: every close contact of someone who tests positive is quarantined
-* P3: everyone has a close contact who is a soccer player
-* P4: no soccer players are in quarantine
----
-* Conclusion: No one has tested positive.
+Consider this argument:
 
-You might first try to determine, informally, if this is a valid argument.
-Suppose the domain is all students at the University and all of the premises are true,
-does it follow that no students have tested positive? Why or why not?
+* If $a$ has $b$ as a close contact, then $b$ has $a$ as a close contact.
+* Every close contact of someone who tests positive is quarantined.
+* Everyone has a close contact who is a soccer player.
+* No soccer player is quarantined.
+* Therefore, no one has tested positive.
 
-Just because you find one interpretation that makes all of the premises true
-and makes the conclusion true, doesn't show it is a valid argument. You need to
-show that for any interpretation (with any non-empty domain), if the premises
-are true then the conclusion will also be true!
+We will translate the argument and prove it valid.
 
----
+## 1. Choose a language
 
-## Step 1: Determine the predicates
-To formalize this problem we first have to determine the First Order Language
-we will translate this argument in to. There are many ways to do this, but
-here is one way.
+Let the domain be people, with:
 
-* $C(x,y)$ means x is a close contact of y
-* $P(x)$ means x tests positive
-* $S(x)$ means x is a soccer player
-* $Q(x)$ means x is in quarantine
-* $a$ is some person (we assume the domain is non-empty)
+* $C(x,y)$: $x$ has $y$ as a close contact;
+* $P(x)$: $x$ tests positive;
+* $S(x)$: $x$ is a soccer player; and
+* $Q(x)$: $x$ is quarantined.
 
----
+## 2. Translate the argument
 
-## Step 2: Translate the argument to predicate calculus
-The next step is to translate the argument into this first order language.
-There are many ways to translate each formula into the predicate calculus,
-but ideally any two different translations will be logically equivalent
-unless the statement is naturally ambiguous.
+* p1: $\forall x\,\forall y(C(x,y)\rightarrow C(y,x))$
+* p2: $\forall x\,\forall y((P(x)\wedge C(x,y))\rightarrow Q(y))$
+* p3: $\forall x\,\exists y(C(x,y)\wedge S(y))$
+* p4: $\forall x(S(x)\rightarrow\neg Q(x))$
+* conclusion: $\neg\exists x\,P(x)$
 
-* P1: $\forall x \forall y (C(x,y) \rightarrow C(y,x)))$
-* P2: $\forall x \forall y P(x)\wedge C(x,y) \rightarrow Q(y)$
-* P3: $\forall x \exists y C(x,y)\wedge S(y)$
-* P4: $\forall x S(x) \rightarrow \neg Q(x)$
-* Conclusion: $\neg \exists x P(x)$
+The formulas use parentheses to make every quantifier scope and mixed connective grouping explicit.
 
-## Step 3: negate the conclusion and simplify the formulas
-Let's apply the simplification rules to the premises and the negation of the conclusion
-to get a set of universally quantified formulas containing only $\wedge$ and $\vee$
-and predicates or their negations.
+## 3. Simplify and Skolemize
 
-* P1: $\forall x \forall y (\neg C(x,y) \vee C(y,x)))$
-* P2: $\forall x \forall y \neg P(x)\vee \neg C(x,y) \vee Q(y)$
-* P3: $\forall x C(x,f(x))\wedge S(f(x)))$, where $f(x)$ is a soccer player who is a close contact of x
-* P4: $\forall x \neg S(x) \vee \neg Q(x)$
-* Negation of Conclusion: $\exists x P(x) \equiv  P(a)$, where $a$ is the person who tested positive
+The premises become:
 
-Lets say, explicitly, what the skolem functions are for the interpretation 
-where the domain is students at the University.
+* p1: $\forall x\,\forall y(\neg C(x,y)\vee C(y,x))$
+* p2: $\forall x\,\forall y(\neg P(x)\vee\neg C(x,y)\vee Q(y))$
+* p3: $\forall x(C(x,f(x))\wedge S(f(x)))$, where $f$ is fresh
+* p4: $\forall x(\neg S(x)\vee\neg Q(x))$
 
+Negate the conclusion:
 
-## Step 4: instantiate the formulas and try to close all branches
-If we can close all of the branches using the Tree Method rules, then
-we know that there is no interpretation that makes all of the premises
-true and makes the conclusion false, so the conclusion must always be
-true for any interpretation which makes all of the premises true!
+$$
+\neg\neg\exists x\,P(x)
+\equiv
+\exists x\,P(x)
+\leadsto
+P(a),
+$$
 
-If we can't close all of the branches, then applying the rules will generate
-an infinitely tall tree, and that tree must have an infinite branch with 
-no contradictions, and the predicates on that branch provide a model.
+where $a$ is a fresh constant.
 
-This is a problem though as it is non-trivial to determine whether the
-the tree method is going to eventually stop or whether it continues forever.
-In fact, we can show that there is no computer program that can determine
-if a particular tree method problem will continue forever. 
+The $\leadsto$ symbol marks Skolemization rather than logical equivalence.
 
-If you suspect that the branches won't close though you can look for a 
-counterexample, that is an interpretation which makes the premises true
-and the conclusion false!
+## 4. Close the tree
 
+Start with $P(a)$. Instantiate p3 at $x=a$ to get $C(a,f(a))$ and $S(f(a))$.
 
-#
+Instantiate p4 at $x=f(a)$. Its $\neg S(f(a))$ branch closes against $S(f(a))$. On the $\neg Q(f(a))$ branch, instantiate p2 with $x=a$ and $y=f(a)$. Its three alternatives contradict $P(a)$, $C(a,f(a))$, and $\neg Q(f(a))$, respectively.
+
+![Closed truth tree for the close-contact argument](../../skills/Predicate_Calculus/images/G02/soccer-tree.svg)
+
+Every branch closes, so the argument is valid.
+
+Premise p1 is not needed for this proof. That is not an error: a valid argument may contain a redundant premise. Removing p1 leaves a valid argument.

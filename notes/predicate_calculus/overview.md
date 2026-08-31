@@ -1,115 +1,93 @@
 # Overview of the Predicate Calculus
 
-We will introduce the predicate calculus and we practice converting English statements into the Predicate Calculus.
+## Skills Addressed
 
-We expand the language of Propositional calculus to include 
+* [F05 — Predicate Calculus: Syntax and Semantics](../../skills/Predicate_Calculus/F05.md)
+* [F06 — Predicate Calculus: Translation to/from English](../../skills/Predicate_Calculus/F06.md)
 
-* predicates, which are boolean functions of one or more variables, P(x), Q(x,y,z). u=v, u<v
-* boolean operators connecting formulas: P and Q, P xor Q, P or Q, not P, P implies Q, P iff Q,
-* variables, usually written as letters from the end of the alphabet, u,v,w,x,y,z ...
-* quantifiers,where F is a predicate formula
-  * $\exists x . F$
-  * $\forall x . F$
-* functions and constants, e.g.
-  e.g. square(x),  x*y, 0, 1, etc.
+First-order logic, also called the predicate calculus, extends propositional logic with objects, predicates, functions, variables, and quantifiers. It is expressive enough to formalize a large portion of ordinary mathematics.
 
-  
-The Predicate Calculus is the language of Mathematics. In theory, anything that can be expressed in Mathematics can be expressed in this formalized language. A key skill is to be able to translate a statement in English into the Predicate Calculus. It will usually remove most of the ambiguity in the original English statement.  
+## First-order languages
 
-For the Propositional Calculus, the propositions could be thought of as boolean variables which are either true or false, and a propositional formula was a boolean expression as we see in Python, Java, and all other modern imperative programming languages.
+A first-order language specifies:
 
-For the Predicate Calculus, the predicates are boolean functions over some domain D which we will usually specify ahead of time (e.g. the domain of integers, or real numbers, or strings of characters, or functions on the real numbers, etc.).  Some predicates we write in "infix" mode such as the comparison functions (=, <, >=, etc.). The Predicate calculus also allows functions from the domain D to itself, and constants (which are elements of the domain). This is a very expressive language and most people believe that any mathematical concept can be expressed in the Predicate Calculus.
+* predicate symbols with fixed arities, such as unary $P$ or binary $Q$;
+* function symbols with fixed arities, such as unary $f$ or binary $+$;
+* constant symbols, such as $a$ or $0$;
+* variables, such as $x,y,z$;
+* the connectives $\neg,\wedge,\vee,\rightarrow,\leftrightarrow,\oplus$; and
+* the quantifiers $\forall$ and $\exists$.
 
-Our goal is to help you begin to develop the skill of translating English statements to the Predicate Calculus and to assess your mastery using a quiz. If we have time, we'll also start to talk about formal methods for proving theorems in the propositional and predicate calculus, but we'll probably have to wait until next week for that.
+Variables and constants are **terms**. If $f$ is a unary function symbol and $t$ is a term, then $f(t)$ is also a term. If $Q$ is a binary predicate symbol and $s,t$ are terms, then $Q(s,t)$ is an atomic formula.
 
-## First Order Languages
-A first order language $L$ consists of 
-* a set of predicate symbols (P,Q,R,=,< >=, ...),
-* a set of function and constant symbols, (f,g,h, a,b,c, 0,1,2, $\pi$, $e$, $\infty$, ...)
-* a set of variables symbols (u,v,w,x,y,z...)
-* a set of logical connectives: $\wedge, \vee, \neg, \rightarrow, \leftrightarrow, \oplus$
+Larger formulas are built from atomic formulas with connectives and quantifiers. In this course, parenthesize formulas so the grouping of mixed binary operators and the scope of each quantifier are explicit.
 
-For the propositional calculus, the language consisted just of proposition symbols and
-logical connectives $\wedge, \vee, \neg, \rightarrow, \leftrightarrow, \oplus$
-The predicate calculus adds predicate symbols, function symbols, constant symbols, variables, and constants!
+## Interpretations
 
-## Interpretations and Models in a first order language
-An interpretation of a first order language gives all of the symbols a particular meaning
-which can be used to express properties of some specific domain $D$ which is the
-situation we are interested in... The Models of Predicate Calculus are like the "interpretations"
-of the Propositional Calculus, they give a particular meaning the formulas which can then be
-evaluated to be either true or false.
+The symbols of a first-order language have no fixed meaning until an **interpretation** supplies:
 
-Thus an interpretation consists of
-* a domain $D$ (e.g. the real numbers, or the positive integers, or the set of digits 0,...,9, etc.)
-together with an interpretation for the predicate, function, and constant symbols on that domain, i.e.
-* each predicate symbol corresponds to some boolean function on the domain $D$
-* each constant symbol corresponds to an element of the domain
-* each function symbols corresponds to a function on the domain
+* a nonempty domain $D$;
+* an element of $D$ for each constant symbol;
+* a function on $D$ of the correct arity for each function symbol; and
+* a relation on $D$ of the correct arity for each predicate symbol.
 
-An interpretation is a **model for a set of formulas** in the predicate calculus if it makes all of the formulas true.
+For example, in an interpretation of integer arithmetic:
 
-The set of formulas which are true for a particular model is called the **Theory of that model**.
+* $D=\mathbb Z$;
+* $0$ denotes the integer zero;
+* $+$ denotes integer addition; and
+* $<$ denotes the usual less-than relation on integers.
 
-For example, we can talk about all of the formulas which are true for integer arithmetic as the Theory of Integer Arithmetic.
+Under that interpretation, $\forall x\,(x<x+1)$ is True, while $\exists x\,\forall y\,(y<x)$ is False because the integers have no largest element.
 
+An interpretation is a **model** of a sentence, or a set of sentences, when it makes every sentence True.
 
+## Bound and free variables
 
+In
 
-## Translating Mathematics statements in to the Predicate Calculus
-Here are some examples over the domain of integers.
+$$
+\forall x\bigl(P(x)\rightarrow Q(x,y)\bigr),
+$$
 
-### A.  d is a divisor of n  
-$\exists k . n = d*k$
+the occurrences of $x$ are bound by $\forall x$, but the occurrence of $y$ is free. A formula with no free variables is a **sentence**. An interpretation determines the truth value of a sentence. A formula with free variables also needs values assigned to those variables.
 
-### B.  p is prime
-(i.e. the only positive divisors of p are 1 and itself)
+## Quantifier order
 
-$\forall p . {\rm prime}(p) \leftrightarrow (p>0) \wedge \neg \exists a \exists b  ((1 \lt a) \wedge (a\lt p) \wedge (p = a*b))$
+The formulas
 
-or, if d is a positive divisor of p then d=1 or d=p
+$$
+\forall x\,\exists y\,Q(x,y)
+$$
 
-$\forall p . {\rm prime}(p) \leftrightarrow (p>0)\wedge \forall d (\exists a . a>0 \wedge p=ad) \rightarrow (d=1) \vee (d=p)$
+and
 
+$$
+\exists y\,\forall x\,Q(x,y)
+$$
 
+generally mean different things. In the first, the witness for $y$ may depend on $x$. In the second, one value of $y$ must work for every $x$.
 
-and here are some for the domain of real numbers
+For example, over the integers, $\forall x\,\exists y\,(x<y)$ is True: choose $y=x+1$. But $\exists y\,\forall x\,(x<y)$ is False: no integer is larger than every integer.
 
-### C. The quadratic formula over the domain C of complex numbers
+## Mathematical translations
 
-$\forall a \forall b \forall c \exists d . (d^2=(b^2 -4ac)) \wedge \forall x ( ax^2 + bx + c = 0 \rightarrow x = \frac{-b + d}{2a} \vee  x = \frac{-b - d}{2a}$
+Over the integers, “$d$ divides $n$” can be written as
 
+$$
+\exists k\,(n=d k).
+$$
 
-where the implies could be replaced with an iff
+“Every two distinct integers are comparable” can be written as
 
-### D. every two real numbers has a number between them
-$\forall x \forall y  ( (x \lt y) \rightarrow \exists z  (x \lt z \wedge z \lt y)  )$
+$$
+\forall x\,\forall y\bigl((x\ne y)\rightarrow((x<y)\vee(y<x))\bigr).
+$$
 
+“There is an integer larger than every integer” can be written as
 
-## More Translation Practice
-Now let's have you do some translation of Mathematics statements into the predicate Calculus
+$$
+\exists x\,\forall y\,(y<x).
+$$
 
-### E. for any two real numbers they are either equal or one is bigger than the other
-
-### F. there is a real number which is bigger than all other real numbers  (this is a statement but it isn't true!)
-
-### G.  x^2 is less than x if and only if x is less than 1 (this is true for the domain of positive real numbers)
-
-### H. for any two positive numbers a,b   a*b is less than or equal to (a+b)/2 squared
-
-## More examples
-Now lets use the domain of functions from the real numbers to the real numbers, where 
-* $I(f)$ means f is always Increasing, i.e. $\forall x \forall y (x\lt y) \rightarrow f(x)\lt f(y)$
-* $B(f,g)$  means f(x) is always bigger than or equal to g(x) (i.e $\forall x f(x)\lt g(x)$)
-* $S(f,g,h)$ means $\forall x f(x)+g(x) = h(x)$, i.e. f+g=h, so the Sum of f and g is h.
-* $E(f,g)$ means f and g are the same function (i.e. $\forall x f(x)=g(x)$, they are Equal)
-
-Try to convert these to predicate calculus using only the predicate symbols A,B,C,E, the quantifiers, and logical connectives.
-* every function f is always increasing or there is a bigger function which is always increasing
-* if f is always increasing the so is 2f (i.e. f+f)
-* if f and g are always increasing then so is f+g
-* there does not exist a function f which is bigger than all increasing functions
-* there is a function g such that f+g=f for all functions f
-* if f is bigger than or equal to g and vice versa, then f is equal to g
-
-
+This last expression is a well-formed sentence even though it is False in the usual interpretation of integer arithmetic. Syntax asks whether an expression is a formula; semantics asks what that formula means and whether it is True in an interpretation.

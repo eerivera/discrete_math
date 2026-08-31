@@ -1,99 +1,88 @@
-# The Truth Tree Method for First Order Logic
+# The Truth-Tree Method for First-Order Logic
 
-We have seen how to use the Truth Tree method to show that a set of Propositional formulas is unsatisfiable 
-(if all of the branches are eventually closed) or to find a counter example, that is an interpretation that
-makes all of the formulas true.
+## Skills Addressed
 
-We used this to show that an argument is valid by showing their are no interpretations which make all of the premises
-true and make the conclusion false.  Thus, any interpretation which makes all of the premises true must also make
-the conclusion true, and the argument is valid.
+* [G02 — Predicate Calculus: Inference](../../skills/Predicate_Calculus/G02.md)
 
-We can use a similar approach for arguments in the Predicate Calculus using the following steps.
-1. negate the conclusion, as usual
-2. simplify all of the premises and the negation of the conclusion
+To test whether premises $E_1,\ldots,E_n$ imply a conclusion $C$, construct a tree for
 
-This leaves us with a set of formulas with the following properties
-* the formulas only have universal quantifiers
-* the only operators are $\wedge$ and $\vee$ and any negations only appear directly in front of predicates
+$$
+E_1,\ldots,E_n,\neg C.
+$$
 
-In making this simplification we may have added some constants $C$ and some function symbols $F$, so we let
-$U$ be the collection of all terms that can be created using the constant symbols and function symbols, e.g.
-if 
-* $C = \\{a,b\\}$ and
-* $F = \\{f(x,y), g(z)\\}$,
+If every branch closes, no interpretation makes all the premises True and the conclusion False, so the argument is valid.
 
-then $U$ contains terms like the following:
+## Preparation
 
-$a, b, g(a), g(b), g(g(a)), \ldots f(a,a), f(a,b), \ldots, f(g(a), b), \ldots$
+Before applying tree rules:
 
-We call $U$ the set of **ground terms**.
+1. rename bound variables so different quantifiers use different names;
+2. eliminate $\rightarrow$, $\leftrightarrow$, and $\oplus$;
+3. move negations inward;
+4. Skolemize existential quantifiers with fresh symbols; and
+5. move remaining universal quantifiers when useful.
 
-We can then extend the tree method by adding one new rule:
+After Skolemization, the formulas contain only universal quantifiers, $\wedge$, $\vee$, and literals.
 
-**Instantiation**: _Any formula with quantifiers can be used to create a formula with no quantifiers 
-by replacing each quantified variable by a ground term._
+## Ground terms and instantiation
 
-The problem is that there are infinitely many such instantiations, so any counter example will have an infinitely long branch
-and so it is much harder to create counter examples with this approach.
+A **ground term** is a term containing no variables. If the language contains constants $a,b$ and function symbols $f$ and $g$, then examples include
 
+$$
+a,\quad b,\quad f(a),\quad g(b),\quad f(g(a)),\ldots
+$$
 
-## Example 1
-Lets use the Tree Method to show the following is a valid argument
+If a Skolemized problem has no constant symbols, introduce one fresh constant to represent an element of the nonempty domain.
 
-p1: $\exists x \forall y P(x,y)$
+The first-order tree method adds an instantiation rule:
 
-............................
+> From $\forall x\,F(x)$, infer $F(t)$ for any ground term $t$.
 
-c: $\forall y \exists x P(x,y)$
+A universal formula may be instantiated repeatedly with different ground terms. Choose instances that interact with literals already on the branch.
 
-The first step is to simplify the premise and the negation of the conclusion, to get
+## Example: A valid argument
 
-p1: $\forall y P(a,y)$, we introduce the Skolem constant $a$ to replace the $\exists x$
+Use the premise
 
-not c: $\neg \forall y \exists x P(x,y)$
+$$
+\exists x\,\forall y\,P(x,y)
+$$
 
-$\equiv \exists y \forall x \neg P(x,y)$
+and conclusion
 
-$\equiv \forall x \neg P(x,b)$, where we introduce the Skolem constant $b$ to replace the $\exists y$
+$$
+\forall y\,\exists x\,P(x,y).
+$$
 
-So we now have two universally quantified formulas:
+Skolemize the premise with a fresh constant $a$:
 
-1. $\forall y P(a,y)$
-2. $\forall x \neg P(x,b)$
+$$
+\forall y\,P(a,y).
+$$
 
-and the set of ground terms is $U = \\{a,b\\}$ since we only added twp skolem constants and no skolem functions.
-For the first one, we can create a new formula by letting $y=b$ and fot the second let $x=a$, then we get two new contradictory formulas
+Negate and simplify the conclusion:
 
-3. $P(a,b)$, replacing $y=b$ in #1
-4. $\neg P(a,b)$, replacing $x=a$ in $2$
+$$
+\begin{aligned}
+\neg\forall y\,\exists x\,P(x,y)
+&\equiv\exists y\,\forall x\,\neg P(x,y)\\
+&\leadsto\forall x\,\neg P(x,b),
+\end{aligned}
+$$
 
-and this says we must have $P(a,b)=True$ and $P(a,b)=False$ which is a contradiction, so we can close this branch,
-and since this is the only branch the argument is valid.
+where $b$ is another fresh constant. Instantiate the first formula with $y=b$ and the second with $x=a$. This gives both $P(a,b)$ and $\neg P(a,b)$, closing the only branch.
 
-This means that for any domain D and any predicate $P$ on that domain, if  $\exists x \forall y P(x,y)$ is true
-then $\forall y \exists x P(x,y)$ must also be true!
+![Closed first-order truth tree](../../skills/Predicate_Calculus/images/G02/quantifier-valid.svg)
 
-Here is the Tree Method drawn out for this problem.
+## Why invalid searches may continue
 
-![FOL Tree Method 1](https://github.com/tjhickey724/discrete_math/blob/main/notes/predicate_calculus/FOLtreeMethod1.jpg)
+For the converse argument, the premise $\forall y\,\exists x\,P(x,y)$ Skolemizes to $\forall y\,P(f(y),y)$. The negation of $\exists x\,\forall y\,P(x,y)$ introduces another function and can generate endlessly nested ground terms. A blind instantiation search may therefore continue without closing.
 
-# Example 2
-Here is a more complex example with a skolem constant and skolem function
-[Truth Tree Example with FOL](https://github.com/tjhickey724/discrete_math/blob/main/notes/predicate_calculus/Truth%20Tree%20Example%20with%20FOL.pdf))
+The converse is invalid. A two-element countermodel is simpler: let $D=\{0,1\}$ and let $P(x,y)$ mean $x=y$. Each $y$ has a matching $x$, but no one $x$ matches every $y$.
 
-# Example 3
-If we try to test the validity of the converse argument
+## Reading a completed tree
 
-
-We get a Truth Tree with a single infinite branch and not contradictions... so if we blindly applied the instantiation rules
-we would never stop and never find a counter example...
-
-Here is what the tree looks like when you start it.
-
-![FOL Tree method 2](https://github.com/tjhickey724/discrete_math/blob/main/notes/predicate_calculus/FOLtreeMethod2.jpg)
-
-
-
-
-
-
+* A branch closes only when it contains a literal and its exact negation, such as $P(a,f(a))$ and $\neg P(a,f(a))$.
+* Similar-looking formulas with different terms do not form a contradiction.
+* Every branch must close to prove validity.
+* An open branch suggests a countermodel, but the proposed interpretation must still be checked against every premise and the negation of the conclusion.
