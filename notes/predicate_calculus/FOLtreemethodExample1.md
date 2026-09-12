@@ -7,7 +7,7 @@
 
 Consider this argument:
 
-* If $a$ has $b$ as a close contact, then $b$ has $a$ as a close contact.
+* Whenever one person has another as a close contact, the second has the first as a close contact.
 * Every close contact of someone who tests positive is quarantined.
 * Everyone has a close contact who is a soccer player.
 * No soccer player is quarantined.

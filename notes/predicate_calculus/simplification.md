@@ -8,7 +8,7 @@ The truth-tree method is easiest to apply after formulas have been placed in neg
 
 ## Rename bound variables first
 
-Give different quantifiers different variable names. For example,
+Give different quantifiers different variable names, using fresh names that do not occur elsewhere in the formula. Rename only occurrences bound by the quantifier being changed, so that no free variable is captured and no occurrence changes which quantifier binds it. For example,
 
 $$
 \forall x\,\forall y\bigl(P(x,y)\rightarrow\exists x\,Q(x,y)\bigr)
@@ -87,7 +87,7 @@ A formula in **prenex form** has all quantifiers at the front. Prenex form can c
 
 ## Skolemization
 
-After moving negations inward, replace each existential variable with a fresh symbol:
+For a sentence, after eliminating derived connectives and moving negations inward, replace each existential variable with a fresh symbol:
 
 * use a fresh constant if the existential quantifier has no universal-quantifier ancestors; and
 * use a fresh function of the universally quantified variables on which the witness may depend otherwise.

@@ -45,7 +45,7 @@ $$
 
 The existential witness may be different for different values of $x$.
 
-### Anyone with an infected roommate who is not infected is vaccinated
+### Anyone who has a roommate with COVID and does not have COVID is vaccinated
 
 $$
 \forall x\bigl(((\exists y(R(x,y)\wedge S(y)))\wedge\neg S(x))\rightarrow V(x)\bigr).
