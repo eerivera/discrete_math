@@ -22,7 +22,7 @@ Before applying tree rules:
 4. Skolemize existential quantifiers with fresh symbols; and
 5. move remaining universal quantifiers when useful.
 
-After Skolemization, the formulas contain only universal quantifiers, $\wedge$, $\vee$, and literals.
+After Skolemization, the formulas contain only universal quantifiers, $\wedge$, $\vee$, and literals. Apply the [propositional truth-tree rules](../../skills/Propositional_Calculus/G01.md#truth-tree-operations) to conjunctions and disjunctions, and use the instantiation rule below for universal quantifiers.
 
 ## Ground terms and instantiation
 
