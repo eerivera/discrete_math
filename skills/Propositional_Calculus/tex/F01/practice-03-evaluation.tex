@@ -1,0 +1,24 @@
+\documentclass[border=8pt]{standalone}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{forest}
+\begin{document}
+\begingroup
+\tikzset{label distance=0em, every label/.append style={fill=white, inner sep=1pt}}
+\begin{forest}
+  for tree={math content, s sep=3.5em, l sep=2em}
+  [\rightarrow, label={above:\textcolor{red}{\textbf{F}}}
+    [\vee, label={above:\textcolor{red}{\textbf{T}}}
+      [\neg, label={above:\textcolor{red}{\textbf{T}}}
+        [P, label={above:\textcolor{red}{\textbf{F}}}]
+      ]
+      [Q, label={above:\textcolor{red}{\textbf{T}}}]
+    ]
+    [\oplus, label={above:\textcolor{red}{\textbf{F}}}
+      [R, label={above:\textcolor{red}{\textbf{F}}}]
+      [P, label={above:\textcolor{red}{\textbf{F}}}]
+    ]
+  ]
+\end{forest}
+\endgroup
+\end{document}

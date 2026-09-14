@@ -1,4 +1,4 @@
-SOURCES := parse-tree.tex parse-tree-evaluation.tex
+SOURCES := parse-tree.tex parse-tree-evaluation.tex practice-03-evaluation.tex
 OUTPUT_DIR := ../../images/F01
 BUILD_DIR := build
 SVGS := $(SOURCES:%.tex=$(OUTPUT_DIR)/%.svg)
