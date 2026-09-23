@@ -1,4 +1,4 @@
-SOURCES := practice-truth-tree.tex quantifier-valid.tex soccer-tree.tex
+SOURCES := practice-truth-tree.tex quantifier-valid.tex soccer-tree.tex practice-exam-01.tex practice-exam-02.tex
 OUTPUT_DIR := ../../images/G02
 BUILD_DIR := build
 SVGS := $(SOURCES:%.tex=$(OUTPUT_DIR)/%.svg)

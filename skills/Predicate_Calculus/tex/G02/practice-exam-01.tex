@@ -1,0 +1,34 @@
+\documentclass[border=8pt]{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+\input{truth-tree-style}
+\begin{document}
+\begin{forest}
+  truth tree
+  [{$P(a)$ \\ $\forall z . (\neg R(a,z)\vee\neg S(z))$}
+    [{\textit{p1, $x=a$} \\ $\neg P(a)\vee(R(a,f(a))\wedge Q(f(a)))$}
+      [{$\neg P(a)$}
+        [{$\mathbf{X}$ \\ \textit{Contradicts $P(a)$}}]
+      ]
+      [{$R(a,f(a))$ \\ $Q(f(a))$}
+        [{\textit{neg-c, $z=f(a)$} \\ $\neg R(a,f(a))\vee\neg S(f(a))$}
+          [{$\neg R(a,f(a))$}
+            [{$\mathbf{X}$ \\ \textit{Contradicts $R(a,f(a))$}}]
+          ]
+          [{$\neg S(f(a))$}
+            [{\textit{p2, $y=f(a)$} \\ $\neg Q(f(a))\vee S(f(a))$}
+              [{$\neg Q(f(a))$}
+                [{$\mathbf{X}$ \\ \textit{Contradicts $Q(f(a))$}}]
+              ]
+              [{$S(f(a))$}
+                [{$\mathbf{X}$ \\ \textit{Contradicts $\neg S(f(a))$}}]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\end{document}

@@ -1,0 +1,35 @@
+\documentclass[border=8pt]{standalone}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{forest}
+\input{truth-tree-style}
+\begin{document}
+\begin{forest}
+  truth tree
+  [{$P(a)$}
+    [{\textit{p1, $x=a$} \\ $R(a,f(a))$ \\ $Q(f(a))$}
+      [{\textit{p3, $y=f(a)$} \\ $\neg Q(f(a))\vee(\neg S(f(a))\wedge\neg T(f(a)))$}
+        [{$\neg Q(f(a))$}
+          [{$\mathbf{X}$ \\ \textit{Contradicts $Q(f(a))$}}]
+        ]
+        [{$\neg S(f(a))$ \\ $\neg T(f(a))$}
+          [{\textit{p2, $x=a$, $y=f(a)$} \\ $\neg P(a)\vee\neg R(a,f(a))\vee S(f(a))\vee T(f(a))$}
+            [{$\neg P(a)$}
+              [{$\mathbf{X}$ \\ \textit{Contradicts $P(a)$}}]
+            ]
+            [{$\neg R(a,f(a))$}
+              [{$\mathbf{X}$ \\ \textit{Contradicts $R(a,f(a))$}}]
+            ]
+            [{$S(f(a))$}
+              [{$\mathbf{X}$ \\ \textit{Contradicts $\neg S(f(a))$}}]
+            ]
+            [{$T(f(a))$}
+              [{$\mathbf{X}$ \\ \textit{Contradicts $\neg T(f(a))$}}]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+\end{document}
