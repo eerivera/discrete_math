@@ -5,6 +5,8 @@
 * [F05 — Predicate Calculus: Syntax and Semantics](../../skills/Predicate_Calculus/F05.md)
 * [G02 — Predicate Calculus: Inference](../../skills/Predicate_Calculus/G02.md)
 
+This is a supporting example of reasoning from axioms. The G02 exam practice concerns truth-tree proofs; the equality substitutions and induction schema below provide broader context.
+
 First-order Peano arithmetic describes the natural numbers
 
 $$
@@ -15,19 +17,19 @@ in a language containing equality, the constant $0$, the successor function $s$,
 
 With equality treated as logical equality, the non-induction axioms may be written as follows:
 
-1. $\forall x\,(s(x)\ne0)$
-2. $\forall x\,\forall y(s(x)=s(y)\rightarrow x=y)$
-3. $\forall x\,(x+0=x)$
-4. $\forall x\,\forall y(x+s(y)=s(x+y))$
-5. $\forall x\,(x\cdot0=0)$
-6. $\forall x\,\forall y(x\cdot s(y)=(x\cdot y)+x)$
+1. $\forall x . (s(x)\ne0)$
+2. $\forall x . \forall y . (s(x)=s(y)\rightarrow x=y)$
+3. $\forall x . (x+0=x)$
+4. $\forall x . \forall y . (x+s(y)=s(x+y))$
+5. $\forall x . (x\cdot0=0)$
+6. $\forall x . \forall y . (x\cdot s(y)=(x\cdot y)+x)$
 
 The theory also includes an **induction schema**. For every first-order formula $\varphi(x)$ in the language, it has an axiom of the form
 
 $$
-\bigl(\varphi(0)\wedge\forall x(\varphi(x)\rightarrow\varphi(s(x)))\bigr)
+\bigl(\varphi(0)\wedge\forall x . (\varphi(x)\rightarrow\varphi(s(x)))\bigr)
 \rightarrow
-\forall x\,\varphi(x).
+\forall x . \varphi(x).
 $$
 
 It is a schema rather than one first-order sentence because there is one induction axiom for each suitable formula $\varphi$.

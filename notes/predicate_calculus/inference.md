@@ -27,20 +27,20 @@ Showing one interpretation in which the premises and conclusion are all True doe
 Consider
 
 $$
-\exists x\,\forall y\,P(x,y)
+\exists x . \forall y . P(x,y)
 $$
 
 as a premise and
 
 $$
-\forall y\,\exists x\,P(x,y)
+\forall y . \exists x . P(x,y)
 $$
 
 as the conclusion. If one element $a$ satisfies $P(a,y)$ for every $y$, then for each $y$ there certainly exists an $x$ satisfying $P(x,y)$—namely $a$. The argument is valid.
 
 ## The converse is invalid
 
-The converse would use $\forall y\,\exists x\,P(x,y)$ as its premise and $\exists x\,\forall y\,P(x,y)$ as its conclusion.
+The converse would use $\forall y . \exists x . P(x,y)$ as its premise and $\exists x . \forall y . P(x,y)$ as its conclusion.
 
 Take the domain $D=\{0,1\}$ and interpret $P(x,y)$ as $x=y$. For every $y$, choosing $x=y$ makes $P(x,y)$ True, so the premise is True. But no single $x$ equals both $0$ and $1$, so the conclusion is False. This is a countermodel, and the converse is invalid.
 

@@ -14,6 +14,8 @@ If every branch closes, no interpretation makes all the premises True and the co
 
 ## Preparation
 
+Use the course’s [dot notation and quantifier scope convention](overview.md#dot-notation-and-quantifier-scope). A quantifier extends from its dot to the end of its enclosing formula; parentheses must enclose the quantifier itself to end its scope early.
+
 Before applying tree rules:
 
 1. rename bound variables so different quantifiers use different names;
@@ -36,7 +38,7 @@ If a Skolemized problem has no constant symbols, introduce one fresh constant to
 
 The first-order tree method adds an instantiation rule:
 
-> From $\forall x\,F(x)$, infer $F(t)$ for any ground term $t$.
+> From $\forall x . F(x)$, infer $F(t)$ for any ground term $t$.
 
 A universal formula may be instantiated repeatedly with different ground terms. Choose instances that interact with literals already on the branch.
 
@@ -45,28 +47,28 @@ A universal formula may be instantiated repeatedly with different ground terms. 
 Use the premise
 
 $$
-\exists x\,\forall y\,P(x,y)
+\exists x . \forall y . P(x,y)
 $$
 
 and conclusion
 
 $$
-\forall y\,\exists x\,P(x,y).
+\forall y . \exists x . P(x,y).
 $$
 
 Skolemize the premise with a fresh constant $a$:
 
 $$
-\forall y\,P(a,y).
+\forall y . P(a,y).
 $$
 
 Negate and simplify the conclusion:
 
 $$
 \begin{aligned}
-\neg\forall y\,\exists x\,P(x,y)
-&\equiv\exists y\,\forall x\,\neg P(x,y)\\
-&\leadsto\forall x\,\neg P(x,b),
+\neg\forall y . \exists x . P(x,y)
+&\equiv\exists y . \forall x . \neg P(x,y)\\
+&\leadsto\forall x . \neg P(x,b),
 \end{aligned}
 $$
 
@@ -76,7 +78,7 @@ where $b$ is another fresh constant. Instantiate the first formula with $y=b$ an
 
 ## Why invalid searches may continue
 
-For the converse argument, the premise $\forall y\,\exists x\,P(x,y)$ Skolemizes to $\forall y\,P(f(y),y)$. The negation of $\exists x\,\forall y\,P(x,y)$ introduces another function and can generate endlessly nested ground terms. A blind instantiation search may therefore continue without closing.
+For the converse argument, the premise $\forall y . \exists x . P(x,y)$ Skolemizes to $\forall y . P(f(y),y)$. The negation of $\exists x . \forall y . P(x,y)$ introduces another function and can generate endlessly nested ground terms. A blind instantiation search may therefore continue without closing.
 
 The converse is invalid. A two-element countermodel is simpler: let $D=\{0,1\}$ and let $P(x,y)$ mean $x=y$. Each $y$ has a matching $x$, but no one $x$ matches every $y$.
 

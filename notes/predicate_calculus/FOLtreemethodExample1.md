@@ -26,11 +26,11 @@ Let the domain be people, with:
 
 ## 2. Translate the argument
 
-* p1: $\forall x\,\forall y(C(x,y)\rightarrow C(y,x))$
-* p2: $\forall x\,\forall y((P(x)\wedge C(x,y))\rightarrow Q(y))$
-* p3: $\forall x\,\exists y(C(x,y)\wedge S(y))$
-* p4: $\forall x(S(x)\rightarrow\neg Q(x))$
-* conclusion: $\neg\exists x\,P(x)$
+* p1: $\forall x . \forall y . (C(x,y)\rightarrow C(y,x))$
+* p2: $\forall x . \forall y . ((P(x)\wedge C(x,y))\rightarrow Q(y))$
+* p3: $\forall x . \exists y . (C(x,y)\wedge S(y))$
+* p4: $\forall x . (S(x)\rightarrow\neg Q(x))$
+* conclusion: $\neg\exists x . P(x)$
 
 The formulas use parentheses to make every quantifier scope and mixed connective grouping explicit.
 
@@ -38,19 +38,19 @@ The formulas use parentheses to make every quantifier scope and mixed connective
 
 The premises become:
 
-* p1: $\forall x\,\forall y(\neg C(x,y)\vee C(y,x))$
-* p2: $\forall x\,\forall y(\neg P(x)\vee\neg C(x,y)\vee Q(y))$
-* p3: $\forall x(C(x,f(x))\wedge S(f(x)))$, where $f$ is fresh
-* p4: $\forall x(\neg S(x)\vee\neg Q(x))$
+* p1: $\forall x . \forall y . (\neg C(x,y)\vee C(y,x))$
+* p2: $\forall x . \forall y . (\neg P(x)\vee\neg C(x,y)\vee Q(y))$
+* p3: $\forall x . (C(x,f(x))\wedge S(f(x)))$, where $f$ is fresh
+* p4: $\forall x . (\neg S(x)\vee\neg Q(x))$
 
 Negate the conclusion:
 
 $$
-\neg\neg\exists x\,P(x)
-\equiv
-\exists x\,P(x)
-\leadsto
-P(a),
+\begin{aligned}
+\neg\neg\exists x . P(x)
+&\equiv \exists x . P(x)\\
+&\leadsto P(a),
+\end{aligned}
 $$
 
 where $a$ is a fresh constant.
