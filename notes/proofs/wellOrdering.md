@@ -1,4 +1,4 @@
-# The Well Ordering Principle 
+# The Well Ordering Principle
 # and The Fundamental Theorem of Arithmetic
 
 A very powerful variation of the proof by contradiction relies on the following statement, called the Well Ordering Principle.
@@ -12,13 +12,13 @@ non-empty set of positive integers which doesn't have a smallest element
 Since the set is non-empty, it contains at least one number $n$.
 
 But if $n$ is not the smallest element in the set, then there is an $n_1$ in the set with $n_1$ smaller than $n$.
-Likewise, since the set has no smallest element it has an $n_2$ smaller than $n_1$. 
+Likewise, since the set has no smallest element it has an $n_2$ smaller than $n_1$.
 Continuing in this way we can construct a sequence of positive integers
 
 $n \gt n_1 \gt n_2 \gt \ldots$ >0
 
 but since these are all positive integers, this sequence of numbers can have length no more than $n$,
-hence it has to be a finite sequence with last element $n_k$ which would be the smallest element in the set.
+hence it has to be a finite sequence with last element $n_k$ which could not have a smaller element in the set without extending the sequence beyond the bound.
 So it does indeed have a smallest element. This is a contradiction, so our theorem is true.  **QED**
 
 ### How to use the Well-Ordering Principle.
@@ -33,23 +33,22 @@ and assuming we have such an $n$ we either
 * show that it is not a counterexample, or
 * show that we can use it to construct a smaller counterexample
 
-## Example: 
+## Example:
 Here is a typical application. We will show that every number can be factored into primes.
 
-
 **Definition:** a positive number $n$ has a non-trivial factorization if it can be written as $n=a*b$
-with $1\lt a \lt n$ and $1\lt b\lt n$.  
+with $1\lt a \lt n$ and $1\lt b\lt n$.
 
 The cases where $n = 1 * n$ and $n = n * 1$ are trivial factorizations which are not interesting to us.
 
-**Definition:** a positive integer $n$ is prime if it can not be factored (non-trivially).
+**Definition:** an integer $n\ge2$ is prime if it can not be factored (non-trivially).
 
 ---
 
-**Theorem.** Every positive integer can be represented as a product of prime numbers.
+**Theorem.** Every integer $n\ge2$ can be represented as a product of prime numbers. A single prime counts as a product of one prime. The integer 1 is the empty product of primes, not a prime itself.
 
 **Proof:** We will prove this by contradiction using the Well-Ordering Principle.  Suppose
-it is false and let $n$ be the smallest positive integer which can not be represented as
+it is false and let $n\ge2$ be the smallest integer which can not be represented as
 a product of primes.
 
 We argue by cases. Either $n$ can be factored or it can not be factored.
@@ -83,7 +82,9 @@ and positive integers $a_1, a_2, \ldots, a_k$ such that n can be represented a a
 
 $n = p_1^{a_1} p_2^{a_2} \ldots p_k^{a_k}$
 
-and this representation is unique, that is there is no other set of primes and powers which can be used to
+For $n=1$, take $k=0$ and the empty product, whose value is 1. For $n\ge2$, take $k\ge1$.
+
+This representation is unique, that is there is no other set of primes and powers which can be used to
 factorize $n$.
 
 ---
@@ -92,8 +93,8 @@ We won't prove this now, but we will show how it can be used.
 
 ---
 
-**Corollary** for every prime $p$ and all positive integer $n$ and $s$, 
-$p$ divides $n^s$ if an only if $p$ divides $n$.
+**Corollary** for every prime $p$ and all positive integer $n$ and $s$,
+$p$ divides $n^s$ if and only if $p$ divides $n$.
 
 **Proof:**
 We will prove by this by proving the "if" part first and then the converse,
@@ -102,18 +103,16 @@ and we will prove each of these parts by direct proof.
 if $p$ divides $n$ then it is easy to see that $p$ divides $n^s$, as $n=pd$ for some d
 so $n^s = p^s*d^s$ which is a multiple of $p$.
 
-Suppose now that $p$ divides $n^s$ and let's show that $p$ dividesd $n$.
+Suppose now that $p$ divides $n^s$ and let's show that $p$ divides $n$.
 We know $n$ can be factored into primes in a unique way so
 
 $n = p_1^{a_1} p_2^{a_2} \ldots p_k^{a_k}$
 
-where $p$ is one of the primes, say $p=p_i$
+Raising this factorization to the power $s$ raises each prime factor to $s$ times its original exponent:
 
-and so $n^s$ has the factorization which raises each of the factors of $n$ to the power $s$
+$n^s = p_1^{sa_1} p_2^{sa_2} \ldots p_k^{sa_k}$
 
-$n = p_1^{sa_1} p_2^{sa_2} \ldots p_k^{sa_k}$
-
-so $p_i$ divides $n$ (in fact $p_i^{a_i}$ divides $n$).
+Since $p$ divides $n^s$, write $n^s=pd$ for a positive integer $d$. Factoring $d$ into primes gives a prime factorization of $n^s$ containing $p$. By uniqueness, $p$ must equal one of the $p_i$ in the displayed factorization. Hence $p$ divides $n$. (If $n=1$, neither $n$ nor $n^s$ is divisible by a prime.)
 
 **QED**
 
@@ -125,7 +124,7 @@ Here is another application of the Fundamental Theorem of Arithmetic.
 
 **Theorem** $\log_2(3)$ is irrational.
 
-**Proof:** 
+**Proof:**
 We will prove this by contradiction. Suppose it is not irrational.
 Then there exists positive integers $r,s$  such that $\log_2(3)=r/s$
 
@@ -137,11 +136,11 @@ Raising each side to the power $s$ we see that
 
 $3^s = (2^{r/s})^s$
 
-but $(a^b)^c = a^{bc}$ so 
+but $(a^b)^c = a^{bc}$ so
 
 $3^s = (2^{r/s})^s = 2^{(r/s)*s} = 2^r$
 
-But the number $n=3^s$ would then have two different prime factorizations, as $3^s$ and as $2^s$,
+But the number $n=3^s$ would then have two different prime factorizations, as $3^s$ and as $2^r$,
 and we know by the Fundamental Theorem of Arithmetic, that each positive integer has one and only
 one factorization into primes.
 
@@ -149,7 +148,7 @@ This contradiction shows that $\log_2(3)$ can not be rational, and hence is an i
 **QED**
 
 Another way we could have proved this is to prove that $3^s$ is an odd number for every $s$ and $2^r$
-is an even number, so they can't be equal. 
+is an even number, so they can't be equal.
 
 ---
 
@@ -165,7 +164,7 @@ positive integer for which $s_n \ne n(n+1)/2$. We will prove that $s_n$ must equ
 and this contradiction proves the theorem.
 
 Clearly $n>0$ because $s_0=0$ and $0\times(0+1)/2 = 0$.
-So $n-1>0$ and since $n$ is the smallest number for which the Theorem doesn't hold, we see it must hold for $n-1$.
+So $n-1\ge0$ and since $n$ is the smallest number for which the Theorem doesn't hold, we see it must hold for $n-1$.
 Hence $s_{n-1} = (n-1)\times((n-1)+1)/2 = (n-1)n/2 = (n^2 - n)/2$
 
 Combining this with he definition of $s_n$ we have
@@ -174,6 +173,4 @@ $s_n = s_{n-1} + n  = \frac{n^2-n}{2} + n = \frac{n^2-n}{2} +\frac{2n}{2} = \fra
 
 But this contradicts the assumption that $n$ was the smallest positive integer for which the theorem doesn't hold!
 **Q.E.D.**
-
-
 
