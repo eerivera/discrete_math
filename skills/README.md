@@ -92,7 +92,7 @@ Ability to write a well-structured proof of a Theorem, Proposition, Lemma or Cor
 
 ## F12
 ### Sets: Syntax and Semantics 
-Ability to work with modern set notation. In particular, the ability to perform calculations using the union, intersection, and complement of sets.
+Ability to read set notation and list the elements of finite sets defined by comprehensions, including sets of tuples and subsets. Distinguish membership from inclusion.
 
 [link to F12 overview and practice problems](Sets/F12.md)
 
@@ -100,7 +100,7 @@ Ability to work with modern set notation. In particular, the ability to perform 
 
 ## F13
 ### Sets: Algebra 
-Ability to using Boolean algebra to reason about sets. In particular, * to simplify formulas using boolean algebra laws * to prove (or disprove) logical inferences about set formulas
+Ability to calculate with union, intersection, difference, and complement; simplify expressions using Boolean algebra laws; and prove identities and inferences or give counterexamples.
 
 [link to F13 overview and practice problems](Sets/F13.md)
 
@@ -108,7 +108,7 @@ Ability to using Boolean algebra to reason about sets. In particular, * to simpl
 
 ## F14
 ### Sets: Categorical Operations 
-The ability to work with the sum, product and powerset operators on sets. In particular * to calculate the sizes of sets formed using these operators * to verify if a particular element is a member of such a set (e.g. P(XxY^2) for finite sets X,Y)
+Ability to describe elements and calculate cardinalities of finite sets formed using Cartesian products, tuple powers, and power sets, including nested constructions. Further reading covers disjoint unions and the sum rule.
 
 [link to F14 overview and practice problems](Sets/F14.md)
 

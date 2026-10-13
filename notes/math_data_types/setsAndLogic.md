@@ -1,58 +1,89 @@
 # Sets and Logic
-We show here that Set Theory is closely related to  the Predicate Calculus
-and we derive several of the transformations on set theory formulas.
 
-## Correspondences of Logic and Set Operations
-Let $U$ be a set and consider subsets $A,B,\ldots$ of $U$.
+This page connects set operations with predicate and propositional calculus. See [F13](../../skills/Sets/F13.md) for the set-algebra law table, simplification examples, proofs, and counterexamples.
 
-Let $\mathbb{B} = \\{{\rm True},{\rm False} \\}$ be the set of Boolean values.
+## Correspondences of logic and set operations
 
-For any subset $A$ we can define a predicate $P_A: U \rightarrow \mathbb{B}$ by
+Let $U$ be a universe and consider subsets $A,B,\ldots$ of $U$. For each $A$, define the membership predicate $P_A$ on $U$ by
 
-$\forall x \ \ P_A(x) = {\rm True}  \ \leftrightarrow \  (x \in A)$
+$$
+\forall x\in U . P_A(x)\leftrightarrow(x\in A).
+$$
 
----
+Its truth value records whether $x$ belongs to $A$.
 
-**Theorem.** For any $A,B\subseteq U$
-* $\forall x\ \  P_{A\cap B}(x) \leftrightarrow P_A(x) \wedge P_B(x)$
-* $\forall x\ \  P_{A\cup B}(x) \leftrightarrow P_A(x) \vee P_B(x)$
-* $\forall x \ \ P_{A^c}(x) \leftrightarrow \neg P_A(x) $
+**Theorem.** For $A,B\subseteq U$,
 
-**Proof:**
-These follow from the definitions of union and intersection of sets. For example,
+$$
+\forall x\in U . P_{A\cap B}(x)\leftrightarrow(P_A(x)\wedge P_B(x)),
+$$
 
-$A\cap B = \\{ x\in U:\  x\in A \wedge x\in B\\}$
+$$
+\forall x\in U . P_{A\cup B}(x)\leftrightarrow(P_A(x)\vee P_B(x)),
+$$
 
-That is, $P_{A\cap B}(x)$ is true 
+$$
+\forall x\in U . P_{A^c}(x)\leftrightarrow\neg P_A(x).
+$$
 
-if and only if $x \in A\cap B$ which is 
+**Proof.** Fix an arbitrary $x\in U$. By definition, $x\in A\cap B$ exactly when $x\in A$ and $x\in B$, giving the first equivalence. The definitions of union and complement give the other two. **Q.E.D.**
 
-if and only if $x \in A$ and $x \in B$ which is
+Thus union corresponds to $\vee$, intersection to $\wedge$, and complement to $\neg$. Membership in $U$ is always true, and membership in $\emptyset$ is always false. Difference satisfies $A-B=A\cap B^c$, so its membership condition is $(x\in A)\wedge\neg(x\in B)$.
 
-if and only if $P_A(x)$ and $P_B(x)$ are true
+## From logical laws to set identities
 
-The proof for $\vee$ and $\neg$ is similar. **QED**
+Two sets are equal exactly when their membership conditions agree for every element of $U$:
 
----
+$$
+(A=B)\leftrightarrow(\forall x\in U . (x\in A)\leftrightarrow(x\in B)).
+$$
 
-**Corollary.** Let $A, B, C \subset U$, then
-* $(A \cap B)^c = A^c \cup B^c$
-* $(A \cup B)^c = A^c \cap B^c$
-* $(A^c)^c = A$
-* $A \cup (B \cap C) \ = \ (A \cup B) \cap (A \cup C)$
-* $A \cap (B \cup C) \ = \ (A \cap B) \cup (A \cap C)$
+**Corollary.** For $A,B,C\subseteq U$,
 
-**Proof:** These follow from the similar rules in logic, e.g.
+* $(A\cap B)^c=A^c\cup B^c$;
+* $(A\cup B)^c=A^c\cap B^c$;
+* $(A^c)^c=A$;
+* $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$; and
+* $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$.
 
-$(A\cap B)^c = \\{x\in U | \neg (x \in A \wedge x \in B) \\}$
+**Proof of the first identity.** Fix an arbitrary $x\in U$. Then
 
-$= \\{x\in U | \neg (x \in A) \vee \neg( x \in B) \\}$
+$$
+\begin{aligned}
+x\in(A\cap B)^c
+&\leftrightarrow\neg((x\in A)\wedge(x\in B))\\
+&\leftrightarrow(\neg(x\in A)\vee\neg(x\in B))\\
+&\leftrightarrow((x\in A^c)\vee(x\in B^c))\\
+&\leftrightarrow x\in A^c\cup B^c.
+\end{aligned}
+$$
 
-$= \\{x\in U | \ \neg (x \in A)\\} \cup \\{ x\in U | \  \vee \neg( x \in B) \\}$
+The first and last transformations use membership definitions, and the middle transformation uses De Morgan's law in logic. Both sets have exactly the same elements. The remaining identities follow from the corresponding logical equivalences in the same way. **Q.E.D.**
 
-$= A^c \cup B^c$
+## Algebraic proofs
 
-The other cases are similar. **QED***
+Once the laws have been established, we can use them directly. For example,
 
----
+$$
+\begin{aligned}
+(A\cup B)^c\cup A
+&=(A^c\cap B^c)\cup A &&\text{De Morgan}\\
+&=(A^c\cup A)\cap(B^c\cup A) &&\text{distributive}\\
+&=U\cap(B^c\cup A) &&\text{complement}\\
+&=B^c\cup A &&\text{identity}.
+\end{aligned}
+$$
 
+Both membership proofs and algebraic derivations can establish identities for arbitrary sets. Name the laws used in an algebraic proof, or explain the equivalences in a membership proof.
+
+## Inclusions and counterexamples
+
+For subsets of $U$,
+
+$$
+(A\subseteq B)\leftrightarrow(\forall x\in U . (x\in A)\rightarrow(x\in B)).
+$$
+
+To prove an inclusion, start with an arbitrary element of the left side and show it belongs to the right side. To prove equality by inclusions, prove both directions.
+
+To refute an identity, specify sets and show that an element belongs to one side but not the other. To refute an inference, satisfy all its premises while making its conclusion false. [F13](../../skills/Sets/F13.md#subset-inferences-and-counterexamples) gives worked examples.

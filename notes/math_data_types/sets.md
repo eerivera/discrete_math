@@ -1,108 +1,167 @@
 # Sets
-A set is a collection of distinct elements.
 
-Sets can be described using a list of items separated by commas inside curly braces, e.g.
+For focused tutorials and worked practice, see [F12: Set notation](../../skills/Sets/F12.md), [F13: Set algebra](../../skills/Sets/F13.md), and [F14: Constructed sets](../../skills/Sets/F14.md).
 
-$\\{ a, b, c\\}$
+A set is a collection of distinct elements. List its elements inside braces: $\{a,b,c\}$. Order and repetition do not change a set, so $\{a,b\}=\{b,a\}=\{a,a,b\}$.
 
-We use the notation
+The predicate $x\in A$ says that $x$ is an element of $A$, while $x\notin A$ says that it is not. For a finite set, $|A|$ denotes the number of distinct elements.
 
-$x\in A$ 
+## Common sets
 
-to express the predicate that the element $x$ is in the set $A$.
+* $\emptyset=\{\}$ is the empty set.
+* $\mathbb N=\{0,1,2,\ldots\}$ is the set of natural numbers.
+* $\mathbb Z=\{\ldots,-2,-1,0,1,2,\ldots\}$ is the set of integers.
+* $\mathbb Q$ is the set of rational numbers.
+* $\mathbb R$ is the set of real numbers.
+* $\mathbb C$ is the set of complex numbers.
+* $F_n=\{0,1,\ldots,n-1\}$ is the set of the first $n$ natural numbers, with $F_0=\emptyset$. The course also uses $\mathbb F_n$ and $\mathcal F_n$ for this set.
 
-Some common sets of numbers have their own symbols
-* $\emptyset$ = the empty set = $\\{\\}$
-* $\mathbb{N}$ = the natural numbers = $\\{0,1,2,\ldots \\}$
-* $\mathbb{Z}$ = the integers = $\\{ \ldots, -2,-1,0,1,2,\ldots \\}$
-* $\mathbb{Q}$ = the rational numbers
-* $\mathbb{R}$ = the real numbers
-* $\mathbb{C}$ = the complex numbers
-* $\mathbb{F}_n = {0,1,\ldots,n-1}$ the natural numbers less than $n$
-  We will also write this as ${\cal F}_n$
+Superscripts $+$ and $-$ indicate positive and negative elements, respectively; for example, $\mathbb Z^+$ contains the positive integers and $\mathbb R^-$ contains the negative reals. Zero belongs to neither.
 
-We can use a superscript '+' or '-' to indicate the positive or negative elements in the set
-* $\mathbb{Z}^+$ = positive integers
-* $\mathbb{R}^-$ = negative real numbers
+## Set comprehensions
 
-## Set Comprehensions
-Another way to express a set is to specify the set as a the elements x of another set S satisfying some relation P(x). Here is the notation
+A comprehension describes elements of a domain that satisfy a condition:
 
-$\\{x \in S | P(x) \\}$ or $\\{x \in S : P(x) \\}$
+$$
+\{x\in S: P(x)\}\qquad\text{or}\qquad\{x\in S\mid P(x)\}.
+$$
 
-the ":" or "|" can be read "such that" or "for"
+Read the colon or vertical bar as “such that.” For example, the odd integers can be written in two ways:
 
-* odds = $\\{ x\in \mathbb{Z} : \exists a\in \mathbb{Z} . (x = 2a+1)\\}$
-  the set of all integers x such that x = 2a+1 for some integer a
-* odds = $\\{ 2x+1 | x \in \mathbb{Z} \\}$
-  the set of numbers of the form 2x+1 for all integers x
+$$
+\{x\in\mathbb Z: \exists k\in\mathbb Z . x=2k+1\}
+=\{2k+1: k\in\mathbb Z\}.
+$$
+
+The expression before the colon determines the elements to list. Thus $\{x^2:x\in\mathbb Z\wedge -2\le x\le2\}=\{0,1,4\}$: the elements are the outputs, with duplicates removed, rather than the five inputs.
 
 ## Intervals
-We use the following notation to represent intervals in the integers, rationals, or reals:
 
-$[a,b] = \\{x : a\le x\le b\\}$
+By default, intervals here are sets of real numbers:
 
-$[a,b) = \\{x : a\le x\lt b\\}$
+$$
+[a,b]=\{x\in\mathbb R:a\le x\le b\},
+$$
 
-$(a,b] = \\{x : a\lt x\le b\\}$
+$$
+[a,b)=\{x\in\mathbb R:a\le x<b\},
+$$
 
-$(a,b) = \\{x : a\lt x\lt b\\}$
+$$
+(a,b]=\{x\in\mathbb R:a<x\le b\},
+$$
 
-The bracket or parenthesis indicates that the endpoint is  or is not in the set.
-Note we can write $\mathbb{F}_n$ as $[0,n)$ or $[0,n-1]$. For example, 
-* $[2,5] = \\{2,3,4,5\\}$
-* $[0,7) = \\{0,1,2,3,4,5,6\\}$
+$$
+(a,b)=\{x\in\mathbb R:a<x<b\}.
+$$
 
-## Relations on sets
-We define the "subseteq" and "subset" relations on sets as follows:
-* $A\subseteq B \equiv \forall x.  (x\in A) \rightarrow (x\in B)$
-* $A\subset B \equiv A\ne B \wedge A\subseteq B$
+A bracket includes its endpoint; a parenthesis excludes it. Specify the discrete domain when listing integers or natural numbers:
 
-## Set Operations
-The fundamental operations on sets $A$ and $B$ are
-* union -  
-  $A\cup B = \\{x | (x\in A) \vee (x\in B) \\}$
-* intersection -  
-  $A\cap B = \\{x | (x\in A) \wedge (x\in B) \\}$
-* difference -  
-  $A-B = \\{x | (x\in A) \wedge \neg (x\in B) \\}$
-* complement -  
-  $\overline{A} = \\{x\in \cal{U} | \neg(x\in A) \\}$  
-  where $\cal{U}$ is some universal domain that contains $A$ and $B$.
-  and is usually clear by context. We also write it using the superscript "c" -
-  $A^c = \overline{A}$
-* powerset -  
-  ${\cal P}(A)$ = the set of all subsets of A including the empty set $\emptyset$ and the set $A$ itself.
-  We sometimes write the powerset as $2^{A}$ since if $A$ has $n$ elements then ${\cal P}(A)$ has $2^n$ elements.
+$$
+\mathbb Z\cap[2,5]=\{2,3,4,5\},\qquad
+\mathbb N\cap[0,7)=\{0,1,2,3,4,5,6\}.
+$$
 
-We can represent a union or interection of a collection of sets $S_1,\ldots,S_n$ as follows:
-* $\bigcup_\limits{i=1}^n S_i = S_1 \cup \ldots \cup S_n$
-* $\bigcap_\limits{i=1}^n S_i = S_1 \cap \ldots \cap S_n$
+In particular, $F_n=\mathbb N\cap[0,n)$. The real interval $[2,5]$ also contains $2.5$ and infinitely many other real numbers.
+
+## Subsets and equality
+
+$A\subseteq B$ means every element of $A$ belongs to $B$:
+
+$$
+(A\subseteq B)\leftrightarrow(\forall x . (x\in A)\rightarrow(x\in B)).
+$$
+
+We use $A\subset B$ to mean a **proper** subset: $A\subseteq B$ and $A\ne B$. Equality means having exactly the same elements:
+
+$$
+(A=B)\leftrightarrow(\forall x . (x\in A)\leftrightarrow(x\in B)).
+$$
+
+Membership and inclusion are different. If $A=\{0,1\}$, then $0\in A$ and $\{0\}\subseteq A$, but $\{0\}\notin A$. The empty set is a subset of every set, but it is an element only of sets that contain it explicitly. For example, $\emptyset\in\{\emptyset\}$, and $|\{\emptyset\}|=1$ while $|\emptyset|=0$.
+
+## Set operations
+
+Fix a universe $U$ containing all the sets under discussion.
+
+| Operation | Definition |
+| --- | --- |
+| Union | $A\cup B=\{x\in U:(x\in A)\vee(x\in B)\}$ |
+| Intersection | $A\cap B=\{x\in U:(x\in A)\wedge(x\in B)\}$ |
+| Difference | $A-B=\{x\in U:(x\in A)\wedge\neg(x\in B)\}=A\cap B^c$ |
+| Complement | $A^c=\overline A=U-A$ |
+
+Union uses inclusive “or.” A complement depends on its universe: the complement of $\{0\}$ in $\{0,1\}$ is $\{1\}$, but its complement in $\{0,1,2\}$ is $\{1,2\}$.
+
+## Indexed unions and intersections
+
+For a finite collection of sets,
+
+$$
+\bigcup_{i=1}^n S_i=S_1\cup\cdots\cup S_n,\qquad
+\bigcap_{i=1}^n S_i=S_1\cap\cdots\cap S_n.
+$$
+
+Membership in an indexed union means membership in at least one input set; membership in an indexed intersection means membership in every input set:
+
+$$
+x\in\bigcup_{i=1}^n S_i
+\leftrightarrow(\exists i\in\{1,\ldots,n\} . x\in S_i),
+$$
+
+$$
+x\in\bigcap_{i=1}^n S_i
+\leftrightarrow(\forall i\in\{1,\ldots,n\} . x\in S_i).
+$$
+
+For example, with $S_1=\{0,1\}$, $S_2=\{1,2\}$, and $S_3=\{1,3\}$, their union is $\{0,1,2,3\}$ and their intersection is $\{1\}$.
+
+See [Sets and logic](setsAndLogic.md) for the Boolean algebra laws governing these operations.
+
+## Products and power sets
+
+$A\times B$ is the set of ordered pairs $(a,b)$ with $a\in A$ and $b\in B$. Use parentheses for pairs and braces for sets.
+
+The **power set** $\mathcal P(A)$, also written $P(A)$ or $2^A$, is the set of all subsets of $A$:
+
+$$
+S\in\mathcal P(A)\leftrightarrow S\subseteq A.
+$$
+
+For example,
+
+$$
+\mathcal P(\{a,b\})=\{\emptyset,\{a\},\{b\},\{a,b\}\}.
+$$
+
+It includes $\emptyset$ and $A$ itself. For finite $A$, $|\mathcal P(A)|=2^{|A|}$. See [Products and sequences](sequences.md) for the counting proofs and [F14](../../skills/Sets/F14.md) for nested constructions.
 
 ## Exercise 1
-Let 
-* $A=\\{1,2,3,4,5,6\\}$,
-* $B=\\{5,6,7,8,9,0\\}$
-* $C=\\{1,3,5,7,9\\}$,
-* ${\cal U}=\\{0,1,2,3,4,5,6,7,8,9\\}$
 
-What is
-* $A\cup B$
-* $A\cap B$
-* $\overline{C}$
-* $A\cap C$
-* $\overline{A\cap B}$
-* $C \cap (A\cup B)$
-* $C \cup (A \cap B)$
+Let $A=\{1,2,3,4,5,6\}$, $B=\{5,6,7,8,9,0\}$, $C=\{1,3,5,7,9\}$, and $U=\{0,1,2,3,4,5,6,7,8,9\}$.
+
+List the elements of each set:
+
+1. $A\cup B$
+2. $A\cap B$
+3. $\overline C$
+4. $A\cap C$
+5. $\overline{A\cap B}$
+6. $C\cap(A\cup B)$
+7. $C\cup(A\cap B)$
 
 ## Exercise 2
-Describe the following sets in English and list a few of their elements, if they aren't empty
-1. A = $\\{x\in \mathbb{Z} | \exists y\in \mathbb{Z} \ (x=y^2)\\}$
-2. B = $\\{x \in \mathbb{Z} | \sqrt{x}\in \mathbb{Q}\\}$
-3. C = $\\{x \in \mathbb{R} | x^2 \lt 9 \\}$
-4. D = $\\{x \in \mathbb{N} | 10 - x \in \mathbb{N} \\}$
-5. Is $A \subseteq B$?
-6. What would it mean if $A=B$? (Is it true?)
-7. What is $\overline{C} \cap D$?
-8. Let $E = \\{0,1,2\\}$, what is the powerset ${\cal P}(E)$ of $E$. Write down its elements.
-   
+
+Describe these sets in English and list a few elements if they are nonempty:
+
+1. $A=\{x\in\mathbb Z:\exists y\in\mathbb Z . x=y^2\}$.
+2. $B=\{x\in\mathbb Z:x\ge0\wedge\sqrt{x}\in\mathbb Q\}$, where $\sqrt{x}$ is the nonnegative real square root.
+3. $C=\{x\in\mathbb R:x^2<9\}$.
+4. $D=\{x\in\mathbb N:10-x\in\mathbb N\}$.
+
+Then answer the following:
+
+5. Is $A\subseteq B$?
+6. What would $A=B$ mean? Is it true?
+7. What is $C^c\cap D$, with the complement taken in $U=\mathbb R$?
+8. List the elements of $\mathcal P(\{0,1,2\})$.
