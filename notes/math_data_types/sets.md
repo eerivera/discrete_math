@@ -2,7 +2,7 @@
 
 For focused tutorials and worked practice, see [F12: Set notation](../../skills/Sets/F12.md), [F13: Set algebra](../../skills/Sets/F13.md), and [F14: Constructed sets](../../skills/Sets/F14.md).
 
-A set is a collection of distinct elements. List its elements inside braces: $\{a,b,c\}$. Order and repetition do not change a set, so $\{a,b\}=\{b,a\}=\{a,a,b\}$.
+A set is a collection of distinct elements. List its elements inside braces: $\{a,b,c\}$. Order does not matter, so $\{a,b\}=\{b,a\}$. Each element must appear exactly once in a set listing. In this course, $\{a,a,b\}$ is invalid notation because $a$ is repeated; write $\{a,b\}$ instead.
 
 The predicate $x\in A$ says that $x$ is an element of $A$, while $x\notin A$ says that it is not. For a finite set, $|A|$ denotes the number of distinct elements.
 
