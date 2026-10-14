@@ -14,6 +14,8 @@ Sets describe collections of objects. These skills develop the notation for thos
 
 Each skill page contains new practice problems modeled on the course's exam question bank, a tutorial, and explained answers. The skill tutorials incorporate the legacy definitions and explanations needed for the tested tasks so the unit can be taught directly from these pages. Further-reading links identify broader material, including real intervals, indexed set operations, longer counting proofs, and disjoint unions.
 
+The [commonly used sets](F12.md#commonly-used-sets) are included directly in F12 as background for class examples: natural numbers, integers, rational numbers, real numbers, complex numbers, the empty set, and $F_n$, together with positive/negative notation and membership examples.
+
 ## Notation used throughout
 
 * $\mathbb N=\{0,1,2,\ldots\}$ includes zero, and $F_n=\{0,1,\ldots,n-1\}$ has $n$ elements; $F_0=\emptyset$. The course also writes $\mathbb F_n$ or $\mathcal F_n$.
