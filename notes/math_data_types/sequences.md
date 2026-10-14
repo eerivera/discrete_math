@@ -20,17 +20,17 @@ The product of $S$ with itself $n$ times is written $S^n$, for a positive intege
 
 Products of tuples may be written in nested or flat form in this course. For example, $((a,b),(c,d,e))$ in $A^2\times B^3$ corresponds to $(a,b,c,d,e)$, whose first two entries belong to $A$ and last three to $B$. Both forms are accepted; formally, flattening is a one-to-one correspondence between the two representations. Subset coordinates retain their braces.
 
-For example if $A=\{0,1\}$ then the elements of $A^2$ are
-* $\{(0,0),(0,1),(1,0),(1,1)\}$
+For example if $A=\lbrace 0,1\rbrace$ then the elements of $A^2$ are
+* $\lbrace (0,0),(0,1),(1,0),(1,1)\rbrace$
 
-if $B=\{T,F\}$ then the elements of $A\times B$ are
-* $\{(0,F),(0,T),(1,F),(1,T)\}$
+if $B=\lbrace T,F\rbrace$ then the elements of $A\times B$ are
+* $\lbrace (0,F),(0,T),(1,F),(1,T)\rbrace$
 
 ## Exercise 1
-1. Describe in English the set $A = \mathbb{N}\times \{0,1\}$ and list a few members of this set
-2. Let $B=\{0,1\}$, list the elements of the set $C$ defined by $C=B\times{\cal P}(B)$
+1. Describe in English the set $A = \mathbb{N}\times \lbrace 0,1\rbrace$ and list a few members of this set
+2. Let $B=\lbrace 0,1\rbrace$, list the elements of the set $C$ defined by $C=B\times{\cal P}(B)$
     where ${\cal P}(B) = 2^B$ is the powerset of B.
-3. List the elements of the set $D = \{(a,s)\in C | a \in s\}$
+3. List the elements of the set $D = \lbrace (a,s)\in C | a \in s\rbrace$
 
 ## Sizes of product sets
 We will use the following notation to represent the size of a set $S$, i.e. the number of elements it contains:
@@ -84,24 +84,24 @@ In particular, $|A^n|=|A|^n$. If any factor is empty, no tuple can be formed, so
 **Proof:** We will show that there is a one-to-one correspondence $b \leftrightarrow S_b$
 between bit strings of length $n$ and subsets of $A$, where $n$ is the size of $A$.
 Let $a_1,\ldots,a_n$ be the elements of $A$ and let $b$ be a bit string of length $n$,
-then $b$ is a sequence of $n$ bits $(b_1,b_2,\ldots,b_n)$ where each $b_i \in B=\{0,1\}$.
+then $b$ is a sequence of $n$ bits $(b_1,b_2,\ldots,b_n)$ where each $b_i \in B=\lbrace 0,1\rbrace$.
 Let $S_b$ be the set
-* $S_b = \{a_i | 1\le i\le n \wedge b_i=1\}$.
+* $S_b = \lbrace a_i | 1\le i\le n \wedge b_i=1\rbrace$.
 Likewise if $S$ is a subset of $A$ we can define
 * $b_S = (b_1,b_2,\ldots,b_n)$ where $b_i=1 \leftrightarrow a_i\in S$
 
-For example let $A=\{a_1,a_2,a_3\}$, then here is the correspondence
+For example let $A=\lbrace a_1,a_2,a_3\rbrace$, then here is the correspondence
 
 | Bit string $b$ | Subset $S_b$ |
 | --- | --- |
 | 000 | $\emptyset$ |
-| 001 | $\{a_3\}$ |
-| 010 | $\{a_2\}$ |
-| 011 | $\{a_2,a_3\}$ |
-| 100 | $\{a_1\}$ |
-| 101 | $\{a_1,a_3\}$ |
-| 110 | $\{a_1,a_2\}$ |
-| 111 | $\{a_1,a_2,a_3\}$ |
+| 001 | $\lbrace a_3\rbrace$ |
+| 010 | $\lbrace a_2\rbrace$ |
+| 011 | $\lbrace a_2,a_3\rbrace$ |
+| 100 | $\lbrace a_1\rbrace$ |
+| 101 | $\lbrace a_1,a_3\rbrace$ |
+| 110 | $\lbrace a_1,a_2\rbrace$ |
+| 111 | $\lbrace a_1,a_2,a_3\rbrace$ |
 
 
 This shows that each bit string $b$ can be associated to a unique subset $S_b$
@@ -112,13 +112,13 @@ QED.
 ---
 
 **Exercise 2**
-Recall that ${\cal F}_n = \{0,1,\ldots,n-1\}$. So
+Recall that ${\cal F}_n = \lbrace 0,1,\ldots,n-1\rbrace$. So
 
-$F_2 = \{0,1\}$
+$F_2 = \lbrace 0,1\rbrace$
 
-$F_3 = \{0,1,2\}$
+$F_3 = \lbrace 0,1,2\rbrace$
 
-$F_4 = \{0,1,2,3\}$
+$F_4 = \lbrace 0,1,2,3\rbrace$
 
 and $\vert F_n \vert = n$
 

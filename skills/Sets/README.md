@@ -18,7 +18,7 @@ The [commonly used sets](F12.md#commonly-used-sets) are included directly in F12
 
 ## Notation used throughout
 
-* $\mathbb N=\{0,1,2,\ldots\}$ includes zero, and $F_n=\{0,1,\ldots,n-1\}$ has $n$ elements; $F_0=\emptyset$. The course also writes $\mathbb F_n$ or $\mathcal F_n$.
+* $\mathbb N=\lbrace 0,1,2,\ldots\rbrace$ includes zero, and $F_n=\lbrace 0,1,\ldots,n-1\rbrace$ has $n$ elements; $F_0=\emptyset$. The course also writes $\mathbb F_n$ or $\mathcal F_n$.
 * Braces describe sets; parentheses describe tuples. Order does not matter in a set listing, but every element must appear exactly once; repeated elements make the listing invalid. Tuples preserve order and allow repeated entries.
 * $x\in A$ is membership. $S\subseteq A$ is inclusion. Here $S\subset A$ means a proper subset.
 * $\mathcal P(A)$, $P(A)$, and $2^A$ denote the power set. Its elements are subsets of $A$.

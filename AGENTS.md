@@ -7,3 +7,5 @@ A quantifier's scope extends from the dot to the end of the formula unless a clo
 Keep explanations, exercises, answers, and formula labels in diagrams consistent with this convention. The student-facing explanation is in `notes/predicate_calculus/overview.md`, under “Dot notation and quantifier scope.”
 
 Keep Markdown display-math delimiters (`$$`) on their own unindented lines, with blank lines around the block, including formulas between numbered exercises.
+
+For visible set braces in Markdown math, use `\lbrace` and `\rbrace`, with a space after a command when needed to separate it from following letters. GitHub's Markdown parser removes the backslash from `\{` and `\}` in ordinary inline math, causing the braces to disappear. Leave ordinary LaTeX grouping braces, such as those in `\mathbb{N}`, unchanged. This convention applies to inline formulas, display formulas, and table cells.
