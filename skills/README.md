@@ -114,9 +114,11 @@ Ability to describe elements and calculate cardinalities of finite sets formed u
 
 ---
 
+The [Functions unit overview](Functions/README.md) connects F15–F17, the exam-style practice, and additional course notes.
+
 ## F15
 ### Functions: Syntax and Semantics 
-Ability to use and understand mathematical notation for functions. In particular, * to calculate values of compositions of given functions * to compute the images and inverse images of a given function on subsets of the domain or codomain * to work with function defined by cases, or by mathematical formulas, or both
+Ability to read function notation, distinguish domain, codomain, and range, evaluate tables, formulas, and cases, and compute images and inverse images, including for explicitly partial functions.
 
 [link to F15 overview and practice problems](Functions/F15.md)
 
@@ -124,7 +126,7 @@ Ability to use and understand mathematical notation for functions. In particular
 
 ## F16
 ### Functions: Composition 
-The ability to compute and reason about compositions of functions In particular, * to calculate the values of a function formed by composing functions on products, powersets, sums, etc. * to calculate the image and inverse image of sets defined by compositions
+Ability to evaluate compositions on numbers, tuples, and finite sets, track intermediate types, derive general formulas, and calculate composite images and inverse images. Additional notes cover products of functions.
 
 [link to F16 overview and practice problems](Functions/F16.md)
 
@@ -132,7 +134,7 @@ The ability to compute and reason about compositions of functions In particular,
 
 ## F17
 ### Functions: Properties 
-The ability to categorize functions and prove properties of functions. In particular, * to show that a given function is (or is not) partial/total, injective, surjective, bijective * to prove properties of compositions and inverses of functions based on properties of the individual functions * to show that two sets are isomorphic by defining a bijection between them
+Ability to classify functions as total, injective, surjective, or bijective; give precise definitions; and prove properties of compositions, images, and inverse images. Additional notes cover inverse functions and constructing bijections between sets.
 
 [link to F17 overview and practice problems](Functions/F17.md)
 
