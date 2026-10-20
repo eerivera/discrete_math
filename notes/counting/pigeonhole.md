@@ -1,56 +1,64 @@
 # The Pigeon Hole Principle
-This principle gets its name from the observsation that if you have 11 pigeons that are roosting in 10 holes,
-then one hole must contain at least 2 pigeons.
 
-Formally, we state it as follows:
+Use [F21](../../skills/Combinatorics/F21.md) for proof practice and worked answers. All sets in the cardinality arguments below are finite, and all functions are total.
 
-**Theorem** Let $f:A\rightarrow B$ be a total function. If $\vert A\vert \gt \vert B \vert$,
-then $f$ is not injective, that is there exists $a_1,a_2\in A$ with $a_1\not = a_2$ and $f(a_1)=f(a_2)$
+If 11 pigeons occupy 10 holes, some hole contains at least two pigeons. For $f:A\rightarrow B$, the inputs are the pigeons, the possible outputs are the holes, and $f$ assigns each input to a hole.
 
-**Proof:** We prove this by contradiction. If not, then $f$ is a bijection from $A$ onto its image $f(A)$
-and so $A$ and $f(A)$ have the same size: $\vert f(A) \vert = \vert A \vert$.
-But $f(A)\subseteq B$ so the size of $f(A)$ is smaller or equal to the size of $B$. 
-Thus, $\vert A\vert = \vert f(A) \vert \le \vert B \vert$, which contradicts our
-assumption that  $\vert A\vert > \vert B \vert$. **QED**
+**Theorem.** If $|A|>|B|$, then $f:A\rightarrow B$ is not injective: two distinct inputs have the same output.
 
-**Corollary** Let $f:A\rightarrow B$ be a total function. If $\vert A\vert \gt \vert B \vert$,
-then  $\vert f^{-1}(b)\vert \ge 2$ for some $b\in B$.
+**Proof.** If $f$ were injective, it would be a bijection from $A$ to $f(A)\subseteq B$. Then $|A|=|f(A)|\le|B|$, contrary to the hypothesis. **Q.E.D.**
 
-**Proof:** this is just another way of saying that at least two elements of $A$ get mapped to the same
-element of $B$, i.e. that $f$ is not 1-1.
+Similarly, if $|A|<|B|$, the function cannot be surjective, since $|f(A)|\le|A|<|B|$.
 
-We also have a similar theorem for when $A$ is much bigger than $B$.
+## Fibers and the generalized principle
 
-**Theorem** Let $f:A\rightarrow B$ be a total function. If $\vert A\vert \gt k* \vert B \vert$ for some integer k>1,
-then $\vert f^{-1}(b)\vert \ge k$ for some $b\in B$.
-
-**Proof:** By contradiction. Suppose it is not true, then $\vert f^{-1}(b)\vert \lt k$ for every $b$ in $B$.
-But this means that the size of $A$ is at most $k$ times the size of $B$ as $A$ is a disjoiont union of the inverse
-images of points in $B$:
+For $b\in B$, write $f^{-1}(\lbrace b\rbrace)=\lbrace a\in A:f(a)=b\rbrace$ for the **fiber** over $b$. This is an inverse image of a singleton, with no assumption that $f$ has an inverse function. The fibers partition the domain:
 
 $$
-A = \bigcup_\limits{b\in B} f^{-1}(b)
+A=\bigcup_{b\in B}f^{-1}(\lbrace b\rbrace),\qquad
+|A|=\sum_{b\in B}|f^{-1}(\lbrace b\rbrace)|.
 $$
 
-and since this is a disjoint union
+Thus $|A|>|B|$ guarantees a fiber of size at least 2. More generally, for an integer $k\ge0$, if $|A|>k|B|$, some fiber has at least $k+1$ elements.
 
-$$
-\vert A \vert = \sum_\limits{b\in B} \vert  f^{-1}(b)\vert \le \sum_\limits{b\in B} k \le \vert B\vert *k
-$$
+**Proof.** If every fiber had at most $k$ elements, their disjoint union would have at most $k|B|$ elements, contradicting $|A|>k|B|$. **Q.E.D.**
 
-and this contradicts our assumption that $\vert A\vert \gt k* \vert B \vert$  **QED**
+If $|B|>0$, some fiber has size at least $\lceil|A|/|B|\rceil$. For a positive threshold $t$, it suffices that $|A|>(t-1)|B|$ to guarantee a fiber of size at least $t$. Equality does not suffice: exactly $t-1$ elements could occupy each hole.
 
 # Applications
-### Subset sums
-**Theorem** Let $S$ be any set of 20 positive integers less than 10000, then there are at least 2 subsets of $S$ with the same sum.
 
-**Proof:** Let U be any subset of S, then the sum of U is at most 20*10,000 = 200,000. So if $f:P(S)\rightarrow \mathbb{N}$ is the
-function that takes $U$ to the sum of the numbers in $U$, then the range of $f$ is contained in the interval $[20,200000]$.
-But there are $2^{20}$ subsets of $S$ and $2^{20} = 1048576$ which is bigger than 200,000 so
-$f$ is not 1-1, and hence there are at least two subsets of $S$ with the same sum. ***QED***
+## Subset sums
 
-Here is such a set of numbers:
+**Theorem.** Every set $S$ of 20 positive integers less than 10,000 has two distinct subsets with the same sum.
 
-9753 7611 3791 7335 6520 1724 1077 4437 9752 3354 8977 8925 5887 2236 104 9384 4192 2543 9191 4980
+**Proof.** Let $U\subseteq S$. Its sum is a nonnegative integer at most $20\cdot9999=199,980$. This includes the empty subset, whose sum is 0. Define
 
-We don't know which two subsets have the same sum, but we know they have to exist!
+$$
+h:\mathcal P(S)\rightarrow\lbrace 0,1,\ldots,199980\rbrace,
+\qquad h(U)=\sum_{u\in U}u.
+$$
+
+There are $2^{20}=1,048,576$ subsets and only 199,981 possible outputs in the chosen codomain. By the pigeonhole principle, $h$ is not injective, so distinct subsets have equal sums. **Q.E.D.**
+
+Here is one such set:
+
+$$
+\begin{aligned}
+S=\lbrace{}&104,1077,1724,2236,2543,3354,3791,4192,4437,4980,\\
+&5887,6520,7335,7611,8925,8977,9191,9384,9752,9753\rbrace.
+\end{aligned}
+$$
+
+The proof guarantees a collision without finding one. To find witnesses by a program, enumerate subsets and store the first subset found for each sum in a dictionary. Encountering that sum again gives a distinct subset with the same sum. A search gives the two subsets $\lbrace 104,2236,3354,9384\rbrace$ and $\lbrace 5887,9191\rbrace$, both with sum 15,078. Adding an element of $S$ outside their union to both subsets gives another pair of distinct subsets with the same sum.
+
+The subsets need not be disjoint. Removing their common elements gives disjoint subsets with equal sums; positivity ensures neither resulting subset is empty.
+
+Return to [F21](../../skills/Combinatorics/F21.md) for fixed-size subset sums, power-set comparisons, and other proof patterns, or the [counting overview](overview.md).
+
+## A set and its square
+
+Let $S$ be a finite set with $n=|S|\ge2$. Prove that no total function $S\rightarrow S\times S$ is surjective and no total function $S\times S\rightarrow S$ is injective.
+
+Since $|S\times S|=n^2>n$, surjectivity in the first direction would require $n\ge n^2$, and injectivity in the second direction would require $n^2\le n$. Both are impossible. **Q.E.D.**
+
+The assumption $n\ge2$ matters: when $n=0$ or $n=1$, $n^2=n$ and the size obstruction disappears.

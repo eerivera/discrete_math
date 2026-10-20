@@ -1,15 +1,26 @@
 # Overview of Combinatorics
-Counting the number of elements in a particular family of sets is an important topic in Discrete Math.
 
-In Computer Science, counting is often needed when we are trying to analyze the performance of an algorithm
-and it is used when estimating probabilities (e.g. the probability some particular segment of code will be run).
+Combinatorics counts elements in finite sets defined by conditions. Counting is useful for analyzing algorithms and calculating probabilities.
 
-In this course we will cover several different counting techniques which can be classified by how the sets
-are constructed
-* [basic counting](https://github.com/tjhickey724/discrete_math/blob/main/notes/counting/basicCounting.md) i.e. counting disjoint unions, products, powersets, ...
-* [counting permutations and combinations](https://github.com/tjhickey724/discrete_math/blob/main/notes/counting/permsAndCombs.md) choosing size k subsets or sequences from a set of size n
-* [multisets](./multisets.md) also known as "Stars and Bars" counting
-* [the pigeonhole principle](pigeonhole.md)
+Begin with the [Combinatorics unit](../../skills/Combinatorics/README.md), whose skill pages contain tutorials, sample problems, and worked answers:
 
+* [F18: Addition and multiplication](../../skills/Combinatorics/F18.md)
+* [F19: Permutations and combinations](../../skills/Combinatorics/F19.md)
+* [F20: Inclusion and exclusion](../../skills/Combinatorics/F20.md)
+* [F21: Pigeonhole proofs](../../skills/Combinatorics/F21.md)
+* [G04: Combined counting methods](../../skills/Combinatorics/G04.md)
 
-Here is a [summary of the counting methods](summary.md)
+These notes provide further explanations and examples:
+
+* [Basic counting](basicCounting.md): products, disjoint unions, divisibility, power sets, and the number of total functions.
+* [Permutations and combinations](permsAndCombs.md): ordered and unordered selections, binomial and multinomial identities, named teams, and card counting.
+* [Multisets](multisets.md): stars and bars, nonnegative integer sums, cookie distributions, and nondecreasing digit strings.
+* [Pigeonhole principle](pigeonhole.md): fibers, generalized bounds, and subset sums.
+* [Summary of counting methods](summary.md).
+
+## Readings
+
+* [Discrete Mathematics: An Open Introduction, addition and multiplication](https://discrete.openmathbooks.org/dmoi3/sec_counting-addmult.html)
+* [Discrete Mathematics: An Open Introduction, permutations and combinations](https://discrete.openmathbooks.org/dmoi3/sec_counting-combperm.html)
+* [Discrete Mathematics: An Open Introduction, stars and bars](https://discrete.openmathbooks.org/dmoi3/sec_stars-and-bars.html)
+* [Mathematics for Computer Science, Chapter 14: Cardinality Rules](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_textbook.pdf)

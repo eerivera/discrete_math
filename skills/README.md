@@ -150,7 +150,7 @@ Ability to apply the addition and multiplication principles to find the sizes of
 
 ## F19
 ### Combinatorics: Permutations and Combinations 
-Counting the sizes of sets defined using permutations and combinations of elements
+Count ordered selections, unordered subsets, position choices, and selections from disjoint groups.
 
 [F19 overview and practice problems](Combinatorics/F19.md)
 
@@ -158,7 +158,7 @@ Counting the sizes of sets defined using permutations and combinations of elemen
 
 ## F20
 ### Combinatorics: Principle of Inclusion and Exclusion 
-Ability to count the sizes of sets defined intersections and unions of larger sets.
+Count finite sets with overlapping conditions using intersections and inclusion and exclusion.
 
 [F20 overview and practice problems](Combinatorics/F20.md)
 
@@ -166,7 +166,9 @@ Ability to count the sizes of sets defined intersections and unions of larger se
 
 ## F21
 ### Combinatorics: Pigeonhole Principle 
-Ability to prove that a function is not an injection by calculating the sizes of the domain and codomain.
+Use finite cardinalities to prove collisions, fiber bounds, and impossibility of injections, surjections, or bijections.
+
+[F21 overview and practice problems](Combinatorics/F21.md)
 
 ## F22
 ### Sequences: Syntax and Semantics 
@@ -202,7 +204,9 @@ Ability to write a well-structured proof of a Theorem, Proposition, Lemma or Cor
 
 ## G04
 ### Combinatorics: Advanced
-Ability to determine the size of a set using a combination of the techniques covered in this course.
+Combine counting methods for rank patterns, labeled positions, grouped selections, and exclusions.
+
+[G04 overview and practice problems](Combinatorics/G04.md)
 
 ## G05
 ### Sequences: Closed Forms for Linear Recurrences
